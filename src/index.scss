@@ -1,0 +1,44 @@
+$primaryColor: white;
+$textColor:black;
+$blue:rbg(0,0,72);
+//MISC
+*{
+    margin:0 0 0 0;
+}
+.center{
+    display: flex;
+    margin:auto auto !important;
+}
+// Home
+.homeDiv{
+    height:100vh;
+    
+    color:$textColor;
+}
+.homeHalfDiv{
+    height:50vh;
+    background-color: lightgray;
+}
+.homeHalfDiv1{
+    height:50vh;
+    background-color: lightcyan;
+}
+.homeHeaderText{
+    font-size: 5em;
+    margin: auto auto;
+    padding:50px;
+}
+#homeSubheaderText{
+    font-size: 1em;
+    margin: 0 auto;
+    padding:20px;
+    line-height: 2;
+}
+//NavBAr
+.navbarPositoning{
+    height:20%;
+    padding: 50px 0px 50px 0px;
+    box-shadow: 5px 5px 10px rgba(0,0,0, 0.3); 
+    font-size: 24px;
+
+}
