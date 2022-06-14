@@ -1,6 +1,8 @@
 import React from 'react';
 import { Button, Col, Container, Form, FormControl, Nav, Navbar, NavbarBrand, NavLink, NavItem } from 'react-bootstrap';
 import { FiSearch } from 'react-icons/fi'
+import LogIn from './LogIn';
+import SignUp from './SignUp';
 
 
 
@@ -42,15 +44,15 @@ const MyNav = () => {
                         
                         <NavItem>
                             <NavLink href="/login">
-                                Login
+                                Log In
                             </NavLink>
                         </NavItem>
 
                         
 
                         <NavItem>
-                            <NavLink href="/signup">
-                                Sign Up
+                            <NavLink>
+                                <SignUp />
                             </NavLink>
                         </NavItem>
                         

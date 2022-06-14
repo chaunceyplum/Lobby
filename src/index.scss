@@ -18,10 +18,17 @@ $blue:rbg(0,0,72);
 .homeHalfDiv{
     height:50vh;
     background-color: lightgray;
+    border-radius: 25px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
 }
 .homeHalfDiv1{
     height:50vh;
     background-color: lightcyan;
+    border-radius: 25px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 .homeHeaderText{
     font-size: 5em;
@@ -40,5 +47,4 @@ $blue:rbg(0,0,72);
     padding: 50px 0px 50px 0px;
     box-shadow: 5px 5px 10px rgba(0,0,0, 0.3); 
     font-size: 24px;
-
 }
