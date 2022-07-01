@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
+import Counter from './Counter';
 
 const Home = () => {
   return (
@@ -31,7 +32,7 @@ const Home = () => {
 
                     
                 </Row>
-                <Row>
+                {/* <Row className="homeDiv">
                     
                     <Col xs={5} className=''>
                         <p className='homeHeaderText'>
@@ -64,6 +65,16 @@ const Home = () => {
                     <Col xs={5} className='text-center'>
                         
                     </Col>
+                </Row> */}
+
+
+                <Row>
+                    <div style={{"padding":"30px 0 30px 0;"}}>
+
+                    </div>
+                    <div style={{"padding":"30px 0 30px 0;"}}>
+
+                    </div>
                 </Row>
                 <Row >
                     <div className='homeHalfDiv'>
@@ -99,6 +110,15 @@ const Home = () => {
                         </p>
                     </div>
 
+                </Row>
+                <br />
+                <br />
+                <br />
+                <br />
+                <Row>
+                    <Col>
+                        <Counter />
+                    </Col>
                 </Row>
                 
             </Container>
