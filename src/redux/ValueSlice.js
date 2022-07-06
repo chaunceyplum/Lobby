@@ -16,7 +16,7 @@ export const ValueSlice = createSlice({
         },
         decrement:(state) => {
             state.value -= 1;
-            console.log( 'Decremented by one')
+            console.log( state.value)
         },
         incrementByAmount: (state, action) => {
             state.value += action.payload;

@@ -5,15 +5,16 @@ import { increment, decrement } from '../redux/ValueSlice'
 
 const Counter = () => {
   
-    const value =useSelector(state => state.counter)
+    const value =useSelector(state => state.counter.value)
     const dispatch =useDispatch()
-
+    
     return (
     <div>
         <Container>
             <Row>
                 <Col>
-                    <p>The count is ${value}</p>
+                 <div>The count is {value}</div>
+                   
                 </Col>
             </Row>
             <Row>

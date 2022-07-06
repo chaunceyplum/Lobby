@@ -1,7 +1,15 @@
 import React from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
+import { useState } from 'react'
+import { Button, Col, Container, Row } from 'react-bootstrap'
 
 const Service = () => {
+  
+  
+    const [show, setShow] = useState(false);
+  
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+  
   return (
     <div>
         <Container>
@@ -13,7 +21,16 @@ const Service = () => {
                 </Col>
             </Row>
             <Row>
-
+                {
+                    show ?
+                    <div>
+                        Content
+                    </div> 
+                    :
+                    <Button onClick={handleShow}>
+                        Learn More
+                    </Button>
+                }
 
             </Row>
         </Container>
