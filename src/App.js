@@ -6,9 +6,13 @@ import About from './components/About';
 import Service from './components/Service';
 import LogIn from './components/LogIn';
 import SignUp from './components/SignUp';
+import Footer from './components/Footer';
 
 
 function App() {
+
+
+  
   return (
     <div>
       <MyNav sticky="top"/>
@@ -29,6 +33,7 @@ function App() {
 
         </Routes>
       </BrowserRouter>
+      <Footer sticky='bottom' />
       
     </div>
   );

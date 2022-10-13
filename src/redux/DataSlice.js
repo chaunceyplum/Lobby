@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 
 const initialState = {
     recipients:[],
-    status:'idle', //'idle'| 'loading'
+    loading:false,
     error:null
     
 
@@ -12,21 +12,17 @@ const initialState = {
 
     const apiUrl = "https://dummyapi.io/data/v1/user?limit=10"
 
-    export const fetchPosts = createAsyncThunk('fetchedRecipients/', async () => {
-        try{
-            const response = await axios.get(apiUrl)
-            return [...response.data];
-        } catch(err){
-            return err.message;
-        }
-        
+    export const fetchUsers = createAsyncThunk('fetchedRecipients/', async (apiUrl) => {
+        const res = await fetch(apiUrl)
+        .then((data) => data.json());
+        return res;
       })
 
 
 
 
     export const DataSlice = createSlice({
-        name:'Data',
+        name:'data',
         initialState:initialState,
         reducers:{
             fetched:{
@@ -35,10 +31,15 @@ const initialState = {
                 },
             }
         }
+        // extraReducers(builder){
+        //     builder
+        //         .addCase()
+        // }
 
     
     })
 
 
 
-    export const {fetched} = DataSlice.actions
+    export const { fetched } = DataSlice.actions
+    export default DataSlice.reducer;

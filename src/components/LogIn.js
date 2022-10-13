@@ -17,6 +17,16 @@ const LogIn = () => {
 
     return (
             <div className=" ">
+                <Container>
+                  <Row className='homeDiv'>
+                      <Col className='center'>
+                          <h3 className='center '>
+                              Login
+                          </h3>
+                      </Col>
+                  </Row>
+                
+                </Container>
                 <Container className=" ">
                   <Row>
                   <Col />
@@ -69,7 +79,11 @@ const LogIn = () => {
                   </Col>
                   <Col />
                   </Row>
+                  <Row>
+                    <br /><br /><br /><br /><br /><br /><br /><br />
+                  </Row>
                 </Container>
+                
             </div>
     )
 }

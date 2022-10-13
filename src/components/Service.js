@@ -15,9 +15,20 @@ const Service = () => {
         <Container>
             <Row className='homeDiv'>
                 <Col className='center'>
-                    <h3 className='center '>
-                        Services
-                    </h3>
+                    <div className='center1'>
+                        <h3 className='center '>
+                            
+                            Services
+                        </h3>
+                    </div>
+                    <div>
+                        <br />
+                    </div>
+                    <div className='center1'>
+                        <Button onClick={handleShow} className='center1'>
+                                Learn More
+                        </Button>
+                    </div>
                 </Col>
             </Row>
             <Row>
@@ -27,9 +38,16 @@ const Service = () => {
                         Content
                     </div> 
                     :
-                    <Button onClick={handleShow}>
-                        Learn More
-                    </Button>
+                    <div className='center1'>
+                        {/* <Button onClick={handleShow} className='center1'>
+                            Learn More
+                        </Button> */}
+                        <div>
+                            <br/>
+                            
+                            <br/>
+                        </div>
+                    </div>
                 }
 
             </Row>

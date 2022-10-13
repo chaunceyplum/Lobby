@@ -6,13 +6,18 @@ $blue:rbg(0,0,72);
     margin:0 0 0 0;
 }
 .center{
-    display: flex;
+    display: inline-block;
     margin:auto auto !important;
+}
+.center1{
+    display: flex;
+    margin:0 auto !important;
 }
 .container{
     display: block;
 }
 // Home
+
 .homeDiv{
     height:100vh;
     
@@ -37,12 +42,17 @@ $blue:rbg(0,0,72);
     font-size: 5em;
     margin: auto auto;
     padding:50px;
+    color:white !important;
 }
 #homeSubheaderText{
     font-size: 1em;
     margin: 0 auto;
     padding:20px;
     line-height: 2;
+    color:white !important;
+    background-color: black;
+    opacity:75%;
+    border-radius: 25px;
 }
 //NavBAr
 .navbarPositoning{
@@ -51,3 +61,17 @@ $blue:rbg(0,0,72);
     box-shadow: 5px 5px 10px rgba(0,0,0, 0.3); 
     font-size: 24px;
 }
+
+//Footer
+.footerClass{
+    background-color: darkgray;
+    color:white !important;
+}
+
+//Parallax
+.content {
+    height: 100%;
+    width:100%;
+
+}
+

@@ -6,6 +6,10 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
+import { fetchUsers } from './redux/DataSlice';
+
+
+store.dispatch(fetchUsers)
 
 ReactDOM.render(
   <React.StrictMode>

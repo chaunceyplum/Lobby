@@ -12,7 +12,7 @@ const Contact = () => {
         </Col>
     </Row>
     <Row>
-
+      <Row></Row>
 
     </Row>
 </Container>
