@@ -3,9 +3,11 @@ import { Button, Col, Container, Row } from 'react-bootstrap';
 import Counter from './Counter';
 import {Parallax} from 'react-parallax'
 import stars from '../Images/gameControllers.jpg'
+import child from '../Images/child.jpg'
 const Home = () => {
   return (
         <div>
+            
             <Parallax strength={-400} bgImage={stars} className="content">
                 <Container>
                 <Row className='homeDiv'>
@@ -19,9 +21,9 @@ const Home = () => {
                                 Find A Lobby
                             </h3>
 
-                            <p id='homeSubheaderText' >
+                            {/* <p id='homeSubheaderText' >
                                 A platform gamers can use to find other gamers to play with.Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec vestibulum felis, at ultrices dui. Suspendisse a consequat neque. Nam tortor nisi, lacinia ut urna ut, dignissim molestie ipsum. Vivamus bibendum odio elementum, convallis felis non, condimentum ligula. Vestibulum nisl augue, tincidunt molestie maximus sit amet, blandit sit amet neque. Praesent ante risus, sodales in vulputate aliquet, pretium sit amet lacus. Praesent lacinia placerat dolor eu maximus. Sed pellentesque, turpis eget gravida egestas, nisi nulla egestas est, et rutrum nisl urna a lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. In tempus malesuada metus vitae rutrum. Integer lacus lorem, sollicitudin vitae lorem at, ornare venenatis velit. Suspendisse eget orci sodales, porttitor tortor tempus, interdum tortor.
-                            </p>
+                            </p> */}
                             <br />
                             <Button variant="secondary" className='center'>
                                 Learn More
@@ -37,86 +39,51 @@ const Home = () => {
                 </Row>
                 </Container>
             </Parallax>
-                <Container>
-                {/* <Row className="homeDiv">
-                    
-                    <Col xs={5} className=''>
-                        <p className='homeHeaderText'>
-                            Find A Lobby
-                        </p>
-                        <Row>
-                            <Col>
-                                <p>
-                                    A platform gamers can use to find other gamers to play with
-                                </p>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col>
-                                <Button variant='secondary'>
-                                    button1
-                                </Button>
-                            </Col>
-                            <Col>
-                                <Button variant='secondary'>
-                                    button2
-                                </Button>
-                            </Col>
-                        </Row>
-                        
-                    </Col>
-
-                    <Col xs={2}/>
-
-                    <Col xs={5} className='text-center'>
-                        
-                    </Col>
-                </Row> */}
-
-
-                <Row>
-                    <div style={{"padding":"30px 0 30px 0;"}}>
-
-                    </div>
-                    <div style={{"padding":"30px 0 30px 0;"}}>
-
-                    </div>
-                </Row>
-                <Row >
-                    <div className='homeHalfDiv'>
-                        <h1>
+                {/* <Parallax strength={-100} bgImage={child} blur={1}>
+                    <Container>
+                    <Row className="homeDiv">
+                    <div className='content'>
+                        <h1 className="homeHeaderText">
                             some text
                         </h1>
 
-                        <p>
+                        <p id="HomeSubheaderText">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec vestibulum felis, at ultrices dui. Suspendisse a consequat neque. Nam tortor nisi, lacinia ut urna ut, dignissim molestie ipsum. Vivamus bibendum odio elementum, convallis felis non, condimentum ligula. Vestibulum nisl augue, tincidunt molestie maximus sit amet, blandit sit amet neque. Praesent ante risus, sodales in vulputate aliquet, pretium sit amet lacus. Praesent lacinia placerat dolor eu maximus. Sed pellentesque, turpis eget gravida egestas, nisi nulla egestas est, et rutrum nisl urna a lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. In tempus malesuada metus vitae rutrum. Integer lacus lorem, sollicitudin vitae lorem at, ornare venenatis velit. Suspendisse eget orci sodales, porttitor tortor tempus, interdum tortor.
 
                         </p>
                     </div>
 
                 </Row>
-                <Row>
-                    <div className='homeHalfDiv1'>
 
-                        <h1>
-                            (PHOTO GOES HERE)
-                        </h1>
-                    </div>
 
-                </Row>
-                <Row>
-                    <div className='homeHalfDiv'>
-                        <h1>
+               
+                </Container>
+            </Parallax> */}
+
+            
+                <Parallax strength={400} blur={10}>
+                    <Container>
+                    <Row >
+                    <div className='content'>
+                        <h1 className="homeHeaderText">
                             some text
                         </h1>
 
-                        <p>
+                        <p id="HomeSubheaderText">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec vestibulum felis, at ultrices dui. Suspendisse a consequat neque. Nam tortor nisi, lacinia ut urna ut, dignissim molestie ipsum. Vivamus bibendum odio elementum, convallis felis non, condimentum ligula. Vestibulum nisl augue, tincidunt molestie maximus sit amet, blandit sit amet neque. Praesent ante risus, sodales in vulputate aliquet, pretium sit amet lacus. Praesent lacinia placerat dolor eu maximus. Sed pellentesque, turpis eget gravida egestas, nisi nulla egestas est, et rutrum nisl urna a lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. In tempus malesuada metus vitae rutrum. Integer lacus lorem, sollicitudin vitae lorem at, ornare venenatis velit. Suspendisse eget orci sodales, porttitor tortor tempus, interdum tortor.
 
                         </p>
                     </div>
 
                 </Row>
+
+
+               
+                </Container>
+            </Parallax>
+
+                
+                
                 <br />
                 <br />
                 <br />
@@ -127,7 +94,7 @@ const Home = () => {
                     </Col>
                 </Row>
                 
-            </Container>
+            
             
         </div>
     );

@@ -1,14 +1,28 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect} from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchPosts, getPostsError, getPostsStatus, selectAllPosts } from '../redux/DataSlice'
+
 
 const Service = () => {
-  
+    const dispatch =useDispatch()
+    const posts =useSelector(selectAllPosts)
+    const postsStatus =useSelector(getPostsStatus)
+    const error =useSelector(getPostsError)
+    
   
     const [show, setShow] = useState(false);
   
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    useEffect(() => {
+        
+        if(postsStatus  === 'idle') {
+            dispatch(fetchPosts())
+        }
+    }, [postsStatus, dispatch]);
   
   return (
     <div>
@@ -50,6 +64,9 @@ const Service = () => {
                     </div>
                 }
 
+            </Row>
+            <Row>
+                {console.log(posts)}
             </Row>
         </Container>
     </div>

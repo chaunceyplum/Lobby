@@ -10,7 +10,7 @@ const MyNav = () => {
   return (
     <div className='navbarPositoning'>
         <Container>
-            <Navbar  sticky = "top" className='text-center'>
+            <Navbar  sticky = "top" className='text-center' >
                 <Col xs={3}>
                     <NavbarBrand>
                         (logo)Lobby

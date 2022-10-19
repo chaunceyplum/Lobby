@@ -3,43 +3,60 @@ import axios from 'axios'
 import { useDispatch } from "react-redux";
 
 const initialState = {
-    recipients:[],
+    posts:[],
     loading:false,
     error:null
     
 
 } 
 
-    const apiUrl = "https://dummyapi.io/data/v1/user?limit=10"
+    const apiUrl = "https://jsonplaceholder.typicode.com/posts"
 
-    export const fetchUsers = createAsyncThunk('fetchedRecipients/', async (apiUrl) => {
-        const res = await fetch(apiUrl)
-        .then((data) => data.json());
-        return res;
+    export const fetchPosts = createAsyncThunk('fetchedRecipients/', async () => {
+        try{
+            const res = await axios.get(apiUrl)
+            return [...res];
+        } catch (err) {
+            return err.message;
+        }
       })
 
 
 
 
     export const DataSlice = createSlice({
-        name:'data',
+        name:'posts',
         initialState:initialState,
         reducers:{
             fetched:{
                 reducer(state, action) {
-                    state.recipients.push(action.payload)
-                },
+                    state.posts.push(action.payload)
+                    .then(console.log(state))
+                }
+                
             }
+        },
+        extraReducers(builder){
+            builder
+                .addCase(fetchPosts.pending, (state, action) => {
+                    state.status = 'loading'
+                })
+                .addCase(fetchPosts.fulfilled, (state,action) => {
+                    state.status ='succeded'
+                })
+                .addCase(fetchPosts.rejected, (state,action) => {
+                    state.status='failed'
+                    state.error = action.error.message
+
+                })
         }
-        // extraReducers(builder){
-        //     builder
-        //         .addCase()
-        // }
 
     
     })
 
-
+    export const selectAllPosts = (state) => state.posts
+    export const getPostsStatus = (state) => state.posts.status
+    export const getPostsError = (state) => state.posts.error
 
     export const { fetched } = DataSlice.actions
     export default DataSlice.reducer;
