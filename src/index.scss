@@ -24,11 +24,11 @@ $blue:rbg(0,0,72);
     color:$textColor;
 }
 .homeHalfDiv{
-    height:50vh;
+    // height:50vh;
     background-color: lightgray;
     border-radius: 25px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 
 }
 .homeHalfDiv1{
@@ -61,6 +61,11 @@ $blue:rbg(0,0,72);
     box-shadow: 5px 5px 10px rgba(0,0,0, 0.3); 
     font-size: 24px;
     
+}
+//Contact
+.formMargin{
+    margin :10%;
+    text-align: center;
 }
 
 //Footer
