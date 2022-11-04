@@ -30,24 +30,25 @@ const Contact = () => {
                   <FormLabel>
                     First Name
                   </FormLabel>
-                  <FormControl type="email" placeholder="Enter Email Here" />
+                  <FormControl type="email" placeholder="Enter Name Here" />
                   <FormText>
                     We'll <strong>NEVER</strong> share your data with anyone
                   </FormText>
                 </FormGroup>
-                <br />
+                
                 <FormGroup className='formMargin'>
                   <FormLabel>
-                    Password
+                    Email
                   </FormLabel>
-                  <FormControl type="password" placeholder="Enter Password Here" />
-                  <br/>
+                  <FormControl type="email" placeholder="Enter email Here" />
+                  
 
                   
                 </FormGroup>
                 <Button variant="secondary" type="submit">
                   Submit
                 </Button>
+                <br /><br />
               </Form>
             </Container>
           </div>
@@ -56,6 +57,11 @@ const Contact = () => {
 
       <Col />
 
+    </Row>
+    <Row>
+      <div>
+        <br /><br /><br /><br />
+      </div>
     </Row>
 </Container>
     </div>
