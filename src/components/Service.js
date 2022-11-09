@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
+import { Parallax } from 'react-parallax'
 import { useDispatch, useSelector } from 'react-redux'
 import {
   fetchPosts,
@@ -9,6 +10,9 @@ import {
   selectAllPosts,
   fetched,
 } from '../redux/DataSlice'
+import GrowExample from './GrowExample'
+import RenderServiceCard from './RenderServiceCard'
+import contact from '../Images/writing.jpg'
 
 const Service = () => {
   const dispatch = useDispatch()
@@ -29,40 +33,66 @@ const Service = () => {
 
   return (
     <div>
-      <Container>
-        <Row className='homeDiv'>
-          <Col className='center'>
-            <div className='center1'>
-              <h3 className='center '>Services</h3>
-            </div>
-            <div>
-              <br />
-            </div>
-            <div className='center1'>
-              <Button onClick={handleShow} className='center1'>
-                Learn More
-              </Button>
-            </div>
-          </Col>
-        </Row>
-        <Row>
-          {show ? (
-            <div>Content</div>
-          ) : (
-            <div className='center1'>
-              {/* <Button onClick={handleShow} className='center1'>
+      {/* <Container> */}
+      <Row className='homeDiv'>
+        <Col className='center'>
+          <div className='homeDiv'>
+            <Parallax strength={-400} bgImage={contact} className='content'>
+              <div className='center '>
+                <h1 className='center homeHeaderText text-center'>Services</h1>
+              </div>
+              <div className='center1'>
+                <Button
+                  onClick={handleShow}
+                  className='center1'
+                  variant='secondary'
+                >
+                  Learn More
+                </Button>
+              </div>
+            </Parallax>
+          </div>
+          <div>
+            <br />
+          </div>
+        </Col>
+      </Row>
+      <Row>
+        {show ? (
+          <div>Content</div>
+        ) : (
+          <div className='center1'>
+            {/* <Button onClick={handleShow} className='center1'>
                             Learn More
                         </Button> */}
-              <div>
-                <br />
+            <div>
+              <br />
 
-                <br />
-              </div>
+              <br />
             </div>
-          )}
-        </Row>
-        <Row>{console.log(posts)}</Row>
-      </Container>
+          </div>
+        )}
+      </Row>
+      <Row>
+        <div>
+          <Container>
+            {/* {console.log(posts)} */}
+            {/* {posts.map(i => {
+            <RenderServiceCard data={i} />
+          })} */}
+
+            {postsStatus ? (
+              posts.posts.map((x, i) => {
+                return <RenderServiceCard data={x} key={i} />
+              })
+            ) : (
+              <GrowExample />
+            )}
+            {console.log(posts.posts)}
+          </Container>
+        </div>
+      </Row>
+      {/* </Container> */}
     </div>
   )
 }
