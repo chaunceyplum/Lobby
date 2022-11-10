@@ -43,14 +43,14 @@ $blue: rbg(0, 0, 72);
   font-size: 5em;
   font-family: medium;
   margin: auto auto;
-  padding: 50px;
+  padding-top: 50%;
   color: white !important;
 }
 #homeSubheaderText {
-  font-size: 1em;
+  font-size: 27px;
   margin: 0 auto;
-  padding: 20px;
-  line-height: 2;
+  padding: 36px;
+  line-height: 36px;
   color: white !important;
   background-color: black;
   opacity: 90%;
@@ -60,8 +60,12 @@ $blue: rbg(0, 0, 72);
 .navbarPositoning {
   height: 20%;
   padding: 50px 0px 50px 0px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-  font-size: 24px;
+  //box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  font-size: 20px;
+  //   background-color: white;
+  backdrop-filter: blur(10px);
+  opacity: 100%;
+  z-index: 100;
 }
 //Contact
 .formMargin {
@@ -86,3 +90,4 @@ $blue: rbg(0, 0, 72);
   src: local('AirbnbCerealLight'),
     url('./fonts/varino/Varino\ -\ Normal.ttf') format('truetype');
 }
+//media queries
