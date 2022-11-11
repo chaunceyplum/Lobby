@@ -39,7 +39,7 @@ const Service = () => {
           <div className='homeDiv'>
             <Parallax strength={-400} bgImage={contact} className='content'>
               <div className='center '>
-                <h1 className='center homeHeaderText text-center'>Services</h1>
+                <h1 className='homeHeaderText1 text-center'>Services</h1>
               </div>
               <div className='center1'>
                 <Button
