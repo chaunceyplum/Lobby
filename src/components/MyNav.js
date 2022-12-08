@@ -126,13 +126,11 @@ const MyNav = () => {
                     Log In
                   </NavLink>
                 </NavItem>
-
-                <NavItem>
-                  <NavLink>
-                    <SignUp />
-                  </NavLink>
-                </NavItem>
               </Nav>
+              <div>
+                {/* if signedIn == true: display <Signup /> ;If false:display <displayUser />;*/}
+                <SignUp />
+              </div>
             </Navbar.Collapse>
           </Container>
         </Navbar>

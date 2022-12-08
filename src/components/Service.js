@@ -74,23 +74,27 @@ const Service = () => {
         )}
       </Row>
       <Row>
-        <div>
-          <Container>
-            {/* {console.log(posts)} */}
-            {/* {posts.map(i => {
+        <Col xs={1} md={2} />
+        <Col xs={10} md={8}>
+          <div>
+            <Container>
+              {/* {console.log(posts)} */}
+              {/* {posts.map(i => {
             <RenderServiceCard data={i} />
           })} */}
 
-            {postsStatus ? (
-              posts.posts.map((x, i) => {
-                return <RenderServiceCard data={x} key={i} />
-              })
-            ) : (
-              <GrowExample />
-            )}
-            {console.log(posts.posts)}
-          </Container>
-        </div>
+              {postsStatus ? (
+                posts.posts.map((x, i) => {
+                  return <RenderServiceCard data={x} key={i} />
+                })
+              ) : (
+                <GrowExample />
+              )}
+              {console.log(posts.posts)}
+            </Container>
+          </div>
+        </Col>
+        <Col xs={1} md={2} />
       </Row>
       {/* </Container> */}
     </div>

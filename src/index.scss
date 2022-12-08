@@ -8,12 +8,12 @@ $blue: rbg(0, 0, 72);
   font-family: medium;
 }
 .center {
-  //display: inl;
+  display: block;
   margin: auto auto !important;
 }
 .center1 {
   display: flex;
-  margin: 0 auto !important;
+  margin: auto auto !important;
 }
 .container {
   display: block;
@@ -21,13 +21,13 @@ $blue: rbg(0, 0, 72);
 // Home
 
 .homeDiv {
-  height: 100vh;
+  height: 100% !important;
 
   color: $textColor;
 }
 .homeHalfDiv {
-  // height:50vh;
-  background-color: lightgray;
+  max-height: 50%;
+  // background-color: lightgray;
   border-radius: 25px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -101,8 +101,8 @@ $blue: rbg(0, 0, 72);
 
 //Parallax
 .content {
-  height: 100%;
-  width: 100%;
+  height: 100% !important;
+  width: 100% !important;
 }
 //font
 @font-face {
