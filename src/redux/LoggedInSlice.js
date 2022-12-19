@@ -12,6 +12,12 @@ const apiUrl = 'https://classycutzbackend.herokuapp.com/user'
 
 export const fetchUser = createAsyncThunk('fetchedRecipients/', async () => {
   try {
+    //must be changed to post
+    //must be changed to post
+    //must be changed to post
+    //must be changed to post
+    //must be changed to post
+    //must be changed to post
     const res = await axios.get(apiUrl)
     // const data = res.data
     // console.log(data)
