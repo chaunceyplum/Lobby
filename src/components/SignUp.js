@@ -14,11 +14,42 @@ import {
   Row,
 } from 'react-bootstrap'
 import { ModalHeader } from 'reactstrap'
+import { useDispatch, useSelector } from 'react-redux'
+import {
+  loggedInBool,
+  loggedInLoading,
+  loggedInError,
+  loggedInEmail,
+  loggedInPassword,
+  setter,
+} from '../redux/LoggedInSlice'
 const SignUp = () => {
   const [show, setShow] = useState(false)
 
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
+
+  const dispatch = useDispatch()
+  //let email = useSelector(loggedInEmail)
+  //const password = useSelector(loggedInPassword)
+  const loggedInBoolean = useSelector(loggedInBool)
+  const Setter = useSelector(setter)
+  const [userEmail, setUserEmail] = useState('')
+  const [userPassword, setUserPassword] = useState('')
+  const submitUser = () => {
+    const userDetails = {
+      email: userEmail,
+      password: userPassword,
+    }
+    console.log(userDetails)
+    handleClose()
+
+    return userDetails
+  }
+  const user = {
+    user: userEmail,
+    password: userPassword,
+  }
 
   //##VALIDATOR LOGIC####
   const required = (val) => val && val.length
@@ -49,7 +80,16 @@ const SignUp = () => {
                     <FormLabel>
                       <h1>Email</h1>
                     </FormLabel>
-                    <FormControl type='email' placeholder='Type Email Here' />
+                    <FormControl
+                      onChange={(e) => setUserEmail(e.target.value)}
+                      type='email'
+                      placeholder='Type Email Here'
+                    />
+
+                    {/* <input
+                      type='text'
+                      onChange={(e) => setUserEmail(e.target.value)}
+                    ></input> */}
                   </FormGroup>
                   <br />
                   <br />
@@ -59,13 +99,14 @@ const SignUp = () => {
                       <h1>Password</h1>
                     </FormLabel>
                     <FormControl
+                      onChange={(e) => setUserPassword(e.target.value)}
                       type='password'
                       placeholder='Type Password Here'
                     />
                   </FormGroup>
                   <br />
                   <br />
-                  <FormGroup>
+                  {/* <FormGroup>
                     <Container>
                       <Row>
                         <Col xs={1} />
@@ -79,7 +120,7 @@ const SignUp = () => {
                         <Col xs={1} />
                       </Row>
                     </Container>
-                  </FormGroup>
+                  </FormGroup> */}
                 </Form>
               </Col>
               <Col />
@@ -90,9 +131,15 @@ const SignUp = () => {
           <Button variant='secondary' onClick={handleClose}>
             Close
           </Button>
-          <Button variant='primary' onClick={handleClose}>
+          <Button variant='primary' onClick={submitUser}>
             Save Changes
           </Button>
+          {user
+            ? (state, action) => {
+                Setter(state, action, user)
+                console.log(user)
+              }
+            : console.log('user state is empty')}
         </ModalFooter>
       </Modal>
     </div>

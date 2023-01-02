@@ -6,51 +6,73 @@ const initialState = {
   LoggedIn: false,
   loading: false,
   error: null,
+  user: {
+    email: '',
+    password: '',
+  },
 }
 
-const apiUrl = 'https://classycutzbackend.herokuapp.com/user'
+const apiUrl = 'https://classycutzbackend.herokuapp.com'
 
-export const fetchUser = createAsyncThunk('fetchedRecipients/', async () => {
+export const fetchSignUp = createAsyncThunk('fetchedSignUp/', async (state) => {
   try {
-    //must be changed to post
-    //must be changed to post
-    //must be changed to post
-    //must be changed to post
-    //must be changed to post
-    //must be changed to post
-    const res = await axios.get(apiUrl)
-    // const data = res.data
-    // console.log(data)
-    // initialState.posts.push(data)
+    const res = await axios.post(`${apiUrl}/user`, {
+      password: 'blah',
+      email: 'chaunceypss@gmail.com',
+    })
 
-    return [...res.data]
+    console.log(res)
+    return res
   } catch (err) {
     return err.message
   }
 })
 
 export const LoggedInSlice = createSlice({
-  name: 'LoggedIn',
+  name: 'loggedIn',
   initialState: initialState,
   reducers: {
-    fetched: {
+    fetcher: {
       reducer(state, action) {
-        state.posts.push(action.payload)
+        state.email = action.payload.user.email
+        state.password = action.payload.user.password
+        state.user = action.payload.user
+
+        state.email && state.password
+          ? setter(state, action, state.user)
+          : (state.LoggedIn = false)
+        console.log(state.user)
+        setter(state, action, state.user)
       },
+    },
+    setter: (state, action, user) => {
+      return {
+        ...state,
+        LoggedIn: true,
+        user: user,
+      }
     },
   },
   extraReducers(builder) {
     builder
-      .addCase(fetchUser.pending, (state, action) => {
+      .addCase(fetchSignUp.pending, (state, action) => {
         state.status = 'loading'
       })
-      .addCase(fetchUser.fulfilled, (state, action) => {
+      .addCase(fetchSignUp.fulfilled, (state, action) => {
         state.status = 'succeded'
-        state.posts = state.posts.concat(action.payload)
+        state.LoggedIn = true
       })
-      .addCase(fetchUser.rejected, (state, action) => {
+      .addCase(fetchSignUp.rejected, (state, action) => {
         state.status = 'failed'
         state.error = action.error.message
       })
   },
 })
+export const loggedInBool = (state) => state.LoggedIn
+export const loggedInLoading = (state) => state.loading
+export const loggedInError = (state) => state.error
+export const loggedInEmail = (state) => state.email
+export const loggedInPassword = (state) => state.password
+export const { fetcher } = LoggedInSlice.actions
+export const { setter } = LoggedInSlice.actions
+export default LoggedInSlice.reducer

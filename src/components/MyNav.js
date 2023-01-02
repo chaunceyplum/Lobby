@@ -16,6 +16,16 @@ import { FiSearch } from 'react-icons/fi'
 import { NavbarToggler } from 'reactstrap'
 import LogIn from './LogIn'
 import SignUp from './SignUp'
+import { useDispatch, useSelector } from 'react-redux'
+import {
+  loggedInBool,
+  loggedInLoading,
+  loggedInError,
+  loggedInEmail,
+  loggedInPassword,
+  fetcher,
+} from '../redux/LoggedInSlice'
+import DisplayUser from './DisplayUser'
 
 const MyNav = () => {
   const [isOpen, setOpen] = useState(false)
@@ -25,6 +35,11 @@ const MyNav = () => {
     console.log(isOpen)
   }
 
+  const dispatch = useDispatch()
+  const email = useSelector(loggedInEmail)
+  const password = useSelector(loggedInPassword)
+  const loggedInBoolean = useSelector(loggedInBool)
+  //const fetcher = useSelector(fetcher)
   return (
     <div className=''>
       {/* <Container>
@@ -128,8 +143,7 @@ const MyNav = () => {
                 </NavItem>
               </Nav>
               <div>
-                {/* if signedIn == true: display <Signup /> ;If false:display <displayUser />;*/}
-                <SignUp />
+                {loggedInBoolean ? <DisplayUser email={email} /> : <SignUp />}
               </div>
             </Navbar.Collapse>
           </Container>
