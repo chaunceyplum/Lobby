@@ -23,6 +23,7 @@ import {
   loggedInPassword,
   setter,
 } from '../redux/LoggedInSlice'
+import axios from 'axios'
 const SignUp = () => {
   const [show, setShow] = useState(false)
 
@@ -30,9 +31,7 @@ const SignUp = () => {
   const handleShow = () => setShow(true)
 
   const dispatch = useDispatch()
-  //let email = useSelector(loggedInEmail)
-  //const password = useSelector(loggedInPassword)
-  const loggedInBoolean = useSelector(loggedInBool)
+
   const Setter = useSelector(setter)
   const [userEmail, setUserEmail] = useState('')
   const [userPassword, setUserPassword] = useState('')
@@ -43,12 +42,29 @@ const SignUp = () => {
     }
     console.log(userDetails)
     handleClose()
+    signUp(userDetails)
 
     return userDetails
   }
   const user = {
     user: userEmail,
     password: userPassword,
+  }
+  const apiUrl = 'https://classycutzbackend.herokuapp.com/user'
+
+  const signUp = async (user) => {
+    try {
+      const res = await axios.post(`${apiUrl}`, user)
+
+      console.log(res.data)
+
+      res.data
+        ? dispatch(setter(res.data))
+        : console.log('unable to run setter func')
+      return res.data
+    } catch (err) {
+      return err.message
+    }
   }
 
   //##VALIDATOR LOGIC####
@@ -134,12 +150,12 @@ const SignUp = () => {
           <Button variant='primary' onClick={submitUser}>
             Save Changes
           </Button>
-          {user
+          {/* {user
             ? (state, action) => {
                 Setter(state, action, user)
                 console.log(user)
               }
-            : console.log('user state is empty')}
+            : console.log('user state is empty')} */}
         </ModalFooter>
       </Modal>
     </div>

@@ -6,10 +6,9 @@ const initialState = {
   LoggedIn: false,
   loading: false,
   error: null,
-  user: {
-    email: '',
-    password: '',
-  },
+  email: '',
+  name: '',
+  auth: '',
 }
 
 const apiUrl = 'https://classycutzbackend.herokuapp.com'
@@ -45,12 +44,24 @@ export const LoggedInSlice = createSlice({
         setter(state, action, state.user)
       },
     },
-    setter: (state, action, user) => {
-      return {
-        ...state,
-        LoggedIn: true,
-        user: user,
-      }
+    setter: (state, action, data) => {
+      // return {
+      //   ...state,
+      //   LoggedIn: true,
+      //   user: user,
+      // }
+
+      // const auth = data.auth
+      // const email = data.email
+      // const name = data.name
+      // return {
+      //   ...state,
+      //   LoggedIn: true,
+      //   email: email,
+      //   name: name,
+      //   auth: auth,
+      // }
+      return action.payload
     },
   },
   extraReducers(builder) {
