@@ -7,9 +7,9 @@ const DisplayUser = (email) => {
       <Container>
         <Row>
           <Col>
-            <a>
-              <h6>{email}</h6>
-            </a>
+            {/* <a href='#'> */}
+            <h6>{email}</h6>
+            {/* </a> */}
           </Col>
         </Row>
       </Container>

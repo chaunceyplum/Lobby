@@ -63,6 +63,13 @@ export const LoggedInSlice = createSlice({
       // }
       return action.payload
     },
+    emailGetter: (state, action) => {
+      //state.email = action.payload.email
+      return state.email
+    },
+    nameGetter: (state, action) => {
+      return state.name
+    },
   },
   extraReducers(builder) {
     builder
@@ -84,6 +91,8 @@ export const loggedInLoading = (state) => state.loading
 export const loggedInError = (state) => state.error
 export const loggedInEmail = (state) => state.email
 export const loggedInPassword = (state) => state.password
+export const { nameGetter } = LoggedInSlice.actions
+export const { emailGetter } = LoggedInSlice.actions
 export const { fetcher } = LoggedInSlice.actions
 export const { setter } = LoggedInSlice.actions
 export default LoggedInSlice.reducer

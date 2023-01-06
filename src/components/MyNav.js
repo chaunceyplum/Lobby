@@ -16,7 +16,7 @@ import { FiSearch } from 'react-icons/fi'
 import { NavbarToggler } from 'reactstrap'
 import LogIn from './LogIn'
 import SignUp from './SignUp'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector, useRef } from 'react-redux'
 import {
   loggedInBool,
   loggedInLoading,
@@ -24,6 +24,7 @@ import {
   loggedInEmail,
   loggedInPassword,
   fetcher,
+  emailGetter,
 } from '../redux/LoggedInSlice'
 import DisplayUser from './DisplayUser'
 
@@ -36,7 +37,8 @@ const MyNav = () => {
   }
 
   const dispatch = useDispatch()
-  const email = useSelector(loggedInEmail)
+  const loggedInState = (state) => state.loggedIn
+  const statey = useSelector(loggedInState)
   const password = useSelector(loggedInPassword)
   const loggedInBoolean = useSelector(loggedInBool)
   //const fetcher = useSelector(fetcher)
@@ -143,7 +145,20 @@ const MyNav = () => {
                 </NavItem>
               </Nav>
               <div>
-                {loggedInBoolean ? <DisplayUser email={email} /> : <SignUp />}
+                {statey.loggedIn ? (
+                  <h6 className='text-wwhite'>
+                    `welcome to Lobby, ${statey.email}`
+                  </h6>
+                ) : (
+                  <SignUp />
+                )}
+                {/* {loggedInBoolean
+                  ? console.log(loggedInBoolean)
+                  : console.log('no')} */}
+
+                {
+                  //<DisplayUser email={statey.email} />
+                }
               </div>
             </Navbar.Collapse>
           </Container>
