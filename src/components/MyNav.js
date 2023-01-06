@@ -107,9 +107,11 @@ const MyNav = () => {
           className='text-center navbarPositoning'
         >
           <Container>
-            <Navbar.Brand href='/' className='text-secondary'>
-              (logo)Lobby
-            </Navbar.Brand>
+            <Button className=' btn btn-light'>
+              <Navbar.Brand href='/' className='text-dark bg-light'>
+                (logo)Lobby
+              </Navbar.Brand>
+            </Button>
             <Navbar.Toggle bg={'darkgrey'} />
             <Navbar.Collapse>
               <Nav
@@ -117,12 +119,12 @@ const MyNav = () => {
                 style={{ maxHeight: '50%' }}
               >
                 <NavItem>
-                  <NavLink className='NavLink' href='/'>
+                  <NavLink className='NavLink text-white' href='/'>
                     Home
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink className='NavLink' href='/service'>
+                  <NavLink className='NavLink text-white' href='/service'>
                     Service
                   </NavLink>
                 </NavItem>
@@ -133,13 +135,13 @@ const MyNav = () => {
                 </NavItem> */}
 
                 <NavItem>
-                  <NavLink className='NavLink' href='/contact'>
+                  <NavLink className='NavLink text-white' href='/contact'>
                     Contact
                   </NavLink>
                 </NavItem>
 
                 <NavItem>
-                  <NavLink className='NavLink' href='/login'>
+                  <NavLink className='NavLink text-white' href='/login'>
                     Log In
                   </NavLink>
                 </NavItem>

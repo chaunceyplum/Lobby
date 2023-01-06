@@ -78,7 +78,7 @@ const SignUp = () => {
 
   return (
     <div>
-      <Button variant='outline-secondary' onClick={handleShow}>
+      <Button variant='light' onClick={handleShow}>
         Sign Up
       </Button>
 
