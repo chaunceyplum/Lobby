@@ -22,6 +22,7 @@ import {
   loggedInEmail,
   loggedInPassword,
   setter,
+  signOut,
 } from '../redux/LoggedInSlice'
 import axios from 'axios'
 const SignUp = () => {
@@ -35,6 +36,11 @@ const SignUp = () => {
   const Setter = useSelector(setter)
   const [userEmail, setUserEmail] = useState('')
   const [userPassword, setUserPassword] = useState('')
+  const loggedInState = (state) => state.loggedIn
+  const statey = useSelector(loggedInState)
+  const email = statey.email
+  const loggedInBoolean = statey.LoggedIn
+
   const submitUser = () => {
     const userDetails = {
       email: userEmail,
@@ -45,6 +51,9 @@ const SignUp = () => {
     signUp(userDetails)
 
     return userDetails
+  }
+  const signOutUser = () => {
+    dispatch(signOut())
   }
   const user = {
     user: userEmail,
@@ -61,6 +70,7 @@ const SignUp = () => {
       res.data
         ? dispatch(setter(res.data))
         : console.log('unable to run setter func')
+
       return res.data
     } catch (err) {
       return err.message
@@ -78,86 +88,115 @@ const SignUp = () => {
 
   return (
     <div>
-      <Button variant='light' onClick={handleShow}>
-        Sign Up
-      </Button>
-
-      <Modal show={show} onHide={handleClose}>
-        <ModalHeader closeButton>
-          <ModalTitle>Sign Up</ModalTitle>
-        </ModalHeader>
-        <ModalBody>
-          <Container className=' '>
-            <Row>
-              <Col />
-              <Col xs={10} lg={8}>
-                <Form>
-                  <FormGroup className='text-center'>
-                    <FormLabel>
-                      <h1>Email</h1>
-                    </FormLabel>
-                    <FormControl
-                      onChange={(e) => setUserEmail(e.target.value)}
-                      type='email'
-                      placeholder='Type Email Here'
-                    />
-
-                    {/* <input
-                      type='text'
-                      onChange={(e) => setUserEmail(e.target.value)}
-                    ></input> */}
-                  </FormGroup>
-                  <br />
-                  <br />
-
-                  <FormGroup className='text-center'>
-                    <FormLabel>
-                      <h1>Password</h1>
-                    </FormLabel>
-                    <FormControl
-                      onChange={(e) => setUserPassword(e.target.value)}
-                      type='password'
-                      placeholder='Type Password Here'
-                    />
-                  </FormGroup>
-                  <br />
-                  <br />
-                  {/* <FormGroup>
-                    <Container>
-                      <Row>
-                        <Col xs={1} />
-                        <Col xs={4} className='text-center'>
-                          <Button type='cancel'>Clear</Button>
-                        </Col>
-                        <Col xs={2} />
-                        <Col xs={4} className='text-center'>
-                          <Button type='Submit'>Submit</Button>
-                        </Col>
-                        <Col xs={1} />
-                      </Row>
-                    </Container>
-                  </FormGroup> */}
-                </Form>
-              </Col>
-              <Col />
-            </Row>
-          </Container>
-        </ModalBody>
-        <ModalFooter>
-          <Button variant='secondary' onClick={handleClose}>
-            Close
+      {console.log(email)}
+      {!email ? (
+        <div>
+          <Button variant='light' onClick={handleShow}>
+            Sign Up
           </Button>
-          <Button variant='primary' onClick={submitUser}>
-            Save Changes
-          </Button>
-          {/* {user
-            ? (state, action) => {
-                Setter(state, action, user)
-                console.log(user)
-              }
-            : console.log('user state is empty')} */}
-        </ModalFooter>
-      </Modal>
+
+          <Modal show={show} onHide={handleClose}>
+            <ModalHeader closeButton>
+              <ModalTitle>Sign Up</ModalTitle>
+            </ModalHeader>
+            <ModalBody>
+              <Container className=' '>
+                <Row>
+                  <Col />
+                  <Col xs={10} lg={8}>
+                    <Form>
+                      <FormGroup className='text-center'>
+                        <FormLabel>
+                          <h1>Email</h1>
+                        </FormLabel>
+                        <FormControl
+                          onChange={(e) => setUserEmail(e.target.value)}
+                          type='email'
+                          placeholder='Type Email Here'
+                        />
+
+                        {/* <input
+                          type='text'
+                          onChange={(e) => setUserEmail(e.target.value)}
+                        ></input> */}
+                      </FormGroup>
+                      <br />
+                      <br />
+
+                      <FormGroup className='text-center'>
+                        <FormLabel>
+                          <h1>Password</h1>
+                        </FormLabel>
+                        <FormControl
+                          onChange={(e) => setUserPassword(e.target.value)}
+                          type='password'
+                          placeholder='Type Password Here'
+                        />
+                      </FormGroup>
+                      <br />
+                      <br />
+                      {/* <FormGroup>
+                        <Container>
+                          <Row>
+                            <Col xs={1} />
+                            <Col xs={4} className='text-center'>
+                              <Button type='cancel'>Clear</Button>
+                            </Col>
+                            <Col xs={2} />
+                            <Col xs={4} className='text-center'>
+                              <Button type='Submit'>Submit</Button>
+                            </Col>
+                            <Col xs={1} />
+                          </Row>
+                        </Container>
+                      </FormGroup> */}
+                    </Form>
+                  </Col>
+                  <Col />
+                </Row>
+              </Container>
+            </ModalBody>
+            <ModalFooter>
+              <Button variant='secondary' onClick={handleClose}>
+                Close
+              </Button>
+              <Button variant='primary' onClick={submitUser}>
+                Save Changes
+              </Button>
+              {/* {user
+                ? (state, action) => {
+                    Setter(state, action, user)
+                    console.log(user)
+                  }
+                : console.log('user state is empty')} */}
+            </ModalFooter>
+          </Modal>
+        </div>
+      ) : (
+        <Container>
+          <Row>
+            <Col>
+              {/* <a href='#'> */}
+              <Container>
+                <Row>
+                  <Col xs={4}>
+                    <Button className=' btn btn-light'>
+                      <h6 className=''>{email}</h6>
+                    </Button>
+                  </Col>
+                  <Col xs={4} />
+                  <Col xs={4}>
+                    <Button className=' btn btn-light' onClick={signOutUser()}>
+                      <h6 className=''>Sign Out</h6>
+                    </Button>
+                  </Col>
+                </Row>
+              </Container>
+              {/* </a> */}
+            </Col>
+          </Row>
+        </Container>
+      )}
     </div>
   )
 }

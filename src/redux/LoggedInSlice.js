@@ -70,6 +70,10 @@ export const LoggedInSlice = createSlice({
     nameGetter: (state, action) => {
       return state.name
     },
+    signOut: (state, action) => {
+      console.log(`clearing the state:     ${JSON.stringify(state)}`)
+      return initialState
+    },
   },
   extraReducers(builder) {
     builder
@@ -95,4 +99,5 @@ export const { nameGetter } = LoggedInSlice.actions
 export const { emailGetter } = LoggedInSlice.actions
 export const { fetcher } = LoggedInSlice.actions
 export const { setter } = LoggedInSlice.actions
+export const { signOut } = LoggedInSlice.actions
 export default LoggedInSlice.reducer
