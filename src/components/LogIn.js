@@ -82,8 +82,8 @@ const LogIn = () => {
 
   return (
     <div className=' '>
-      <Container>
-        <Row className='homeDiv'>
+      <Container className='homeDiv'>
+        <Row className=' homeHalfDiv1'>
           <Col className='center'>
             <h3 className='center '>Login</h3>
           </Col>

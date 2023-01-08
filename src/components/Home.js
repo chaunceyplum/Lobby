@@ -20,16 +20,17 @@ const Home = () => {
           <Row className='homeDiv'>
             <Col xs={2} />
             <Col xs={8}>
-              <div className='text-center'>
-                <h3 className='center homeHeaderText'>Find A Lobby</h3>
+              <div className='text-center homeHeaderText'>
+                <h3 className='center text-white'>Find A Lobby</h3>
+                <Button variant='secondary' className='center1 text-white'>
+                  Learn More
+                </Button>
 
                 {/* <p id='homeSubheaderText' >
                                 A platform gamers can use to find other gamers to play with.Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec vestibulum felis, at ultrices dui. Suspendisse a consequat neque. Nam tortor nisi, lacinia ut urna ut, dignissim molestie ipsum. Vivamus bibendum odio elementum, convallis felis non, condimentum ligula. Vestibulum nisl augue, tincidunt molestie maximus sit amet, blandit sit amet neque. Praesent ante risus, sodales in vulputate aliquet, pretium sit amet lacus. Praesent lacinia placerat dolor eu maximus. Sed pellentesque, turpis eget gravida egestas, nisi nulla egestas est, et rutrum nisl urna a lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. In tempus malesuada metus vitae rutrum. Integer lacus lorem, sollicitudin vitae lorem at, ornare venenatis velit. Suspendisse eget orci sodales, porttitor tortor tempus, interdum tortor.
                             </p> */}
                 <br />
-                <Button variant='secondary' className='center'>
-                  Learn More
-                </Button>
+
                 <br />
               </div>
             </Col>
@@ -43,10 +44,12 @@ const Home = () => {
           <div className=' center'>
             <Container>
               <Row>
-                <div className='homeHalfDiv'>
-                  <h1 className='center text-center'>some text</h1>
+                <div className='homeHalfDiv1'>
+                  <h1 className='center text-center headerPadding'>
+                    some text
+                  </h1>
 
-                  <p className='center text-center'>
+                  <p className='center text-center textPadding'>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
                     nec vestibulum felis, at ultrices dui. Suspendisse a
                     consequat neque. Nam tortor nisi, lacinia ut urna ut,
@@ -66,7 +69,7 @@ const Home = () => {
                 </div>
               </Row>
             </Container>
-            <Container>
+            <Container className='homeHalfDiv1'>
               <Row>
                 <Col xs={4}>
                   <h6 className='center text-center'>Lobby</h6>

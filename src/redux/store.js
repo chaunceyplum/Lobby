@@ -45,6 +45,7 @@ export const store = configureStore({
   reducer: {
     posts: DataSlice,
     counter: ValueSlice,
+    //loggedIn: LoggedInSlice.reducer,
     loggedIn: persistedReducer,
     // middleware: (getDefaultMiddleware) =>
     //   getDefaultMiddleware({
