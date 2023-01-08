@@ -44,7 +44,7 @@ const Home = () => {
           <div className=' center'>
             <Container>
               <Row>
-                <div className='homeHalfDiv1'>
+                <div className=''>
                   <h1 className='center text-center headerPadding'>
                     some text
                   </h1>
@@ -69,7 +69,7 @@ const Home = () => {
                 </div>
               </Row>
             </Container>
-            <Container className='homeHalfDiv1'>
+            <Container className=''>
               <Row>
                 <Col xs={4}>
                   <h6 className='center text-center'>Lobby</h6>
