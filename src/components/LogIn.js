@@ -13,7 +13,7 @@ import {
   ModalTitle,
   Row,
 } from 'react-bootstrap'
-import { ModalHeader } from 'reactstrap'
+import { Label, ModalHeader } from 'reactstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import {
   loggedInBool,
@@ -22,8 +22,10 @@ import {
   loggedInEmail,
   loggedInPassword,
   setter,
+  nameGetter,
 } from '../redux/LoggedInSlice'
 import axios from 'axios'
+import { Control, Errors, LocalForm } from 'react-redux-form'
 
 const LogIn = () => {
   const [show, setShow] = useState(false)
@@ -34,13 +36,28 @@ const LogIn = () => {
   const dispatch = useDispatch()
 
   const Setter = useSelector(setter)
+  const loggedInState = (state) => state.loggedIn.name
+  const statey = useSelector(loggedInState)
   const [userEmail, setUserEmail] = useState('')
   const [userPassword, setUserPassword] = useState('')
-  const submitUser = () => {
+  const [validated, setValidated] = useState(false)
+  const name = statey.name
+  const clearBoth = () => {
+    setUserEmail('')
+    setUserPassword('')
+  }
+  const submitUser = (event) => {
     const userDetails = {
       email: userEmail,
       password: userPassword,
     }
+    const form = event.currentTarget
+    if (form.checkValidity() === false) {
+      event.preventDefault()
+      event.stopPropagation()
+    }
+
+    setValidated(true)
     console.log(userDetails)
     handleClose()
     logIn(userDetails)
@@ -72,13 +89,13 @@ const LogIn = () => {
     forceUpdateHandler()
   }
 
-  const required = (val) => val && val.length
-  const maxLength = (len) => (val) => !val || val.length <= len
-  const minLength = (len) => (val) => val && val.length >= len
-  const isNumber = (val) => !isNaN(+val)
-  const validEmail = (val) =>
-    /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val)
-  const validPassword = (val) => /^(?=.*\d)[a-zA-Z0-9]{8,16}$/
+  // const required = (val) => val && val.length
+  // const maxLength = (len) => (val) => !val || val.length <= len
+  // const minLength = (len) => (val) => val && val.length >= len
+  // const isNumber = (val) => !isNaN(+val)
+  // const validEmail = (val) =>
+  //   /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val)
+  // const validPassword = (val) => /^(?=.*\d)[a-zA-Z0-9]{8,16}$/
 
   return (
     <div className=' '>
@@ -93,8 +110,10 @@ const LogIn = () => {
         <Row>
           <Col />
           <Col xs={10} sm={8} md={6}>
-            <Form>
+            <Form noValidate validated={validated}>
               <FormGroup className='text-center'>
+                <h3>Welcome back {name}</h3>
+                {console.table(name)}
                 <FormLabel>
                   <h1>Email</h1>
                 </FormLabel>
@@ -102,12 +121,12 @@ const LogIn = () => {
                   onChange={(e) => setUserEmail(e.target.value)}
                   type='email'
                   placeholder='Type Email Here'
+                  required
                 />
 
-                {/* <input
-                      type='text'
-                      onChange={(e) => setUserEmail(e.target.value)}
-                    ></input> */}
+                <Form.Control.Feedback type='invalid'>
+                  Please provide a valid Email.
+                </Form.Control.Feedback>
               </FormGroup>
               <br />
               <br />
@@ -120,30 +139,22 @@ const LogIn = () => {
                   onChange={(e) => setUserPassword(e.target.value)}
                   type='password'
                   placeholder='Type Password Here'
+                  required
                 />
+                <Form.Control.Feedback>Looks Good</Form.Control.Feedback>
+                <Form.Control.Feedback type='invalid'>
+                  Please provide a valid password.
+                </Form.Control.Feedback>
               </FormGroup>
               <FormGroup>
-                <Button variant='primary' onClick={submitUser}>
+                <br />
+                <br />
+                <Button variant='primary' onClick={(e) => submitUser(e)}>
                   Submit
                 </Button>
               </FormGroup>
               <br />
               <br />
-              {/* <FormGroup>
-                    <Container>
-                      <Row>
-                        <Col xs={1} />
-                        <Col xs={4} className='text-center'>
-                          <Button type='cancel'>Clear</Button>
-                        </Col>
-                        <Col xs={2} />
-                        <Col xs={4} className='text-center'>
-                          <Button type='Submit'>Submit</Button>
-                        </Col>
-                        <Col xs={1} />
-                      </Row>
-                    </Container>
-                  </FormGroup> */}
             </Form>
           </Col>
           <Col />

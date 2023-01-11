@@ -36,7 +36,7 @@ const SignUp = () => {
   const Setter = useSelector(setter)
   const [userEmail, setUserEmail] = useState('')
   const [userPassword, setUserPassword] = useState('')
-  const loggedInState = (state) => state.loggedIn
+  const loggedInState = (state) => state.loggedIn.name
   const statey = useSelector(loggedInState)
   const email = statey.email
   const loggedInBoolean = statey.LoggedIn
