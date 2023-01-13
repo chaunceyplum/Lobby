@@ -36,16 +36,25 @@ const SignUp = () => {
   const Setter = useSelector(setter)
   const [userEmail, setUserEmail] = useState('')
   const [userPassword, setUserPassword] = useState('')
+  const [userName, setUserName] = useState('')
   const loggedInState = (state) => state.loggedIn.name
   const statey = useSelector(loggedInState)
   const email = statey.email
   const loggedInBoolean = statey.LoggedIn
-
-  const submitUser = () => {
+  const [validated, setValidated] = useState(false)
+  const submitUser = (event) => {
     const userDetails = {
       email: userEmail,
       password: userPassword,
+      name: userName,
     }
+    const form = event.currentTarget
+    if (form.checkValidity() === false) {
+      event.preventDefault()
+      event.stopPropagation()
+    }
+
+    setValidated(true)
     console.log(userDetails)
     handleClose()
     signUp(userDetails)
@@ -59,7 +68,7 @@ const SignUp = () => {
     user: userEmail,
     password: userPassword,
   }
-  const apiUrl = 'https://classycutzbackend.herokuapp.com/user'
+  const apiUrl = 'https://classycutzbackend.herokuapp.com/signUp'
 
   const signUp = async (user) => {
     try {
@@ -104,7 +113,20 @@ const SignUp = () => {
                 <Row>
                   <Col />
                   <Col xs={10} lg={8}>
-                    <Form>
+                    <Form noValidate validated={validated}>
+                      <FormGroup className='text-center'>
+                        <FormLabel>
+                          <h1>Full Name</h1>
+                        </FormLabel>
+                        <FormControl
+                          onChange={(e) => setUserName(e.target.value)}
+                          type='name'
+                          placeholder='Type Full Name Here!'
+                          required
+                        />
+                      </FormGroup>
+                      <br />
+                      <br />
                       <FormGroup className='text-center'>
                         <FormLabel>
                           <h1>Email</h1>
@@ -113,12 +135,8 @@ const SignUp = () => {
                           onChange={(e) => setUserEmail(e.target.value)}
                           type='email'
                           placeholder='Type Email Here'
+                          required
                         />
-
-                        {/* <input
-                          type='text'
-                          onChange={(e) => setUserEmail(e.target.value)}
-                        ></input> */}
                       </FormGroup>
                       <br />
                       <br />
@@ -131,6 +149,7 @@ const SignUp = () => {
                           onChange={(e) => setUserPassword(e.target.value)}
                           type='password'
                           placeholder='Type Password Here'
+                          required
                         />
                       </FormGroup>
                       <br />

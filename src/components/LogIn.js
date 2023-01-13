@@ -112,7 +112,7 @@ const LogIn = () => {
           <Col xs={10} sm={8} md={6}>
             <Form noValidate validated={validated}>
               <FormGroup className='text-center'>
-                <h3>Welcome back {name}</h3>
+                {statey.loggedIn ? <h3>Welcome back {name}</h3> : <div></div>}
                 {console.table(name)}
                 <FormLabel>
                   <h1>Email</h1>

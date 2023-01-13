@@ -2,7 +2,6 @@ import {
   applyMiddleware,
   configureStore,
   compose,
-  getDefaultMiddleware,
   createSerializableStateInvariantMiddleware,
   isPlain,
 } from '@reduxjs/toolkit'
@@ -47,6 +46,7 @@ export const store = configureStore({
     counter: ValueSlice,
     //loggedIn: LoggedInSlice.reducer,
     loggedIn: persistedReducer,
+
     // middleware: (getDefaultMiddleware) =>
     //   getDefaultMiddleware({
     //     serializableCheck: {
@@ -54,6 +54,10 @@ export const store = configureStore({
     //     },
     //   }),
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 })
 
 export const persistor = persistStore(store)

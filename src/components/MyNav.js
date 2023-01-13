@@ -211,92 +211,107 @@ const MyNav = () => {
                 )} */}
 
                 {!loggedInBoolean ? (
-                  <div>
-                    <Button variant='light' onClick={handleShow}>
-                      Sign Up
-                    </Button>
+                  //   <div>
+                  //     <Button variant='light' onClick={handleShow}>
+                  //       Sign Up
+                  //     </Button>
 
-                    <Modal show={show} onHide={handleClose}>
-                      <ModalHeader closeButton>
-                        <ModalTitle>Sign Up</ModalTitle>
-                      </ModalHeader>
-                      <ModalBody>
-                        <Container className=' '>
-                          <Row>
-                            <Col />
-                            <Col xs={10} lg={8}>
-                              <Form>
-                                <FormGroup className='text-center'>
-                                  <FormLabel>
-                                    <h1>Email</h1>
-                                  </FormLabel>
-                                  <FormControl
-                                    onChange={(e) =>
-                                      setUserEmail(e.target.value)
-                                    }
-                                    type='email'
-                                    placeholder='Type Email Here'
-                                  />
+                  //     <Modal show={show} onHide={handleClose}>
+                  //       <ModalHeader closeButton>
+                  //         <ModalTitle>Sign Up</ModalTitle>
+                  //       </ModalHeader>
+                  //       <ModalBody>
+                  //         <Container className=' '>
+                  //           <Row>
+                  //             <Col />
+                  //             <Col xs={10} lg={8}>
+                  //               <Form>
+                  //                 <FormGroup className='text-center'>
+                  //                   <FormLabel>
+                  //                     <h1>Full Name</h1>
+                  //                   </FormLabel>
+                  //                   <FormControl
+                  //                     onChange={(e) =>
+                  //                       setUserName(e.target.value)
+                  //                     }
+                  //                     type='name'
+                  //                     placeholder='Type Full Name Here!'
+                  //                   />
+                  //                 </FormGroup>
+                  //                 <br />
+                  //                 <br />
+                  //                 <FormGroup className='text-center'>
+                  //                   <FormLabel>
+                  //                     <h1>Email</h1>
+                  //                   </FormLabel>
+                  //                   <FormControl
+                  //                     onChange={(e) =>
+                  //                       setUserEmail(e.target.value)
+                  //                     }
+                  //                     type='email'
+                  //                     placeholder='Type Email Here'
+                  //                   />
 
-                                  {/* <input
-                          type='text'
-                          onChange={(e) => setUserEmail(e.target.value)}
-                        ></input> */}
-                                </FormGroup>
-                                <br />
-                                <br />
+                  //                   {/* <input
+                  //           type='text'
+                  //           onChange={(e) => setUserEmail(e.target.value)}
+                  //         ></input> */}
+                  //                 </FormGroup>
+                  //                 <br />
+                  //                 <br />
 
-                                <FormGroup className='text-center'>
-                                  <FormLabel>
-                                    <h1>Password</h1>
-                                  </FormLabel>
-                                  <FormControl
-                                    onChange={(e) =>
-                                      setUserPassword(e.target.value)
-                                    }
-                                    type='password'
-                                    placeholder='Type Password Here'
-                                  />
-                                </FormGroup>
-                                <br />
-                                <br />
-                                {/* <FormGroup>
-                        <Container>
-                          <Row>
-                            <Col xs={1} />
-                            <Col xs={4} className='text-center'>
-                              <Button type='cancel'>Clear</Button>
-                            </Col>
-                            <Col xs={2} />
-                            <Col xs={4} className='text-center'>
-                              <Button type='Submit'>Submit</Button>
-                            </Col>
-                            <Col xs={1} />
-                          </Row>
-                        </Container>
-                      </FormGroup> */}
-                              </Form>
-                            </Col>
-                            <Col />
-                          </Row>
-                        </Container>
-                      </ModalBody>
-                      <ModalFooter>
-                        <Button variant='secondary' onClick={handleClose}>
-                          Close
-                        </Button>
-                        <Button variant='primary' onClick={submitUser}>
-                          Save Changes
-                        </Button>
-                        {/* {user
-                ? (state, action) => {
-                    Setter(state, action, user)
-                    console.log(user)
-                  }
-                : console.log('user state is empty')} */}
-                      </ModalFooter>
-                    </Modal>
-                  </div>
+                  //                 <FormGroup className='text-center'>
+                  //                   <FormLabel>
+                  //                     <h1>Password</h1>
+                  //                   </FormLabel>
+                  //                   <FormControl
+                  //                     onChange={(e) =>
+                  //                       setUserPassword(e.target.value)
+                  //                     }
+                  //                     type='password'
+                  //                     placeholder='Type Password Here'
+                  //                   />
+                  //                 </FormGroup>
+                  //                 <br />
+                  //                 <br />
+                  //                 {/* <FormGroup>
+                  //         <Container>
+                  //           <Row>
+                  //             <Col xs={1} />
+                  //             <Col xs={4} className='text-center'>
+                  //               <Button type='cancel'>Clear</Button>
+                  //             </Col>
+                  //             <Col xs={2} />
+                  //             <Col xs={4} className='text-center'>
+                  //               <Button type='Submit'>Submit</Button>
+                  //             </Col>
+                  //             <Col xs={1} />
+                  //           </Row>
+                  //         </Container>
+                  //       </FormGroup> */}
+                  //               </Form>
+                  //             </Col>
+                  //             <Col />
+                  //           </Row>
+                  //         </Container>
+                  //       </ModalBody>
+                  //       <ModalFooter>
+                  //         <Button variant='secondary' onClick={handleClose}>
+                  //           Close
+                  //         </Button>
+                  //         <Button variant='primary' onClick={submitUser}>
+                  //           Save Changes
+                  //         </Button>
+                  //         {/* {user
+                  // ? (state, action) => {
+                  //     Setter(state, action, user)
+                  //     console.log(user)
+                  //   }
+                  // : console.log('user state is empty')} */}
+                  //       </ModalFooter>
+                  //     </Modal>
+                  //   </div>
+                  <SignUp />
                 ) : (
                   <Container>
                     <Row>

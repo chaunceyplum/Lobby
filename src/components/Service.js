@@ -73,8 +73,12 @@ const Service = () => {
         )}
       </Row>
       <Row>
-        <Col xs={1} md={2} />
-        <Col xs={10} md={8}>
+        <Col xs={3} md={4}>
+          <div>
+            <Container></Container>
+          </div>
+        </Col>
+        <Col xs={8} md={7}>
           <div>
             <Container>
               {/* {console.log(posts)} */}
