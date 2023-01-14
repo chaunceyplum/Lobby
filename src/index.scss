@@ -21,17 +21,19 @@ $blue: rbg(0, 0, 72);
 // Home
 
 .homeDiv {
-  height: 100% !important;
-
+  height: 100vh !important;
   color: $textColor;
+  display: block;
 }
 .headerPadding {
   padding-top: 10vh;
   padding-bottom: 10vh;
+  font-size: 6rem;
 }
 .textPadding {
   //padding-top: 10vh;
   padding-bottom: 10vh;
+  font-size: 1.5rem;
 }
 .homeHalfDiv {
   height: 50%;
@@ -48,7 +50,7 @@ $blue: rbg(0, 0, 72);
   padding-bottom: 30px;
 }
 .homeHeaderText {
-  font-size: 3em;
+  font-size: 4em;
   font-family: medium;
   margin: auto auto;
   padding-top: 50%;

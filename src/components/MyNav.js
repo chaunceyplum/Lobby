@@ -45,6 +45,7 @@ const MyNav = () => {
 
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
+  const [userName, setUserName] = useState('')
   const [userEmail, setUserEmail] = useState('')
   const [userPassword, setUserPassword] = useState('')
   const toggle = () => {
@@ -62,21 +63,41 @@ const MyNav = () => {
     const userDetails = {
       email: userEmail,
       password: userPassword,
+      name: userName,
+    }
+    const userLogin = {
+      email: userEmail,
+      password: userPassword,
     }
     console.log(userDetails)
-    handleClose()
-    signUp(userDetails)
 
+    signUp(userDetails)
+    setTimeout(logIn(userLogin), 4000)
     return userDetails
   }
   const signOutUser = () => {
     dispatch(signOut())
   }
-  const apiUrl = 'https://classycutzbackend.herokuapp.com/user'
+  const apiUrl = 'https://classycutzbackend.herokuapp.com'
 
   const signUp = async (user) => {
     try {
-      const res = await axios.post(`${apiUrl}`, user)
+      const res = await axios.post(`${apiUrl}/signup`, user)
+
+      console.log(res.data)
+
+      res.data
+        ? dispatch(setter(res.data))
+        : console.log('unable to run setter func')
+
+      return res.data
+    } catch (err) {
+      return err.message
+    }
+  }
+  const logIn = async (user) => {
+    try {
+      const res = await axios.post(`${apiUrl}/user`, user)
 
       console.log(res.data)
 
@@ -96,6 +117,7 @@ const MyNav = () => {
   const email = statey.email
   const password = statey.password
   const loggedInBoolean = statey.LoggedIn
+  const [validated, setValidated] = useState(false)
   //const fetcher = useSelector(fetcher)
   return (
     <div className=''>
@@ -211,108 +233,116 @@ const MyNav = () => {
                 )} */}
 
                 {!loggedInBoolean ? (
-                  //   <div>
-                  //     <Button variant='light' onClick={handleShow}>
-                  //       Sign Up
-                  //     </Button>
+                  <div>
+                    <Button variant='light' onClick={handleShow}>
+                      Sign Up
+                    </Button>
 
-                  //     <Modal show={show} onHide={handleClose}>
-                  //       <ModalHeader closeButton>
-                  //         <ModalTitle>Sign Up</ModalTitle>
-                  //       </ModalHeader>
-                  //       <ModalBody>
-                  //         <Container className=' '>
-                  //           <Row>
-                  //             <Col />
-                  //             <Col xs={10} lg={8}>
-                  //               <Form>
-                  //                 <FormGroup className='text-center'>
-                  //                   <FormLabel>
-                  //                     <h1>Full Name</h1>
-                  //                   </FormLabel>
-                  //                   <FormControl
-                  //                     onChange={(e) =>
-                  //                       setUserName(e.target.value)
-                  //                     }
-                  //                     type='name'
-                  //                     placeholder='Type Full Name Here!'
-                  //                   />
-                  //                 </FormGroup>
-                  //                 <br />
-                  //                 <br />
-                  //                 <FormGroup className='text-center'>
-                  //                   <FormLabel>
-                  //                     <h1>Email</h1>
-                  //                   </FormLabel>
-                  //                   <FormControl
-                  //                     onChange={(e) =>
-                  //                       setUserEmail(e.target.value)
-                  //                     }
-                  //                     type='email'
-                  //                     placeholder='Type Email Here'
-                  //                   />
+                    <Modal show={show} onHide={handleClose}>
+                      <ModalHeader closeButton>
+                        <ModalTitle>Sign Up</ModalTitle>
+                      </ModalHeader>
+                      <ModalBody>
+                        <Container className=' '>
+                          <Row>
+                            <Col />
+                            <Col xs={10} lg={8}>
+                              <Form noValidate validated={validated}>
+                                <FormGroup className='text-center'>
+                                  <FormLabel>
+                                    <h1>Full Name</h1>
+                                  </FormLabel>
+                                  <FormControl
+                                    onChange={(e) =>
+                                      setUserName(e.target.value)
+                                    }
+                                    type='text'
+                                    placeholder='Type Full Name Here!'
+                                    required
+                                  />
+                                </FormGroup>
+                                <br />
+                                <br />
+                                <FormGroup className='text-center'>
+                                  <FormLabel>
+                                    <h1>Email</h1>
+                                  </FormLabel>
+                                  <FormControl
+                                    onChange={(e) =>
+                                      setUserEmail(e.target.value)
+                                    }
+                                    type='email'
+                                    placeholder='Type Email Here'
+                                    required
+                                  />
 
-                  //                   {/* <input
-                  //           type='text'
-                  //           onChange={(e) => setUserEmail(e.target.value)}
-                  //         ></input> */}
-                  //                 </FormGroup>
-                  //                 <br />
-                  //                 <br />
+                                  <Form.Control.Feedback type='invalid'>
+                                    Please provide a valid Email.
+                                  </Form.Control.Feedback>
+                                </FormGroup>
+                                <br />
+                                <br />
 
-                  //                 <FormGroup className='text-center'>
-                  //                   <FormLabel>
-                  //                     <h1>Password</h1>
-                  //                   </FormLabel>
-                  //                   <FormControl
-                  //                     onChange={(e) =>
-                  //                       setUserPassword(e.target.value)
-                  //                     }
-                  //                     type='password'
-                  //                     placeholder='Type Password Here'
-                  //                   />
-                  //                 </FormGroup>
-                  //                 <br />
-                  //                 <br />
-                  //                 {/* <FormGroup>
-                  //         <Container>
-                  //           <Row>
-                  //             <Col xs={1} />
-                  //             <Col xs={4} className='text-center'>
-                  //               <Button type='cancel'>Clear</Button>
-                  //             </Col>
-                  //             <Col xs={2} />
-                  //             <Col xs={4} className='text-center'>
-                  //               <Button type='Submit'>Submit</Button>
-                  //             </Col>
-                  //             <Col xs={1} />
-                  //           </Row>
-                  //         </Container>
-                  //       </FormGroup> */}
-                  //               </Form>
-                  //             </Col>
-                  //             <Col />
-                  //           </Row>
-                  //         </Container>
-                  //       </ModalBody>
-                  //       <ModalFooter>
-                  //         <Button variant='secondary' onClick={handleClose}>
-                  //           Close
-                  //         </Button>
-                  //         <Button variant='primary' onClick={submitUser}>
-                  //           Save Changes
-                  //         </Button>
-                  //         {/* {user
-                  // ? (state, action) => {
-                  //     Setter(state, action, user)
-                  //     console.log(user)
-                  //   }
-                  // : console.log('user state is empty')} */}
-                  //       </ModalFooter>
-                  //     </Modal>
-                  //   </div>
-                  <SignUp />
+                                <FormGroup className='text-center'>
+                                  <FormLabel>
+                                    <h1>Password</h1>
+                                  </FormLabel>
+                                  <FormControl
+                                    onChange={(e) =>
+                                      setUserPassword(e.target.value)
+                                    }
+                                    type='password'
+                                    placeholder='Type Password Here'
+                                    required
+                                  />
+                                  <Form.Control.Feedback>
+                                    Looks Good
+                                  </Form.Control.Feedback>
+                                  <Form.Control.Feedback type='invalid'>
+                                    Please provide a valid password.
+                                  </Form.Control.Feedback>
+                                </FormGroup>
+                                <br />
+                                <br />
+                                {/* <FormGroup>
+                        <Container>
+                          <Row>
+                            <Col xs={1} />
+                            <Col xs={4} className='text-center'>
+                              <Button type='cancel'>Clear</Button>
+                            </Col>
+                            <Col xs={2} />
+                            <Col xs={4} className='text-center'>
+                              <Button type='Submit'>Submit</Button>
+                            </Col>
+                            <Col xs={1} />
+                          </Row>
+                        </Container>
+                      </FormGroup> */}
+                              </Form>
+                            </Col>
+                            <Col />
+                          </Row>
+                        </Container>
+                      </ModalBody>
+                      <ModalFooter>
+                        <Button variant='secondary' onClick={handleClose}>
+                          Close
+                        </Button>
+                        <Button variant='primary' onClick={submitUser}>
+                          Save Changes
+                        </Button>
+                        {/* {user
+                ? (state, action) => {
+                    Setter(state, action, user)
+                    console.log(user)
+                  }
+                : console.log('user state is empty')} */}
+                      </ModalFooter>
+                    </Modal>
+                  </div>
                 ) : (
+                  // <SignUp />
                   <Container>
                     <Row>
                       <Col>

@@ -71,18 +71,23 @@ const SignUp = () => {
   const apiUrl = 'https://classycutzbackend.herokuapp.com/signUp'
 
   const signUp = async (user) => {
-    try {
-      const res = await axios.post(`${apiUrl}`, user)
+    if (validated) {
+      try {
+        const res = await axios.post(`${apiUrl}`, user)
 
-      console.log(res.data)
+        console.log(res.data)
 
-      res.data
-        ? dispatch(setter(res.data))
-        : console.log('unable to run setter func')
+        res.data
+          ? dispatch(setter(res.data))
+          : console.log('unable to run setter func')
 
-      return res.data
-    } catch (err) {
-      return err.message
+        return res.data
+      } catch (err) {
+        return err.message
+      }
+    } else {
+      console.log('input not valid')
+      handleShow()
     }
   }
 

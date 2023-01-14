@@ -60,7 +60,7 @@ const LogIn = () => {
     setValidated(true)
     console.log(userDetails)
     handleClose()
-    logIn(userDetails)
+    setTimeout(logIn(userDetails), 4000)
 
     return userDetails
   }

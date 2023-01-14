@@ -40,12 +40,12 @@ const Home = () => {
         </Container>
       </Parallax>
 
-      <Container>
+      <Container className=''>
         <Row>
           <div className=' center'>
             <Container>
               <Row>
-                <div className=''>
+                <div className='homeDiv'>
                   <h1 className='center text-center headerPadding'>
                     some text
                   </h1>
@@ -72,12 +72,12 @@ const Home = () => {
             </Container>
             <Container className=''>
               <Row>
-                <Col xs={4}>
+                <Col xs={4} className='headerPadding'>
                   <h6 className='center text-center'>Lobby</h6>
-                  <img src='#' alt='logo' className='center text-center' />
+                  <img src='' alt='' className='center text-center' />
                 </Col>
                 <Col xs={2} />
-                <Col xs={4}>
+                <Col xs={4} className='textPadding'>
                   <p>
                     A platform gamers can use to find other gamers to play
                     with.Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -100,7 +100,7 @@ const Home = () => {
             <br />
             <br />
             <Container>
-              <Row>
+              <Row className='homeDiv'>
                 <Col xs={4} className='text-center center'>
                   <Card>
                     <CardHeader>

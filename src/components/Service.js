@@ -37,19 +37,19 @@ const Service = () => {
       <Row className='homeDiv'>
         <Col className='center'>
           <div className='homeDiv '>
-            <Parallax strength={-400} bgImage={contact} className='content'>
-              <div className='center homeHeaderText'>
-                <h1 className='text-center'>Services</h1>
+            {/* <Parallax strength={-400} bgImage={contact} className='content'> */}
+            <div className='center homeHeaderText'>
+              <h1 className='text-center'>Services</h1>
 
-                <Button
-                  onClick={handleShow}
-                  className='center1'
-                  variant='secondary'
-                >
-                  Learn More
-                </Button>
-              </div>
-            </Parallax>
+              <Button
+                onClick={handleShow}
+                className='center1'
+                variant='secondary'
+              >
+                Learn More
+              </Button>
+            </div>
+            {/* </Parallax> */}
           </div>
           <div>
             <br />
