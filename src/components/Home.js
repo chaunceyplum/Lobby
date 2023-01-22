@@ -1,8 +1,8 @@
 import React from 'react'
 import { Button, Card, CardImg, Col, Container, Row } from 'react-bootstrap'
 import Counter from './Counter'
-import { Parallax } from 'react-parallax'
-import stars from '../Images/gameControllers.jpg'
+
+import comp from '../Images/comp.png'
 import {
   CardBody,
   CardFooter,
@@ -15,21 +15,18 @@ import { Control, LocalForm, Errors } from 'react-redux-form'
 
 const Home = () => {
   return (
-    <div>
-      <Parallax strength={-400} bgImage={stars} className='content'>
+    <div style={{ 'background-color': '#613333 !important;' }}>
+      <div class='homeBackground'>
         <Container>
-          <Row className='homeDiv'>
+          <Row className='changesss'>
             <Col xs={2} />
             <Col xs={8}>
-              <div className='text-center homeHeaderText'>
-                <h3 className='center text-white'>Find A Lobby</h3>
-                <Button variant='secondary' className='center1 text-white'>
+              <div className='text-center'>
+                <h3 className='center homeHeaderText'>Find A Lobby</h3>
+                <Button variant='secondary' className='center1 '>
                   Learn More
                 </Button>
 
-                {/* <p id='homeSubheaderText' >
-                                A platform gamers can use to find other gamers to play with.Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec vestibulum felis, at ultrices dui. Suspendisse a consequat neque. Nam tortor nisi, lacinia ut urna ut, dignissim molestie ipsum. Vivamus bibendum odio elementum, convallis felis non, condimentum ligula. Vestibulum nisl augue, tincidunt molestie maximus sit amet, blandit sit amet neque. Praesent ante risus, sodales in vulputate aliquet, pretium sit amet lacus. Praesent lacinia placerat dolor eu maximus. Sed pellentesque, turpis eget gravida egestas, nisi nulla egestas est, et rutrum nisl urna a lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. In tempus malesuada metus vitae rutrum. Integer lacus lorem, sollicitudin vitae lorem at, ornare venenatis velit. Suspendisse eget orci sodales, porttitor tortor tempus, interdum tortor.
-                            </p> */}
                 <br />
 
                 <br />
@@ -38,14 +35,12 @@ const Home = () => {
             <Col xs={2} />
           </Row>
         </Container>
-      </Parallax>
 
-      <Container className=''>
-        <Row>
-          <div className=' center'>
+        <div className=' center'>
+          <div className='changesss'>
             <Container>
               <Row>
-                <div className='homeDiv'>
+                <div className='text1'>
                   <h1 className='center text-center headerPadding'>
                     some text
                   </h1>
@@ -70,15 +65,33 @@ const Home = () => {
                 </div>
               </Row>
             </Container>
+          </div>
+          <div className='changesss'>
             <Container className=''>
               <Row>
-                <Col xs={4} className='headerPadding'>
-                  <h6 className='center text-center'>Lobby</h6>
-                  <img src='' alt='' className='center text-center' />
+                <Col xs={10} sm={8} md={4} className=' center1'>
+                  {/* <h6 className='center text-center '>Lobby</h6> */}
+                  <img
+                    src={comp}
+                    alt=''
+                    className=''
+                    style={{
+                      width: '100%',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      size: '2em',
+                    }}
+                  />
                 </Col>
-                <Col xs={2} />
-                <Col xs={4} className='textPadding'>
-                  <p>
+                <Col md={2} />
+                <Col
+                  xs={10}
+                  sm={8}
+                  md={4}
+                  className='textPadding'
+                  style={{ margin: '50px' }}
+                >
+                  <p className='text2'>
                     A platform gamers can use to find other gamers to play
                     with.Lorem ipsum dolor sit amet, consectetur adipiscing
                     elit. In nec vestibulum felis, at ultrices dui. Suspendisse
@@ -86,21 +99,26 @@ const Home = () => {
                     dignissim molestie ipsum. Vivamus bibendum odio elementum,
                     convallis felis non, condimentum ligula. Vestibulum nisl
                     augue, tincidunt molestie maximus sit amet, blandit sit amet
-                    neque. Praesent ante risus, sodales in vulputate aliquet,
-                    pretium sit amet lacus. Praesent lacinia placerat dolor eu
-                    maximus. Sed pellentesque, turpis eget gravida egestas, nisi
-                    nulla egestas est, et rutrum nisl urna a lectus. Interdum et
-                    malesuada fames ac ante ipsum primis in faucibus. In tempus
-                    malesuada metus vitae rutrum.
+                    neque.
+                    {/* Praesent ante risus, sodales
+                      in vulputate aliquet, pretium sit amet lacus. Praesent
+                      lacinia placerat dolor eu maximus.
+                       Sed pellentesque,
+                      turpis eget gravida egestas, nisi nulla egestas est, et
+                      rutrum nisl urna a lectus. Interdum et malesuada fames ac
+                      ante ipsum primis in faucibus. In tempus malesuada metus
+                      vitae rutrum. */}
                   </p>
                 </Col>
               </Row>
             </Container>
-            <br />
-            <br />
-            <br />
+          </div>
+          <br />
+          <br />
+          <br />
+          <div className='changesss'>
             <Container>
-              <Row className='homeDiv'>
+              <Row className=''>
                 <Col xs={4} className='text-center center'>
                   <Card>
                     <CardHeader>
@@ -146,22 +164,22 @@ const Home = () => {
               </Row>
             </Container>
           </div>
+        </div>
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <Row>
+          <Col>
+            <Counter />
+          </Col>
         </Row>
-      </Container>
-
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-
-      <Row>
-        <Col>
-          <Counter />
-        </Col>
-      </Row>
+      </div>
     </div>
   )
 }

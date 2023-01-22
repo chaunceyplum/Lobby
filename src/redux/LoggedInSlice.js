@@ -9,6 +9,7 @@ const initialState = {
   email: '',
   name: '',
   auth: '',
+  message: '',
 }
 
 const apiUrl = 'https://classycutzbackend.herokuapp.com'

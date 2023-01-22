@@ -27,7 +27,7 @@ import {
 import axios from 'axios'
 import { Control, Errors, LocalForm } from 'react-redux-form'
 
-const LogIn = () => {
+const MakePost = () => {
   const [show, setShow] = useState(false)
 
   const handleClose = () => setShow(false)
@@ -69,9 +69,9 @@ const LogIn = () => {
     user: userEmail,
     password: userPassword,
   }
-  const apiUrl = 'https://classycutzbackend.herokuapp.com/user'
+  //const apiUrl = 'https://classycutzbackend.herokuapp.com/user'
 
-  //const apiUrl = 'http://localhost:3007/user'
+  const apiUrl = 'http://localhost:3007/user'
 
   const forceUpdateHandler = () => {
     this.forceUpdate()
@@ -102,11 +102,11 @@ const LogIn = () => {
   // const validPassword = (val) => /^(?=.*\d)[a-zA-Z0-9]{8,16}$/
 
   return (
-    <div className='homeBackground '>
+    <div className=' '>
       <Container className='homeDiv'>
         <Row className=' homeHalfDiv1'>
           <Col className='center'>
-            <h3 className='center homeHeaderText'>Login</h3>
+            <h3 className='center '>Login</h3>
           </Col>
         </Row>
       </Container>
@@ -127,7 +127,7 @@ const LogIn = () => {
                 {statey.message ? setValidated(false) : <div></div>}
 
                 <FormLabel>
-                  <h1 className='text1'>Email</h1>
+                  <h1>Email</h1>
                 </FormLabel>
                 <FormControl
                   onChange={(e) => setUserEmail(e.target.value)}
@@ -145,7 +145,7 @@ const LogIn = () => {
 
               <FormGroup className='text-center'>
                 <FormLabel>
-                  <h1 className='text1'>Password</h1>
+                  <h1>Password</h1>
                 </FormLabel>
                 <FormControl
                   onChange={(e) => setUserPassword(e.target.value)}
@@ -186,4 +186,4 @@ const LogIn = () => {
   )
 }
 
-export default LogIn
+export default MakePost

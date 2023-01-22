@@ -1,5 +1,9 @@
 $primaryColor: white;
-$textColor: black;
+$primaryBackground: #613333;
+$secondBackground: #42708f;
+$thirdBackground: #f9ba7d;
+$textColor1: #42708f;
+$textColor2: #f9ba7d;
 $blue: rbg(0, 0, 72);
 
 //MISC
@@ -7,9 +11,31 @@ $blue: rbg(0, 0, 72);
   margin: 0 0 0 0;
   font-family: medium;
 }
+button {
+  background-color: #42708f !important;
+  color: #f9ba7d !important;
+}
+.offsetBackground {
+  background-color: #f9ba7d !important;
+  color: #613333 !important;
+}
+#signUpForm {
+  background-color: #f9ba7d !important;
+  color: #613333 !important;
+}
+.buttons {
+  background-color: #42708f !important;
+  color: #f9ba7d !important;
+}
 .center {
   display: block;
   margin: auto auto !important;
+}
+.text1 {
+  color: $secondBackground;
+}
+.text2 {
+  color: $thirdBackground;
 }
 .center1 {
   display: flex;
@@ -19,11 +45,14 @@ $blue: rbg(0, 0, 72);
   display: block;
 }
 // Home
-
+.homeBackground {
+  background-color: $primaryBackground !important;
+}
 .homeDiv {
   height: 100vh !important;
-  color: $textColor;
+  color: $textColor1;
   display: block;
+  background-color: $primaryBackground;
 }
 .headerPadding {
   padding-top: 10vh;
@@ -31,7 +60,7 @@ $blue: rbg(0, 0, 72);
   font-size: 6rem;
 }
 .textPadding {
-  //padding-top: 10vh;
+  padding-top: 10vh;
   padding-bottom: 10vh;
   font-size: 1.5rem;
 }
@@ -41,6 +70,7 @@ $blue: rbg(0, 0, 72);
   border-radius: 25px;
   padding-top: 10px;
   padding-bottom: 10px;
+  background-color: $primaryBackground;
 }
 .homeHalfDiv1 {
   height: 70vh;
@@ -48,6 +78,7 @@ $blue: rbg(0, 0, 72);
   border-radius: 25px;
   padding-top: 30px;
   padding-bottom: 30px;
+  background-color: $primaryBackground;
 }
 .homeHeaderText {
   font-size: 4em;
@@ -55,8 +86,8 @@ $blue: rbg(0, 0, 72);
   margin: auto auto;
   padding-top: 50%;
   padding-bottom: 50%;
-  color: white !important;
-  -webkit-text-stroke: 3px darkgrey;
+  color: $textColor1 !important;
+  //-webkit-text-stroke: 3px $textColor2;
   text-align: center;
 }
 .homeHeaderText1 {
@@ -64,15 +95,15 @@ $blue: rbg(0, 0, 72);
   font-family: medium;
   margin: auto auto;
   padding-top: 75%;
-  color: white !important;
-  -webkit-text-stroke: 3px darkgrey;
+  color: $textColor1 !important;
+  //-webkit-text-stroke: 3px $textColor2;
 }
 #homeSubheaderText {
   font-size: 27px;
   margin: 0 auto;
   padding: 36px;
   line-height: 36px;
-  color: white !important;
+  color: $textColor2 !important;
   background-color: black;
   opacity: 90%;
   border-radius: 25px;
@@ -91,12 +122,12 @@ $blue: rbg(0, 0, 72);
 }
 .navlinks {
   height: fit-content;
-  color: white !important;
-  -webkit-text-stroke: 3px darkgrey !important;
+  color: $textColor1 !important;
+  -webkit-text-stroke: 3px $textColor2 !important;
 }
 .NavLink {
-  color: white !important;
-  -webkit-text-stroke: 2px darkgrey !important;
+  color: $textColor1 !important;
+  -webkit-text-stroke: 2px $textColor2 !important;
 }
 //Contact
 .formMargin {
@@ -106,8 +137,8 @@ $blue: rbg(0, 0, 72);
 
 //Footer
 .footerClass {
-  background-color: darkgray;
-  color: white !important;
+  background-color: $thirdBackground;
+  color: $primaryBackground !important;
   height: 50vh;
 }
 

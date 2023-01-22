@@ -32,7 +32,7 @@ const Service = () => {
   }, [postsStatus, dispatch])
 
   return (
-    <div>
+    <div className='homeBackground'>
       {/* <Container> */}
       <Row className='homeDiv'>
         <Col className='center'>

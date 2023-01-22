@@ -48,6 +48,9 @@ const MyNav = () => {
   const [userName, setUserName] = useState('')
   const [userEmail, setUserEmail] = useState('')
   const [userPassword, setUserPassword] = useState('')
+  const [userUserName, setUserUserName] = useState('')
+  const [userConsole, setUserConsole] = useState('')
+  const [userGamerTag, setUserGamerTag] = useState('')
   const toggle = () => {
     setOpen(!isOpen)
     console.log(isOpen)
@@ -64,6 +67,9 @@ const MyNav = () => {
       email: userEmail,
       password: userPassword,
       name: userName,
+      username: userUserName,
+      console: userConsole,
+      gamertag: userGamerTag,
     }
     const userLogin = {
       email: userEmail,
@@ -79,6 +85,7 @@ const MyNav = () => {
     dispatch(signOut())
   }
   const apiUrl = 'https://classycutzbackend.herokuapp.com'
+  //const apiUrl = 'http://localhost:3007'
 
   const signUp = async (user) => {
     try {
@@ -96,18 +103,20 @@ const MyNav = () => {
     }
   }
   const logIn = async (user) => {
-    try {
-      const res = await axios.post(`${apiUrl}/user`, user)
+    if (validated) {
+      try {
+        const res = await axios.post(`${apiUrl}/user`, user)
 
-      console.log(res.data)
+        // console.log(res.data)
 
-      res.data
-        ? dispatch(setter(res.data))
-        : console.log('unable to run setter func')
+        res.data
+          ? dispatch(setter(res.data))
+          : console.log('unable to run setter func')
 
-      return res.data
-    } catch (err) {
-      return err.message
+        return res.data
+      } catch (err) {
+        return err.message
+      }
     }
   }
 
@@ -184,11 +193,10 @@ const MyNav = () => {
           className='text-center navbarPositoning'
         >
           <Container>
-            <Button className=' btn btn-light'>
-              <Navbar.Brand href='/' className='text-dark bg-light'>
-                (logo)Lobby
-              </Navbar.Brand>
-            </Button>
+            <Navbar.Brand href='/' className=''>
+              <h1 className='text2'>(logo)Lobby</h1>
+            </Navbar.Brand>
+
             <Navbar.Toggle bg={'darkgrey'} />
             <Navbar.Collapse>
               <Nav
@@ -232,7 +240,7 @@ const MyNav = () => {
                   signUp()
                 )} */}
 
-                {!loggedInBoolean ? (
+                {!statey.email ? (
                   <div>
                     <Button variant='light' onClick={handleShow}>
                       Sign Up
@@ -261,7 +269,76 @@ const MyNav = () => {
                                     required
                                   />
                                 </FormGroup>
+
                                 <br />
+                                <FormGroup className='text-center'>
+                                  <FormLabel>
+                                    <h1>Gamertag</h1>
+                                  </FormLabel>
+                                  <FormControl
+                                    onChange={(e) =>
+                                      setUserGamerTag(e.target.value)
+                                    }
+                                    type='text'
+                                    placeholder='Type Gamer Tag Here'
+                                    required
+                                  />
+                                  <Form.Control.Feedback type='invalid'>
+                                    Please provide a valid Gamertag.
+                                  </Form.Control.Feedback>
+                                </FormGroup>
+
+                                <br />
+                                <FormGroup className='text-center'>
+                                  <FormLabel>
+                                    <h1>UserName</h1>
+                                  </FormLabel>
+                                  <FormControl
+                                    onChange={(e) =>
+                                      setUserUserName(e.target.value)
+                                    }
+                                    type='text'
+                                    placeholder='Type Username Here'
+                                    required
+                                  />
+                                  <Form.Control.Feedback type='invalid'>
+                                    Please provide a valid Username.
+                                  </Form.Control.Feedback>
+                                </FormGroup>
+
+                                <br />
+                                <FormGroup className='text-center'>
+                                  <FormLabel>
+                                    <h1>Console</h1>
+                                  </FormLabel>
+                                  {/* <FormControl
+                                    onChange={(e) =>
+                                      setUserConsole(e.target.value)
+                                    }
+                                    type='radio'
+                                    placeholder='Type Password Here'
+                                    required
+                                    isvalid='false'
+                                  /> */}
+                                  <br />
+
+                                  <select
+                                    value={userConsole}
+                                    onChange={(e) =>
+                                      setUserConsole(e.target.value)
+                                    }
+                                  >
+                                    <option value='PSN'>Playstation</option>
+                                    <option value='XBOX'>Xbox</option>
+                                    <option value='PC'>PC</option>
+                                    <option value='mango'>Mango</option>
+                                  </select>
+
+                                  <Form.Control.Feedback type='invalid'>
+                                    Please provide a valid console.
+                                  </Form.Control.Feedback>
+                                </FormGroup>
+
                                 <br />
                                 <FormGroup className='text-center'>
                                   <FormLabel>
@@ -280,7 +357,7 @@ const MyNav = () => {
                                     Please provide a valid Email.
                                   </Form.Control.Feedback>
                                 </FormGroup>
-                                <br />
+
                                 <br />
 
                                 <FormGroup className='text-center'>
@@ -302,7 +379,7 @@ const MyNav = () => {
                                     Please provide a valid password.
                                   </Form.Control.Feedback>
                                 </FormGroup>
-                                <br />
+
                                 <br />
                                 {/* <FormGroup>
                         <Container>

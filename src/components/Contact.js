@@ -15,7 +15,7 @@ import { Parallax } from 'react-parallax'
 
 const Contact = () => {
   return (
-    <div>
+    <div className='homeBackground'>
       <div className='homeDiv'>
         <div className='text-center center homeHeaderText'>
           <h1 className='center text-center'>Contact</h1>

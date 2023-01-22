@@ -37,6 +37,9 @@ const SignUp = () => {
   const [userEmail, setUserEmail] = useState('')
   const [userPassword, setUserPassword] = useState('')
   const [userName, setUserName] = useState('')
+  const [userUserName, setUserUserName] = useState('')
+  const [userConsole, setUserConsole] = useState('')
+  const [userGamerTag, setUserGamerTag] = useState('')
   const loggedInState = (state) => state.loggedIn.name
   const statey = useSelector(loggedInState)
   const email = statey.email
@@ -47,6 +50,9 @@ const SignUp = () => {
       email: userEmail,
       password: userPassword,
       name: userName,
+      username: userUserName,
+      console: userConsole,
+      gamertag: userGamerTag,
     }
     const form = event.currentTarget
     if (form.checkValidity() === false) {
@@ -109,12 +115,12 @@ const SignUp = () => {
             Sign Up
           </Button>
 
-          <Modal show={show} onHide={handleClose}>
+          <Modal show={show} onHide={handleClose} className=''>
             <ModalHeader closeButton>
               <ModalTitle>Sign Up</ModalTitle>
             </ModalHeader>
-            <ModalBody>
-              <Container className=' '>
+            <ModalBody className='offsetBackground' id='signUpForm'>
+              <Container className='offsetBackground '>
                 <Row>
                   <Col />
                   <Col xs={10} lg={8}>
@@ -125,10 +131,58 @@ const SignUp = () => {
                         </FormLabel>
                         <FormControl
                           onChange={(e) => setUserName(e.target.value)}
-                          type='name'
+                          type='text'
                           placeholder='Type Full Name Here!'
                           required
                         />
+                      </FormGroup>
+                      <br />
+                      <br />
+                      <FormGroup className='text-center'>
+                        <FormLabel>
+                          <h1>Gamertag</h1>
+                        </FormLabel>
+                        <FormControl
+                          onChange={(e) => setUserGamerTag(e.target.value)}
+                          type='text'
+                          placeholder='Type Gamer Tag Here'
+                          required
+                        />
+                        <Form.Control.Feedback type='invalid'>
+                          Please provide a valid Gamertag.
+                        </Form.Control.Feedback>
+                      </FormGroup>
+                      <br />
+                      <br />
+                      <FormGroup className='text-center'>
+                        <FormLabel>
+                          <h1>UserName</h1>
+                        </FormLabel>
+                        <FormControl
+                          onChange={(e) => setUserUserName(e.target.value)}
+                          type='text'
+                          placeholder='Type Username Here'
+                          required
+                        />
+                        <Form.Control.Feedback type='invalid'>
+                          Please provide a valid Username.
+                        </Form.Control.Feedback>
+                      </FormGroup>
+                      <br />
+                      <br />
+                      <FormGroup className='text-center'>
+                        <FormLabel>
+                          <h1>Console</h1>
+                        </FormLabel>
+                        <FormControl
+                          onChange={(e) => setUserConsole(e.target.value)}
+                          type='radio'
+                          placeholder='Type Password Here'
+                          required
+                        />
+                        <Form.Control.Feedback type='invalid'>
+                          Please provide a valid console.
+                        </Form.Control.Feedback>
                       </FormGroup>
                       <br />
                       <br />
@@ -142,6 +196,9 @@ const SignUp = () => {
                           placeholder='Type Email Here'
                           required
                         />
+                        <Form.Control.Feedback type='invalid'>
+                          Please provide a valid Email.
+                        </Form.Control.Feedback>
                       </FormGroup>
                       <br />
                       <br />
@@ -156,6 +213,9 @@ const SignUp = () => {
                           placeholder='Type Password Here'
                           required
                         />
+                        <Form.Control.Feedback type='invalid'>
+                          Please provide a valid password.
+                        </Form.Control.Feedback>
                       </FormGroup>
                       <br />
                       <br />
