@@ -25,7 +25,6 @@ import {
   nameGetter,
 } from '../redux/LoggedInSlice'
 import axios from 'axios'
-import { Control, Errors, LocalForm } from 'react-redux-form'
 
 const LogIn = () => {
   const [show, setShow] = useState(false)
