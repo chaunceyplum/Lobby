@@ -11,7 +11,6 @@ import {
   CardText,
   CardTitle,
 } from 'reactstrap'
-import { Control, LocalForm, Errors } from 'react-redux-form'
 
 const Home = () => {
   return (
