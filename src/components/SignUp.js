@@ -270,7 +270,7 @@ const SignUp = () => {
                   </Col>
                   <Col xs={4} />
                   <Col xs={4}>
-                    <Button className=' btn btn-light' onClick={signOutUser()}>
+                    <Button className=' btn btn-light ' onClick={signOutUser()}>
                       <h6 className=''>Sign Out</h6>
                     </Button>
                   </Col>
