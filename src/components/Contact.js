@@ -16,24 +16,35 @@ import { Parallax } from 'react-parallax'
 const Contact = () => {
   return (
     <div className='homeBackground'>
-      <div className='homeDiv'>
-        <div className='text-center center homeHeaderText'>
-          <h1 className='center text-center'>Contact</h1>
-        </div>
-      </div>
+      <Container>
+        <Row className='changesss'>
+          <Col xs={2} />
+          <Col xs={8}>
+            <div className='text-center'>
+              <h3 className='center homeHeaderText text2'>Contact </h3>
+
+              <br />
+              <br />
+              <br />
+              <br />
+            </div>
+          </Col>
+          <Col xs={2} />
+        </Row>
+      </Container>
       <Container>
         <Row>
           <Col />
 
           <Col xs={10} md={8}>
-            <div className='text-center '>
+            <div className='text-center text2'>
               <h2>Leave us your email and we will reach out to you</h2>
               <Container>
                 <Form className='homeHalfDiv'>
                   <FormGroup className='formMargin'>
                     <FormLabel>First Name</FormLabel>
                     <FormControl type='email' placeholder='Enter Name Here' />
-                    <FormText>
+                    <FormText className='text1'>
                       We'll <strong>NEVER</strong> share your data with anyone
                     </FormText>
                   </FormGroup>

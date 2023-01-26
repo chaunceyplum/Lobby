@@ -246,72 +246,73 @@ const MyNav = () => {
                       Sign Up
                     </Button>
 
-                    <Modal show={show} onHide={handleClose}>
-                      <ModalHeader closeButton>
-                        <ModalTitle>Sign Up</ModalTitle>
-                      </ModalHeader>
-                      <ModalBody>
-                        <Container className=' '>
-                          <Row>
-                            <Col />
-                            <Col xs={10} lg={8}>
-                              <Form noValidate validated={validated}>
-                                <FormGroup className='text-center'>
-                                  <FormLabel>
-                                    <h1>Full Name</h1>
-                                  </FormLabel>
-                                  <FormControl
-                                    onChange={(e) =>
-                                      setUserName(e.target.value)
-                                    }
-                                    type='text'
-                                    placeholder='Type Full Name Here!'
-                                    required
-                                  />
-                                </FormGroup>
+                    <Modal show={show} onHide={handleClose} className=''>
+                      <div className='homeBackground'>
+                        <ModalHeader closeButton className='offsetBackground'>
+                          <ModalTitle>Sign Up</ModalTitle>
+                        </ModalHeader>
+                        <ModalBody className='homeBackground text2'>
+                          <Container>
+                            <Row>
+                              <Col />
+                              <Col xs={10} lg={8}>
+                                <Form noValidate validated={validated}>
+                                  <FormGroup className='text-center'>
+                                    <FormLabel>
+                                      <h1>Full Name</h1>
+                                    </FormLabel>
+                                    <FormControl
+                                      onChange={(e) =>
+                                        setUserName(e.target.value)
+                                      }
+                                      type='text'
+                                      placeholder='Type Full Name Here!'
+                                      required
+                                    />
+                                  </FormGroup>
 
-                                <br />
-                                <FormGroup className='text-center'>
-                                  <FormLabel>
-                                    <h1>Gamertag</h1>
-                                  </FormLabel>
-                                  <FormControl
-                                    onChange={(e) =>
-                                      setUserGamerTag(e.target.value)
-                                    }
-                                    type='text'
-                                    placeholder='Type Gamer Tag Here'
-                                    required
-                                  />
-                                  <Form.Control.Feedback type='invalid'>
-                                    Please provide a valid Gamertag.
-                                  </Form.Control.Feedback>
-                                </FormGroup>
+                                  <br />
+                                  <FormGroup className='text-center'>
+                                    <FormLabel>
+                                      <h1>Gamertag</h1>
+                                    </FormLabel>
+                                    <FormControl
+                                      onChange={(e) =>
+                                        setUserGamerTag(e.target.value)
+                                      }
+                                      type='text'
+                                      placeholder='Type Gamer Tag Here'
+                                      required
+                                    />
+                                    <Form.Control.Feedback type='invalid'>
+                                      Please provide a valid Gamertag.
+                                    </Form.Control.Feedback>
+                                  </FormGroup>
 
-                                <br />
-                                <FormGroup className='text-center'>
-                                  <FormLabel>
-                                    <h1>UserName</h1>
-                                  </FormLabel>
-                                  <FormControl
-                                    onChange={(e) =>
-                                      setUserUserName(e.target.value)
-                                    }
-                                    type='text'
-                                    placeholder='Type Username Here'
-                                    required
-                                  />
-                                  <Form.Control.Feedback type='invalid'>
-                                    Please provide a valid Username.
-                                  </Form.Control.Feedback>
-                                </FormGroup>
+                                  <br />
+                                  <FormGroup className='text-center'>
+                                    <FormLabel>
+                                      <h1>UserName</h1>
+                                    </FormLabel>
+                                    <FormControl
+                                      onChange={(e) =>
+                                        setUserUserName(e.target.value)
+                                      }
+                                      type='text'
+                                      placeholder='Type Username Here'
+                                      required
+                                    />
+                                    <Form.Control.Feedback type='invalid'>
+                                      Please provide a valid Username.
+                                    </Form.Control.Feedback>
+                                  </FormGroup>
 
-                                <br />
-                                <FormGroup className='text-center'>
-                                  <FormLabel>
-                                    <h1>Console</h1>
-                                  </FormLabel>
-                                  {/* <FormControl
+                                  <br />
+                                  <FormGroup className='text-center'>
+                                    <FormLabel>
+                                      <h1>Console</h1>
+                                    </FormLabel>
+                                    {/* <FormControl
                                     onChange={(e) =>
                                       setUserConsole(e.target.value)
                                     }
@@ -320,68 +321,91 @@ const MyNav = () => {
                                     required
                                     isvalid='false'
                                   /> */}
+                                    <br />
+
+                                    <select
+                                      value={userConsole}
+                                      onChange={(e) =>
+                                        setUserConsole(e.target.value)
+                                      }
+                                    >
+                                      <option value='PSN'>Playstation</option>
+                                      <option value='XBOX'>Xbox</option>
+                                      <option value='PC'>PC</option>
+                                      <option value='mango'>Mango</option>
+                                    </select>
+
+                                    <Form.Control.Feedback type='invalid'>
+                                      Please provide a valid console.
+                                    </Form.Control.Feedback>
+                                  </FormGroup>
+
+                                  <br />
+                                  <FormGroup className='text-center'>
+                                    <FormLabel>
+                                      <h1>Email</h1>
+                                    </FormLabel>
+                                    <FormControl
+                                      onChange={(e) =>
+                                        setUserEmail(e.target.value)
+                                      }
+                                      type='email'
+                                      placeholder='Type Email Here'
+                                      required
+                                    />
+
+                                    <Form.Control.Feedback type='invalid'>
+                                      Please provide a valid Email.
+                                    </Form.Control.Feedback>
+                                  </FormGroup>
+
                                   <br />
 
-                                  <select
-                                    value={userConsole}
-                                    onChange={(e) =>
-                                      setUserConsole(e.target.value)
-                                    }
-                                  >
-                                    <option value='PSN'>Playstation</option>
-                                    <option value='XBOX'>Xbox</option>
-                                    <option value='PC'>PC</option>
-                                    <option value='mango'>Mango</option>
-                                  </select>
+                                  <FormGroup className='text-center'>
+                                    <FormLabel>
+                                      <h1>Password</h1>
+                                    </FormLabel>
+                                    <FormControl
+                                      onChange={(e) =>
+                                        setUserPassword(e.target.value)
+                                      }
+                                      type='password'
+                                      placeholder='Type Password Here'
+                                      required
+                                    />
+                                    <Form.Control.Feedback>
+                                      Looks Good
+                                    </Form.Control.Feedback>
+                                    <Form.Control.Feedback type='invalid'>
+                                      Please provide a valid password.
+                                    </Form.Control.Feedback>
+                                  </FormGroup>
 
-                                  <Form.Control.Feedback type='invalid'>
-                                    Please provide a valid console.
-                                  </Form.Control.Feedback>
-                                </FormGroup>
+                                  <br />
 
-                                <br />
-                                <FormGroup className='text-center'>
-                                  <FormLabel>
-                                    <h1>Email</h1>
-                                  </FormLabel>
-                                  <FormControl
-                                    onChange={(e) =>
-                                      setUserEmail(e.target.value)
-                                    }
-                                    type='email'
-                                    placeholder='Type Email Here'
-                                    required
-                                  />
-
-                                  <Form.Control.Feedback type='invalid'>
-                                    Please provide a valid Email.
-                                  </Form.Control.Feedback>
-                                </FormGroup>
-
-                                <br />
-
-                                <FormGroup className='text-center'>
-                                  <FormLabel>
-                                    <h1>Password</h1>
-                                  </FormLabel>
-                                  <FormControl
-                                    onChange={(e) =>
-                                      setUserPassword(e.target.value)
-                                    }
-                                    type='password'
-                                    placeholder='Type Password Here'
-                                    required
-                                  />
-                                  <Form.Control.Feedback>
-                                    Looks Good
-                                  </Form.Control.Feedback>
-                                  <Form.Control.Feedback type='invalid'>
-                                    Please provide a valid password.
-                                  </Form.Control.Feedback>
-                                </FormGroup>
-
-                                <br />
-                                {/* <FormGroup>
+                                  <FormGroup>
+                                    <Container>
+                                      <Row>
+                                        <Col>
+                                          <Button
+                                            variant='secondary'
+                                            onClick={handleClose}
+                                          >
+                                            Close
+                                          </Button>
+                                        </Col>
+                                        <Col>
+                                          <Button
+                                            variant='primary'
+                                            onClick={submitUser}
+                                          >
+                                            Save Changes
+                                          </Button>
+                                        </Col>
+                                      </Row>
+                                    </Container>
+                                  </FormGroup>
+                                  {/* <FormGroup>
                         <Container>
                           <Row>
                             <Col xs={1} />
@@ -396,26 +420,21 @@ const MyNav = () => {
                           </Row>
                         </Container>
                       </FormGroup> */}
-                              </Form>
-                            </Col>
-                            <Col />
-                          </Row>
-                        </Container>
-                      </ModalBody>
-                      <ModalFooter>
-                        <Button variant='secondary' onClick={handleClose}>
-                          Close
-                        </Button>
-                        <Button variant='primary' onClick={submitUser}>
-                          Save Changes
-                        </Button>
-                        {/* {user
+                                </Form>
+                              </Col>
+                              <Col />
+                            </Row>
+                          </Container>
+                        </ModalBody>
+                        {/* <ModalFooter className='homeBackground'>
+                          {/* {user
                 ? (state, action) => {
                     Setter(state, action, user)
                     console.log(user)
                   }
-                : console.log('user state is empty')} */}
-                      </ModalFooter>
+                : console.log('user state is empty')} 
+                        </ModalFooter> */}
+                      </div>
                     </Modal>
                   </div>
                 ) : (

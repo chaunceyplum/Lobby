@@ -102,14 +102,25 @@ const LogIn = () => {
 
   return (
     <div className='homeBackground '>
-      <Container className='homeDiv'>
-        <Row className=' homeHalfDiv1'>
-          <Col className='center'>
-            <h3 className='center homeHeaderText'>Login</h3>
+      <Container>
+        <Row className='changesss'>
+          <Col xs={2} />
+          <Col xs={8}>
+            <div className='text-center'>
+              <h3 className='center homeHeaderText text2'>Login</h3>
+
+              <br />
+
+              <br />
+              <br />
+
+              <br />
+            </div>
           </Col>
+          <Col xs={2} />
         </Row>
       </Container>
-      <Container className=' '>
+      <Container className=' text2'>
         <Row>
           <Col />
           <Col xs={10} sm={8} md={6}>
@@ -126,7 +137,7 @@ const LogIn = () => {
                 {statey.message ? setValidated(false) : <div></div>}
 
                 <FormLabel>
-                  <h1 className='text1'>Email</h1>
+                  <h1 className='text2'>Email</h1>
                 </FormLabel>
                 <FormControl
                   onChange={(e) => setUserEmail(e.target.value)}
@@ -144,7 +155,7 @@ const LogIn = () => {
 
               <FormGroup className='text-center'>
                 <FormLabel>
-                  <h1 className='text1'>Password</h1>
+                  <h1 className='text2'>Password</h1>
                 </FormLabel>
                 <FormControl
                   onChange={(e) => setUserPassword(e.target.value)}
