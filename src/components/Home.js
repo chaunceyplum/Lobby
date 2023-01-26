@@ -21,7 +21,7 @@ const Home = () => {
             <Col xs={2} />
             <Col xs={8}>
               <div className='text-center'>
-                <h3 className='center homeHeaderText'>Find A Lobby</h3>
+                <h3 className='center homeHeaderText text2'>Find A Lobby</h3>
                 <Button variant='secondary' className='center1 '>
                   Learn More
                 </Button>
@@ -39,7 +39,7 @@ const Home = () => {
           <div className='changesss'>
             <Container>
               <Row>
-                <div className='text1'>
+                <div className='text2'>
                   <h1 className='center text-center headerPadding'>
                     some text
                   </h1>
@@ -87,27 +87,21 @@ const Home = () => {
                   xs={10}
                   sm={8}
                   md={4}
-                  className='textPadding'
-                  style={{ margin: '50px' }}
+                  className='textPadding center1 text-center '
+                  // style={{ margin: '0 auto;' }}
                 >
-                  <p className='text2'>
-                    A platform gamers can use to find other gamers to play
-                    with.Lorem ipsum dolor sit amet, consectetur adipiscing
-                    elit. In nec vestibulum felis, at ultrices dui. Suspendisse
-                    a consequat neque. Nam tortor nisi, lacinia ut urna ut,
-                    dignissim molestie ipsum. Vivamus bibendum odio elementum,
-                    convallis felis non, condimentum ligula. Vestibulum nisl
-                    augue, tincidunt molestie maximus sit amet, blandit sit amet
-                    neque.
-                    {/* Praesent ante risus, sodales
-                      in vulputate aliquet, pretium sit amet lacus. Praesent
-                      lacinia placerat dolor eu maximus.
-                       Sed pellentesque,
-                      turpis eget gravida egestas, nisi nulla egestas est, et
-                      rutrum nisl urna a lectus. Interdum et malesuada fames ac
-                      ante ipsum primis in faucibus. In tempus malesuada metus
-                      vitae rutrum. */}
-                  </p>
+                  <div className='text2'>
+                    <p className='center text-center textPadding'>
+                      A platform gamers can use to find other gamers to play
+                      with.Lorem ipsum dolor sit amet, consectetur adipiscing
+                      elit. In nec vestibulum felis, at ultrices dui.
+                      Suspendisse a consequat neque. Nam tortor nisi, lacinia ut
+                      urna ut, dignissim molestie ipsum. Vivamus bibendum odio
+                      elementum, convallis felis non, condimentum ligula.
+                      Vestibulum nisl augue, tincidunt molestie maximus sit
+                      amet, blandit sit amet neque.
+                    </p>
+                  </div>
                 </Col>
               </Row>
             </Container>
