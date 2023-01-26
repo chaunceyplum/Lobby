@@ -8,8 +8,8 @@ const initialState = {
   error: null,
 }
 
-const apiUrl = 'https://jsonplaceholder.typicode.com/posts'
-const apiUrl1 = 'https://classycutzbackend.herokuapp.com/'
+//const apiUrl = 'https://jsonplaceholder.typicode.com/posts'
+const apiUrl = 'https://classycutzbackend.herokuapp.com/posts'
 
 export const fetchPosts = createAsyncThunk('fetchedRecipients/', async () => {
   try {

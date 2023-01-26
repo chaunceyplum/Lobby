@@ -13,6 +13,7 @@ import {
 import GrowExample from './GrowExample'
 import RenderServiceCard from './RenderServiceCard'
 import contact from '../Images/writing.jpg'
+import RenderPostCard from './RenderPostCard'
 
 const Service = () => {
   const dispatch = useDispatch()
@@ -83,13 +84,11 @@ const Service = () => {
             <RenderServiceCard data={i} />
           })} */}
 
-                {postsStatus ? (
-                  posts.posts.map((x, i) => {
-                    return <RenderServiceCard data={x} key={i} />
-                  })
-                ) : (
-                  <GrowExample />
-                )}
+                {posts.posts.map((x, i) => {
+                  console.log(x)
+                  return <RenderPostCard data={x} key={i} />
+                })}
+
                 {console.log(posts.posts)}
               </Container>
             </div>

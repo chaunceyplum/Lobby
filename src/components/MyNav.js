@@ -445,13 +445,13 @@ const MyNav = () => {
                         {/* <a href='#'> */}
                         <Container>
                           <Row>
-                            <Col xs={12} lg={4}>
+                            <Col xs={10} lg={4}>
                               <Button className=' btn btn-light'>
                                 <h6 className=''>{email}</h6>
                               </Button>
                             </Col>
-                            <Col xs={0} />
-                            <Col xs={12} lg={4}>
+                            <Col xs={2} />
+                            <Col xs={10} lg={4}>
                               <Button
                                 className=' btn btn-light'
                                 onClick={() => signOutUser()}
