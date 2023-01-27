@@ -26,6 +26,7 @@ import {
 } from '../redux/LoggedInSlice'
 import axios from 'axios'
 import { Control, Errors, LocalForm } from 'react-redux-form'
+import mongoose from 'mongoose'
 
 const MakePost = () => {
   const [show, setShow] = useState(false)
@@ -41,17 +42,27 @@ const MakePost = () => {
   const statey = useSelector(loggedInState)
   const [userEmail, setUserEmail] = useState('')
   const [userPassword, setUserPassword] = useState('')
+  const [userTitle, setUserTitle] = useState('')
+  const [userPost, setUserPost] = useState('')
   const [validated, setValidated] = useState(false)
   //const message = statey.message
-  const name = statey.name
+  // const name = statey.name
+  console.log(loggedInState)
   const clearBoth = () => {
     setUserEmail('')
     setUserPassword('')
   }
   const submitUser = (event) => {
     const userDetails = {
-      email: userEmail,
-      password: userPassword,
+      id: mongoose.Types.ObjectId(),
+      title: userTitle,
+      post: userPost,
+      email: statey.email,
+      username: statey.username,
+      gamertag: statey.gamertag,
+      console: statey.console,
+      timePosted: new Date(),
+      updated: new Date(),
     }
     const form = event.currentTarget
     if (form.checkValidity() === false) {
@@ -65,13 +76,10 @@ const MakePost = () => {
 
     return userDetails
   }
-  const user = {
-    user: userEmail,
-    password: userPassword,
-  }
-  //const apiUrl = 'https://classycutzbackend.herokuapp.com/user'
 
-  const apiUrl = 'http://localhost:3007/user'
+  const apiUrl = 'https://classycutzbackend.herokuapp.com/user'
+
+  //const apiUrl = 'http://localhost:3007/posts'
 
   const forceUpdateHandler = () => {
     this.forceUpdate()
@@ -88,56 +96,41 @@ const MakePost = () => {
 
       return res.data
     } catch (err) {
-      return err.message
+      return err
     }
     forceUpdateHandler()
   }
 
-  // const required = (val) => val && val.length
-  // const maxLength = (len) => (val) => !val || val.length <= len
-  // const minLength = (len) => (val) => val && val.length >= len
-  // const isNumber = (val) => !isNaN(+val)
-  // const validEmail = (val) =>
-  //   /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val)
-  // const validPassword = (val) => /^(?=.*\d)[a-zA-Z0-9]{8,16}$/
-
   return (
     <div className=' '>
-      <Container className='homeDiv'>
-        <Row className=' homeHalfDiv1'>
-          <Col className='center'>
-            <h3 className='center '>Login</h3>
-          </Col>
-        </Row>
-      </Container>
       <Container className=' '>
         <Row>
           <Col />
-          <Col xs={10} sm={8} md={6}>
+          <Col xs={10}>
             <Form noValidate validated={validated}>
               <FormGroup className='text-center'>
-                <FormLabel>
-                  {statey.loggedIn ? (
+                {/* <FormLabel>
+                  {/* {statey.loggedIn ? (
                     <h3>Welcome back {name}</h3>
                   ) : (
                     console.log(statey)
-                  )}
-                </FormLabel>
+                  )} 
+                </FormLabel> */}
 
-                {statey.message ? setValidated(false) : <div></div>}
+                {/* {statey.message ? setValidated(true) : <div></div>} */}
 
                 <FormLabel>
-                  <h1>Email</h1>
+                  <h1>Title</h1>
                 </FormLabel>
                 <FormControl
-                  onChange={(e) => setUserEmail(e.target.value)}
-                  type='email'
-                  placeholder='Type Email Here'
+                  onChange={(e) => setUserTitle(e.target.value)}
+                  type='text'
+                  placeholder='Type title Here'
                   required
                 />
 
                 <Form.Control.Feedback type='invalid'>
-                  Please provide a valid Email.
+                  Please provide a valid Title.
                 </Form.Control.Feedback>
               </FormGroup>
               <br />
@@ -145,17 +138,17 @@ const MakePost = () => {
 
               <FormGroup className='text-center'>
                 <FormLabel>
-                  <h1>Password</h1>
+                  <h1>Post</h1>
                 </FormLabel>
                 <FormControl
-                  onChange={(e) => setUserPassword(e.target.value)}
-                  type='password'
-                  placeholder='Type Password Here'
+                  onChange={(e) => setUserPost(e.target.value)}
+                  type='textarea'
+                  placeholder='Type Post Here'
                   required
                 />
                 <Form.Control.Feedback>Looks Good</Form.Control.Feedback>
                 <Form.Control.Feedback type='invalid'>
-                  Please provide a valid password.
+                  Please provide a valid post.
                 </Form.Control.Feedback>
               </FormGroup>
               <FormGroup>

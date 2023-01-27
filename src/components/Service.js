@@ -14,6 +14,7 @@ import GrowExample from './GrowExample'
 import RenderServiceCard from './RenderServiceCard'
 import contact from '../Images/writing.jpg'
 import RenderPostCard from './RenderPostCard'
+import MakePost from './MakePost'
 
 const Service = () => {
   const dispatch = useDispatch()
@@ -73,7 +74,9 @@ const Service = () => {
         <Row>
           <Col xs={3} md={4}>
             <div>
-              <Container></Container>
+              <Container>
+                <MakePost />
+              </Container>
             </div>
           </Col>
           <Col xs={8} md={7}>
