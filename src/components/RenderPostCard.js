@@ -56,7 +56,7 @@ const RenderPostCard = (data, key) => {
         <CardHeader
           avatar={
             <Avatar sx={{ bgcolor: brown[700] }} aria-label=''>
-              b
+              c
             </Avatar>
           }
           action={
