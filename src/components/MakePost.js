@@ -25,6 +25,8 @@ import {
   nameGetter,
 } from '../redux/LoggedInSlice'
 import axios from 'axios'
+import { ObjectId } from 'bson'
+//import mongoose from 'mongoose'
 
 const MakePost = () => {
   const [show, setShow] = useState(false)
@@ -52,7 +54,7 @@ const MakePost = () => {
   }
   const submitUser = (event) => {
     const userDetails = {
-      id: mongoose.Types.ObjectId(),
+      id: ObjectId(32),
       title: userTitle,
       post: userPost,
       email: statey.email,
