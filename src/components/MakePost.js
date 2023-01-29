@@ -26,8 +26,6 @@ import {
 } from '../redux/LoggedInSlice'
 import axios from 'axios'
 
-import mongoose from 'mongoose'
-
 const MakePost = () => {
   const [show, setShow] = useState(false)
 
