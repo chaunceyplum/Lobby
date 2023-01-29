@@ -22,7 +22,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert'
 const RenderPostCard = (data, key) => {
   // const data = useSelector((state) => state.posts)
   const firstName = data.data.name
-  const firstLetterOfName = firstName.charAt(1)
+  // const firstLetterOfName = firstName.charAt(1)
 
   return (
     <div>
