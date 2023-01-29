@@ -18,8 +18,11 @@ import FavoriteIcon from '@mui/icons-material/Favorite'
 import ShareIcon from '@mui/icons-material/Share'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
+
 const RenderPostCard = (data, key) => {
   // const data = useSelector((state) => state.posts)
+  const firstName = data.data.name
+  const firstLetterOfName = firstName.charAt(1)
 
   return (
     <div>
@@ -52,8 +55,8 @@ const RenderPostCard = (data, key) => {
       <Card sx={{ maxWidth: 345 }} className='offsetBackground'>
         <CardHeader
           avatar={
-            <Avatar sx={{ bgcolor: brown[700] }} aria-label='recipe'>
-              R
+            <Avatar sx={{ bgcolor: brown[700] }} aria-label=''>
+              b
             </Avatar>
           }
           action={
