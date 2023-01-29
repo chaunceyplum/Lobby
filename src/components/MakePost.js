@@ -25,7 +25,7 @@ import {
   nameGetter,
 } from '../redux/LoggedInSlice'
 import axios from 'axios'
-import { ObjectId } from 'bson'
+import { ObjectId } from 'mongodb'
 //import mongoose from 'mongoose'
 
 const MakePost = () => {
