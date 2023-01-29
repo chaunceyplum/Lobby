@@ -25,7 +25,7 @@ import {
   nameGetter,
 } from '../redux/LoggedInSlice'
 import axios from 'axios'
-import { Control, Errors, LocalForm } from 'react-redux-form'
+
 import mongoose from 'mongoose'
 
 const MakePost = () => {
