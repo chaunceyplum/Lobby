@@ -64,6 +64,10 @@ export const LoggedInSlice = createSlice({
       // }
       return action.payload
     },
+    validatePost: (state, action) => {
+      state.message = action.payload.user.message
+      return state.message
+    },
     emailGetter: (state, action) => {
       //state.email = action.payload.email
       return state.email
@@ -91,11 +95,13 @@ export const LoggedInSlice = createSlice({
       })
   },
 })
+
 export const loggedInBool = (state) => state.LoggedIn
 export const loggedInLoading = (state) => state.loading
 export const loggedInError = (state) => state.error
 export const loggedInEmail = (state) => state.email
 export const loggedInPassword = (state) => state.password
+export const { validatePost } = LoggedInSlice.actions
 export const { nameGetter } = LoggedInSlice.actions
 export const { emailGetter } = LoggedInSlice.actions
 export const { fetcher } = LoggedInSlice.actions

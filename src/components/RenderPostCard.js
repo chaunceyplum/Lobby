@@ -69,6 +69,9 @@ const RenderPostCard = (data, key) => {
         />
 
         <CardContent>
+          <Typography variant='h6' color='text-primary'>
+            {data.data.post}
+          </Typography>
           <Typography variant='body2' color='text.secondary'>
             {data.data.post}
           </Typography>

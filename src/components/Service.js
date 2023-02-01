@@ -72,14 +72,14 @@ const Service = () => {
           )}
         </Row>
         <Row>
-          <Col xs={6}>
+          <Col xs={12} md={6}>
             <div>
               <Container>
                 <MakePost />
               </Container>
             </div>
           </Col>
-          <Col xs={6}>
+          <Col xs={12} md={6}>
             <div>
               <Container>
                 {/* {console.log(posts)} */}

@@ -23,6 +23,7 @@ import {
   loggedInPassword,
   setter,
   nameGetter,
+  validatePost,
 } from '../redux/LoggedInSlice'
 import axios from 'axios'
 import { ObjectId } from 'bson'
@@ -35,9 +36,9 @@ const MakePost = () => {
   const handleShow = () => setShow(true)
 
   const dispatch = useDispatch()
-
+  const LoggedInBool = useSelector(loggedInBool)
   const Setter = useSelector(setter)
-  const loggedInState = (state) => state.loggedIn.name
+  const loggedInState = (state) => state.loggedIn
   const message = (state) => state.loggedIn.message
   const statey = useSelector(loggedInState)
   const [userEmail, setUserEmail] = useState('')
@@ -47,7 +48,7 @@ const MakePost = () => {
   const [validated, setValidated] = useState(false)
   //const message = statey.message
   // const name = statey.name
-  console.log(loggedInState)
+  console.log(LoggedInBool)
   const clearBoth = () => {
     setUserEmail('')
     setUserPassword('')
@@ -77,7 +78,7 @@ const MakePost = () => {
     return userDetails
   }
 
-  const apiUrl = 'https://classycutzbackend.herokuapp.com/user'
+  const apiUrl = 'https://classycutzbackend.herokuapp.com/posts'
 
   //const apiUrl = 'http://localhost:3007/posts'
 
@@ -85,20 +86,24 @@ const MakePost = () => {
     this.forceUpdate()
   }
   const logIn = async (user) => {
-    try {
-      const res = await axios.post(`${apiUrl}`, user)
+    if (statey.email || statey.name || statey.gamertag || statey.username) {
+      try {
+        const res = await axios.post(`${apiUrl}`, user)
 
-      console.log(res.data)
+        console.log(res.data)
 
-      res.data
-        ? dispatch(setter(res.data))
-        : console.log('unable to run setter func')
+        res.data
+          ? dispatch(validatePost(res.data))
+          : console.log('unable to run setter func')
 
-      return res.data
-    } catch (err) {
-      return err
+        return res.data
+      } catch (err) {
+        return err
+      }
+      forceUpdateHandler()
+    } else {
+      console.log('unable to make post due to incorrect credentials')
     }
-    forceUpdateHandler()
   }
 
   return (
