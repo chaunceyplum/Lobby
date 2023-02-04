@@ -76,13 +76,14 @@ const RenderPostCard = (data, key) => {
             {data.data.post}
           </Typography>
         </CardContent>
-        <CardActions disableSpacing>
+        <CardActions>
           <IconButton
             aria-label='add to favorites'
             sx={{ bgcolor: brown[700] }}
           >
             <FavoriteIcon />
           </IconButton>
+          <br />
           <IconButton aria-label='share' sx={{ bgcolor: brown[700] }}>
             <ShareIcon />
           </IconButton>

@@ -46,28 +46,13 @@ export const LoggedInSlice = createSlice({
       },
     },
     setter: (state, action, data) => {
-      // return {
-      //   ...state,
-      //   LoggedIn: true,
-      //   user: user,
-      // }
-
-      // const auth = data.auth
-      // const email = data.email
-      // const name = data.name
-      // return {
-      //   ...state,
-      //   LoggedIn: true,
-      //   email: email,
-      //   name: name,
-      //   auth: auth,
-      // }
       return action.payload
     },
     validatePost: (state, action) => {
       state.message = action.payload.user.message
       return state.message
     },
+
     emailGetter: (state, action) => {
       //state.email = action.payload.email
       return state.email
