@@ -141,8 +141,8 @@ const MyNav = () => {
               <h1 className='text2'>(logo)Lobby</h1>
             </Navbar.Brand>
 
-            <Navbar.Toggle bg={'darkgrey'} />
-            <Navbar.Collapse>
+            <Navbar.Toggle bg={'#613333'} className='buttons1' />
+            <Navbar.Collapse className=''>
               <Nav
                 className='me-auto my-2 my-lg-0 text-center nav d-flex center'
                 style={{ maxHeight: '50%' }}
@@ -173,7 +173,11 @@ const MyNav = () => {
               <div>
                 {!statey.email ? (
                   <div>
-                    <Button variant='light' onClick={handleShow}>
+                    <Button
+                      variant='light'
+                      onClick={handleShow}
+                      className='buttons1'
+                    >
                       Sign Up
                     </Button>
 
@@ -345,14 +349,14 @@ const MyNav = () => {
                         <Container>
                           <Row>
                             <Col xs={12} lg={4}>
-                              <Button className=' btn btn-light'>
+                              <Button className=' btn btn-light buttons1'>
                                 <h6 className=''>{email}</h6>
                               </Button>
                             </Col>
                             <Col xs={0} />
                             <Col xs={12} lg={4}>
                               <Button
-                                className=' btn btn-light'
+                                className=' btn btn-light buttons1'
                                 onClick={() => signOutUser()}
                               >
                                 <h6 className=''>Sign Out</h6>

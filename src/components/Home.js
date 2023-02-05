@@ -37,7 +37,7 @@ const Home = () => {
             <Col xs={8}>
               <div className='text-center homeHeaderText'>
                 <h3 className='center  text2'>Find A Lobby</h3>
-                <Button variant='secondary' className='center1 '>
+                <Button variant='secondary' className='center1 buttons1'>
                   Learn More
                 </Button>
 

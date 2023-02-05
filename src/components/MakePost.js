@@ -48,7 +48,7 @@ const MakePost = () => {
   const [validated, setValidated] = useState(false)
   //const message = statey.message
   // const name = statey.name
-
+  //console.log(statey.likedBy.filter())
   const clearBoth = () => {
     setUserEmail('')
     setUserPassword('')

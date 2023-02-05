@@ -41,6 +41,21 @@ export const DataSlice = createSlice({
       state.message = action.payload.user.message
       return state.message
     },
+    submitLike: (state, action) => {
+      // if (state.likedBy.includes(state.username)) {
+      //   for (let i = 0; i < state.likedBy.length; i++) {
+      //     if (i == state.username) {
+      //       const index = state.likedBy.indexOf(state.username)
+      //       state.likedBy.splice(index, 1)
+      //       return state.likedBy
+      //     }
+      //   }
+      // } else {
+
+      const newState = state.likedBy.push(state.username)
+      return newState
+      //}
+    },
   },
   extraReducers(builder) {
     builder
@@ -62,6 +77,6 @@ export const selectAllPosts = (state) => state.posts
 export const getPostsStatus = (state) => state.posts.status
 export const getPostsError = (state) => state.posts.error
 export const { validatePost } = DataSlice.actions
-
+export const { submitLike } = DataSlice.actions
 export const { fetched } = DataSlice.actions
 export default DataSlice.reducer

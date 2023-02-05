@@ -53,7 +53,11 @@ const Contact = () => {
                     <FormLabel>Email</FormLabel>
                     <FormControl type='email' placeholder='Enter email Here' />
                   </FormGroup>
-                  <Button variant='secondary' type='submit'>
+                  <Button
+                    variant='secondary'
+                    type='submit'
+                    className='buttons1'
+                  >
                     Submit
                   </Button>
                   <br />

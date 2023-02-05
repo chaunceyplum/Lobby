@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 // import { Card } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { CardBody, CardSubtitle, CardText, CardTitle } from 'reactstrap'
@@ -19,11 +19,16 @@ import ShareIcon from '@mui/icons-material/Share'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
 
+import submitLike from '../redux/DataSlice'
+import { Dispatch } from 'redux'
+
 const RenderPostCard = (data, key) => {
+  const [liked, setLiked] = useState(true)
+
   return (
     <div className='center'>
       <br />
-
+      {console.table(data)}
       <Card sx={{ width: 345 }} className='offsetBackground'>
         <CardHeader
           avatar={
@@ -42,17 +47,19 @@ const RenderPostCard = (data, key) => {
 
         <CardContent>
           <Typography variant='h6' color='text-primary'>
-            {data.data.post}
+            {data.data.title}
           </Typography>
           <Typography variant='body2' color='text.secondary'>
             {data.data.post}
           </Typography>
+          <Typography>{data.data.likedBy}</Typography>
         </CardContent>
         <CardActions>
           <IconButton
             aria-label='add to favorites'
             sx={{ bgcolor: brown[700] }}
             className='buttons'
+            onClick={(e) => submitLike(e)}
           >
             <FavoriteIcon />
           </IconButton>

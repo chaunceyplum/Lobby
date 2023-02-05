@@ -171,7 +171,11 @@ const LogIn = () => {
               <FormGroup>
                 <br />
                 <br />
-                <Button variant='secondary' onClick={(e) => submitUser(e)}>
+                <Button
+                  variant='secondary'
+                  onClick={(e) => submitUser(e)}
+                  className='buttons1'
+                >
                   Submit
                 </Button>
               </FormGroup>
