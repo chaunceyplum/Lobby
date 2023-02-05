@@ -130,62 +130,6 @@ const MyNav = () => {
   //const fetcher = useSelector(fetcher)
   return (
     <div className=''>
-      {/* <Container>
-        <Navbar fixed='top' className='text-center navbarPositoning'>
-          <Col xs={6} lg={4}>
-            <NavbarBrand href='/' className='text-secondary'>
-              (logo)Lobby
-            </NavbarBrand>
-          </Col>
-          <NavbarToggler onClick={toggle} className='navbar-toggler' />
-
-          <Col
-            xs={0}
-            md={6}
-            lg={4}
-            className='text-center display-flex ms-auto'
-          >
-            {isOpen ? (
-              <div className='navlinks'>
-                <Nav className='ms-auto nav text-center '>
-                  <NavItem>
-                    <NavLink href='/'>Home</NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink href='/service'>Service</NavLink>
-                  </NavItem>
-                  {/* <NavItem>
-                    <NavLink href='/about'>About Us</NavLink>
-                  </NavItem> 
-                  <NavItem>
-                    <NavLink href='/contact'>Contact</NavLink>
-                  </NavItem>
-
-                  <NavItem>
-                    <NavLink href='/login'>Log In</NavLink>
-                  </NavItem>
-
-                  <NavItem>
-                    <NavLink>
-                      <SignUp />
-                    </NavLink>
-                  </NavItem>
-                </Nav>
-              </div>
-            ) : (
-              <div></div>
-            )}
-          </Col>
-
-          <Col xs={6} md={3} lg={4}>
-            <div>
-              <Button onClick={toggle} variant='outline-secondary'>
-                menu
-              </Button>
-            </div>
-          </Col>
-        </Navbar>
-      </Container> */}
       <Container>
         <Navbar
           expand='lg'
@@ -213,11 +157,6 @@ const MyNav = () => {
                     Service
                   </NavLink>
                 </NavItem>
-                {/* <NavItem>
-                  <NavLink className='NavLink' href='/about'>
-                    About Us
-                  </NavLink>
-                </NavItem> */}
 
                 <NavItem>
                   <NavLink className='NavLink text-white' href='/contact'>
@@ -232,14 +171,6 @@ const MyNav = () => {
                 </NavItem>
               </Nav>
               <div>
-                {/* {loggedInBoolean ? (
-                  <DisplayUser email={JSON.stringify(email)} />
-                ) : (
-                  //displayUser()
-                  //<SignUp />
-                  signUp()
-                )} */}
-
                 {!statey.email ? (
                   <div>
                     <Button variant='light' onClick={handleShow}>
@@ -312,15 +243,7 @@ const MyNav = () => {
                                     <FormLabel>
                                       <h1>Console</h1>
                                     </FormLabel>
-                                    {/* <FormControl
-                                    onChange={(e) =>
-                                      setUserConsole(e.target.value)
-                                    }
-                                    type='radio'
-                                    placeholder='Type Password Here'
-                                    required
-                                    isvalid='false'
-                                  /> */}
+
                                     <br />
 
                                     <select
@@ -405,35 +328,12 @@ const MyNav = () => {
                                       </Row>
                                     </Container>
                                   </FormGroup>
-                                  {/* <FormGroup>
-                        <Container>
-                          <Row>
-                            <Col xs={1} />
-                            <Col xs={4} className='text-center'>
-                              <Button type='cancel'>Clear</Button>
-                            </Col>
-                            <Col xs={2} />
-                            <Col xs={4} className='text-center'>
-                              <Button type='Submit'>Submit</Button>
-                            </Col>
-                            <Col xs={1} />
-                          </Row>
-                        </Container>
-                      </FormGroup> */}
                                 </Form>
                               </Col>
                               <Col />
                             </Row>
                           </Container>
                         </ModalBody>
-                        {/* <ModalFooter className='homeBackground'>
-                          {/* {user
-                ? (state, action) => {
-                    Setter(state, action, user)
-                    console.log(user)
-                  }
-                : console.log('user state is empty')} 
-                        </ModalFooter> */}
                       </div>
                     </Modal>
                   </div>
@@ -442,7 +342,6 @@ const MyNav = () => {
                   <Container>
                     <Row>
                       <Col>
-                        {/* <a href='#'> */}
                         <Container>
                           <Row>
                             <Col xs={12} lg={4}>
@@ -461,7 +360,6 @@ const MyNav = () => {
                             </Col>
                           </Row>
                         </Container>
-                        {/* </a> */}
                       </Col>
                     </Row>
                   </Container>

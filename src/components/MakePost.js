@@ -23,8 +23,8 @@ import {
   loggedInPassword,
   setter,
   nameGetter,
-  validatePost,
 } from '../redux/LoggedInSlice'
+import validatePost from '../redux/DataSlice'
 import axios from 'axios'
 import { ObjectId } from 'bson'
 //import mongoose from 'mongoose'
@@ -48,7 +48,7 @@ const MakePost = () => {
   const [validated, setValidated] = useState(false)
   //const message = statey.message
   // const name = statey.name
-  console.log(LoggedInBool)
+
   const clearBoth = () => {
     setUserEmail('')
     setUserPassword('')
@@ -74,13 +74,14 @@ const MakePost = () => {
     setValidated(true)
     // console.log(userDetails)
     logIn(userDetails)
+    //validatePost(userDetails)
 
     return userDetails
   }
 
-  const apiUrl = 'https://classycutzbackend.herokuapp.com/posts'
+  //const apiUrl = 'https://classycutzbackend.herokuapp.com/posts'
 
-  //const apiUrl = 'http://localhost:3007/posts'
+  const apiUrl = 'http://localhost:3007/posts'
 
   const forceUpdateHandler = () => {
     this.forceUpdate()
@@ -107,25 +108,15 @@ const MakePost = () => {
   }
 
   return (
-    <div className=' '>
+    <div className=' offsetBackground roundedCorners'>
       <Container className=' '>
         <Row>
           <Col />
           <Col xs={10}>
             <Form noValidate validated={validated}>
               <FormGroup className='text-center'>
-                {/* <FormLabel>
-                  {/* {statey.loggedIn ? (
-                    <h3>Welcome back {name}</h3>
-                  ) : (
-                    console.log(statey)
-                  )} 
-                </FormLabel> */}
-
-                {/* {statey.message ? setValidated(true) : <div></div>} */}
-
                 <FormLabel>
-                  <h1>Title</h1>
+                  <h1 className='makePostFormTextPadding'>Title</h1>
                 </FormLabel>
                 <FormControl
                   onChange={(e) => setUserTitle(e.target.value)}
@@ -138,16 +129,15 @@ const MakePost = () => {
                   Please provide a valid Title.
                 </Form.Control.Feedback>
               </FormGroup>
-              <br />
-              <br />
 
               <FormGroup className='text-center'>
                 <FormLabel>
-                  <h1>Post</h1>
+                  <h1 className='makePostFormTextPadding'>Post</h1>
                 </FormLabel>
                 <FormControl
                   onChange={(e) => setUserPost(e.target.value)}
-                  type='textarea'
+                  as='textarea'
+                  rows={3}
                   placeholder='Type Post Here'
                   required
                 />
@@ -159,9 +149,15 @@ const MakePost = () => {
               <FormGroup>
                 <br />
                 <br />
-                <Button variant='secondary' onClick={(e) => submitUser(e)}>
-                  Submit
-                </Button>
+                <div className='center'>
+                  <Button
+                    className='buttons'
+                    variant='secondary'
+                    onClick={(e) => submitUser(e)}
+                  >
+                    Submit
+                  </Button>
+                </div>
               </FormGroup>
               <br />
               <br />
@@ -169,17 +165,10 @@ const MakePost = () => {
           </Col>
           <Col />
         </Row>
-        <Row>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-        </Row>
+        <Row></Row>
       </Container>
+      <br />
+      <br />
     </div>
   )
 }

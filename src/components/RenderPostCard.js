@@ -20,39 +20,11 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
 
 const RenderPostCard = (data, key) => {
-  // const data = useSelector((state) => state.posts)
-  const firstName = data.data.name
-  // const firstLetterOfName = firstName.charAt(1)
-
   return (
-    <div>
+    <div className='center'>
       <br />
-      {/* <Card>
-        <CardContent>
-          <CardHeader>
-            <h1>{data.data.gamertag}</h1>
 
-            <CardSubtitle>
-              <h4>{data.data.console}</h4>
-              <h4>{data.data.timePosted}</h4>
-            </CardSubtitle>
-          </CardHeader>
-          <CardBody>
-            <CardText>
-              {data.data.likedBy.length ? (
-                <h3>{`this post was liked by${data.data.likedBy[0]}, ${data.data.likedBy[1]}, ...`}</h3>
-              ) : (
-                <h3>Be the first to like tthe post</h3>
-              )}
-            </CardText>
-
-            <h6>{`Post Id:${data.data.id}`}</h6>
-            <h6>{data.data.post}</h6>
-          </CardBody>
-        </CardContent>
-      </Card> */}
-
-      <Card sx={{ maxWidth: 345 }} className='offsetBackground'>
+      <Card sx={{ width: 345 }} className='offsetBackground'>
         <CardHeader
           avatar={
             <Avatar sx={{ bgcolor: brown[700] }} aria-label=''>
@@ -60,7 +32,7 @@ const RenderPostCard = (data, key) => {
             </Avatar>
           }
           action={
-            <IconButton aria-label='settings'>
+            <IconButton aria-label='settings' className='buttons'>
               <MoreVertIcon />
             </IconButton>
           }
@@ -80,11 +52,16 @@ const RenderPostCard = (data, key) => {
           <IconButton
             aria-label='add to favorites'
             sx={{ bgcolor: brown[700] }}
+            className='buttons'
           >
             <FavoriteIcon />
           </IconButton>
           <br />
-          <IconButton aria-label='share' sx={{ bgcolor: brown[700] }}>
+          <IconButton
+            aria-label='share'
+            sx={{ bgcolor: brown[700] }}
+            className='buttons'
+          >
             <ShareIcon />
           </IconButton>
         </CardActions>

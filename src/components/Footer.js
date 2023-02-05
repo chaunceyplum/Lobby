@@ -16,7 +16,7 @@ const Footer = () => {
         <Container>
           <Row>
             <NavbarBrand>
-              <h1 className=' text-center text1'>Lobby</h1>
+              <h1 className=' text-center '>Lobby</h1>
             </NavbarBrand>
           </Row>
 

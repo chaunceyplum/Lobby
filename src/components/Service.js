@@ -40,14 +40,6 @@ const Service = () => {
           <Col>
             <div className='text-center'>
               <h3 className='center homeHeaderText text2'>Services</h3>
-
-              {/* <Button
-                onClick={handleShow}
-                className='center1'
-                variant='secondary'
-              >
-                Learn More
-              </Button> */}
             </div>
 
             <div>
@@ -60,9 +52,6 @@ const Service = () => {
             <div>Content</div>
           ) : (
             <div className='center1'>
-              {/* <Button onClick={handleShow} className='center1'>
-                            Learn More
-                        </Button> */}
               <div>
                 <br />
 
@@ -82,17 +71,19 @@ const Service = () => {
           <Col xs={12} md={6}>
             <div>
               <Container>
-                {/* {console.log(posts)} */}
-                {/* {posts.map(i => {
-            <RenderServiceCard data={i} />
-          })} */}
-
-                {posts.posts.map((x, i) => {
-                  console.log(x)
-                  return <RenderPostCard data={x} key={i} />
-                })}
-
-                {console.log(posts.posts)}
+                <div className='center'>
+                  {posts.posts
+                    ? posts.posts.map((x, i) => {
+                        return (
+                          <div className='center1' key={i} data={x}>
+                            <RenderPostCard data={x} key={i} />
+                          </div>
+                        )
+                      })
+                    : () => {
+                        return <h1>No posts</h1>
+                      }}
+                </div>
               </Container>
             </div>
           </Col>

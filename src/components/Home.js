@@ -1,27 +1,42 @@
 import React from 'react'
-import { Button, Card, CardImg, Col, Container, Row } from 'react-bootstrap'
+import { Button, CardImg, Col, Container, Row } from 'react-bootstrap'
 import Counter from './Counter'
 
-import comp from '../Images/comp.png'
-import {
-  CardBody,
-  CardFooter,
-  CardHeader,
-  CardSubtitle,
-  CardText,
-  CardTitle,
-} from 'reactstrap'
+import comp from '../Images/comp.svg'
+// import {
+//   CardBody,
+//   CardFooter,
+//   CardHeader,
+//   CardSubtitle,
+//   CardText,
+//   CardTitle,
+// } from 'reactstrap'
+import Box from '@mui/material/Box'
+import Card from '@mui/material/Card'
+import CardHeader from '@mui/material/CardHeader'
+import CardMedia from '@mui/material/CardMedia'
+import CardContent from '@mui/material/CardContent'
+import CardActions from '@mui/material/CardActions'
+import Collapse from '@mui/material/Collapse'
+import Avatar from '@mui/material/Avatar'
+import IconButton from '@mui/material/IconButton'
+import Typography from '@mui/material/Typography'
+import { brown, red } from '@mui/material/colors'
+import FavoriteIcon from '@mui/icons-material/Favorite'
+import ShareIcon from '@mui/icons-material/Share'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import MoreVertIcon from '@mui/icons-material/MoreVert'
 
 const Home = () => {
   return (
-    <div style={{ 'background-color': '#613333 !important;' }}>
+    <div className='homeBackground'>
       <div class='homeBackground'>
         <Container>
           <Row className='changesss'>
             <Col xs={2} />
             <Col xs={8}>
-              <div className='text-center'>
-                <h3 className='center homeHeaderText text2'>Find A Lobby</h3>
+              <div className='text-center homeHeaderText'>
+                <h3 className='center  text2'>Find A Lobby</h3>
                 <Button variant='secondary' className='center1 '>
                   Learn More
                 </Button>
@@ -40,7 +55,7 @@ const Home = () => {
             <Container>
               <Row>
                 <div className='text2'>
-                  <h1 className='center text-center headerPadding'>
+                  <h1 className='center text-center headerPadding1'>
                     some text
                   </h1>
 
@@ -66,26 +81,36 @@ const Home = () => {
             </Container>
           </div>
           <div className='changesss'>
-            <Container className=''>
+            <Container className='homeCard'>
               <Row>
-                <Col xs={10} sm={8} md={4} className=' center1'>
+                <Col xs={12} sm={10} md={8} className=' center1'>
                   {/* <h6 className='center text-center '>Lobby</h6> */}
-                  <img
-                    src={comp}
-                    alt=''
-                    className=''
+                  <div
                     style={{
-                      width: '100%',
+                      // width: '350px',
+                      // height: '350px',
+                      justtifyContent: 'center',
                       display: 'flex',
-                      justifyContent: 'center',
-                      size: '2em',
                     }}
-                  />
+                  >
+                    <img
+                      src={comp}
+                      alt=''
+                      className=''
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        //size: '2em',
+                      }}
+                    />
+                  </div>
                 </Col>
-                <Col md={2} />
+                {/* <Col md={2} /> */}
                 <Col
-                  xs={10}
-                  sm={8}
+                  xs={12}
+                  sm={10}
                   md={4}
                   className='textPadding center1 text-center '
                   // style={{ margin: '0 auto;' }}
@@ -112,51 +137,92 @@ const Home = () => {
           <div className='changesss'>
             <Container>
               <Row className=''>
-                <Col xs={4} className='text-center center'>
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>Playstation</CardTitle>
-                      <CardSubtitle>PS4 & PS5</CardSubtitle>
-                    </CardHeader>
-                    <CardBody>
+                <Col xs={12} md={4} className='text-center center'>
+                  <br />
+                  <Card
+                    sx={{ maxWidth: 600, height: 500 }}
+                    className='offsetBackground'
+                  >
+                    <CardHeader title='Playstation' subheader='PS4 & PS5' />
+                    <CardContent>
                       <CardImg></CardImg>
-                    </CardBody>
-                    <CardFooter>
-                      <CardText>blah blah blah</CardText>
-                    </CardFooter>
+
+                      <Typography variant='body2' color='text.secondary'>
+                        A platform gamers can use to find other gamers to play
+                        with.Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit. In nec vestibulum felis, at ultrices dui.
+                        Suspendisse a consequat neque. Nam tortor nisi, lacinia
+                        ut urna ut, dignissim molestie ipsum. Vivamus bibendum
+                        odio elementum, convallis felis non, condimentum ligula.
+                        Vestibulum nisl augue, tincidunt molestie maximus sit
+                        amet, blandit sit amet neque.
+                      </Typography>
+                    </CardContent>
                   </Card>
                 </Col>
-                <Col xs={4} className='text-center center'>
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>Xbox</CardTitle>
-                      <CardSubtitle>Xbox One & Xbox series X|S</CardSubtitle>
-                    </CardHeader>
-                    <CardBody>
+                <br />
+                <Col xs={12} md={4} className='text-center center'>
+                  <br />
+                  <Card
+                    sx={{ maxWidth: 600, height: 500 }}
+                    className='offsetBackground'
+                  >
+                    <CardHeader title='Xbox' subheader='Xbox One & Xbox X|S' />
+                    <CardContent>
                       <CardImg></CardImg>
-                    </CardBody>
-                    <CardFooter>
-                      <CardText>blah blah blah</CardText>
-                    </CardFooter>
+
+                      <Typography variant='body2' color='text.secondary'>
+                        A platform gamers can use to find other gamers to play
+                        with.Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit. In nec vestibulum felis, at ultrices dui.
+                        Suspendisse a consequat neque. Nam tortor nisi, lacinia
+                        ut urna ut, dignissim molestie ipsum. Vivamus bibendum
+                        odio elementum, convallis felis non, condimentum ligula.
+                        Vestibulum nisl augue, tincidunt molestie maximus sit
+                        amet, blandit sit amet neque.
+                      </Typography>
+                    </CardContent>
                   </Card>
                 </Col>
-                <Col xs={4} className='text-center center'>
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>PC</CardTitle>
-                      {/* <CardSubtitle>PS4 & PS5</CardSubtitle> */}
-                    </CardHeader>
-                    <CardBody>
+                <br />
+                <Col xs={12} md={4} className='text-center center'>
+                  <br />
+                  <Card
+                    sx={{ maxWidth: 600, height: 500 }}
+                    className='offsetBackground '
+                  >
+                    <CardHeader title='PC' />
+                    <CardContent>
                       <CardImg></CardImg>
-                    </CardBody>
-                    <CardFooter>
-                      <CardText>blah blah blah</CardText>
-                    </CardFooter>
+
+                      <Typography variant='body2' color='text.secondary'>
+                        A platform gamers can use to find other gamers to play
+                        with.Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit. In nec vestibulum felis, at ultrices dui.
+                        Suspendisse a consequat neque. Nam tortor nisi, lacinia
+                        ut urna ut, dignissim molestie ipsum. Vivamus bibendum
+                        odio elementum, convallis felis non, condimentum ligula.
+                        Vestibulum nisl augue, tincidunt molestie maximus sit
+                        amet, blandit sit amet neque.
+                      </Typography>
+                    </CardContent>
                   </Card>
                 </Col>
               </Row>
             </Container>
           </div>
+          <br />
+          {/* <div className='changess'>
+            <Container>
+              <Row>
+                <Col />
+
+                <Col />
+
+                <Col />
+              </Row>
+            </Container>
+          </div> */}
         </div>
 
         <br />
@@ -166,12 +232,6 @@ const Home = () => {
         <br />
         <br />
         <br />
-
-        <Row>
-          <Col>
-            <Counter />
-          </Col>
-        </Row>
       </div>
     </div>
   )

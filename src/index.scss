@@ -15,6 +15,9 @@ button {
   background-color: #42708f !important;
   color: #f9ba7d !important;
 }
+.roundedCorners {
+  border-radius: 25px;
+}
 .thirdBackground {
   background-color: $thirdBackground;
 }
@@ -27,7 +30,7 @@ button {
   color: #613333 !important;
 }
 .buttons {
-  background-color: #42708f !important;
+  background-color: $primaryBackground !important;
   color: #f9ba7d !important;
 }
 .center {
@@ -42,7 +45,8 @@ button {
 }
 .center1 {
   display: flex;
-  margin: auto auto !important;
+  margin: 0 auto !important;
+  justify-content: center !important;
 }
 .container {
   display: block;
@@ -61,6 +65,11 @@ button {
   padding-top: 10vh;
   padding-bottom: 10vh;
   font-size: 6rem;
+}
+.headerPadding1 {
+  padding-top: 15vh;
+  padding-bottom: 15vh;
+  font-size: 4rem;
 }
 .textPadding {
   padding-top: 10vh;
@@ -111,6 +120,9 @@ button {
   opacity: 90%;
   border-radius: 25px;
 }
+.homeCard {
+  padding-bottom: 5vh;
+}
 //NavBAr
 .navbarPositoning {
   max-height: 75% !important;
@@ -149,6 +161,13 @@ button {
 .content {
   height: 100% !important;
   width: 100% !important;
+}
+//Make Post
+
+.makePostFormTextPadding {
+  padding-top: 5vh;
+
+  font-size: 3rem;
 }
 //font
 @font-face {

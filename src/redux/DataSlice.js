@@ -9,8 +9,8 @@ const initialState = {
 }
 
 //const apiUrl = 'https://jsonplaceholder.typicode.com/posts'
-const apiUrl = 'https://classycutzbackend.herokuapp.com/posts'
-
+//const apiUrl = 'https://classycutzbackend.herokuapp.com/posts'
+const apiUrl = 'http://localhost:3007/posts'
 export const fetchPosts = createAsyncThunk('fetchedRecipients/', async () => {
   try {
     const res = await axios.get(apiUrl)
@@ -29,9 +29,17 @@ export const DataSlice = createSlice({
   initialState: initialState,
   reducers: {
     fetched: {
+      // reducer(state, action) {
+      //   state.posts.push(action.payload)
+      // },
       reducer(state, action) {
-        state.posts.push(action.payload)
+        state.posts = action.payload.posts.posts
+        return state.posts
       },
+    },
+    validatePost: (state, action) => {
+      state.message = action.payload.user.message
+      return state.message
     },
   },
   extraReducers(builder) {
@@ -53,6 +61,7 @@ export const DataSlice = createSlice({
 export const selectAllPosts = (state) => state.posts
 export const getPostsStatus = (state) => state.posts.status
 export const getPostsError = (state) => state.posts.error
+export const { validatePost } = DataSlice.actions
 
 export const { fetched } = DataSlice.actions
 export default DataSlice.reducer
