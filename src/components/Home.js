@@ -223,6 +223,16 @@ const Home = () => {
               </Row>
             </Container>
           </div> */}
+
+          <div className='changess'>
+            <Container>
+              <Row>
+                <Col>new element</Col>
+                <Col>new element</Col>
+                <Col>new element</Col>
+              </Row>
+            </Container>
+          </div>
         </div>
 
         <br />
