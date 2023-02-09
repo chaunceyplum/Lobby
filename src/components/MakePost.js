@@ -79,9 +79,9 @@ const MakePost = () => {
     return userDetails
   }
 
-  //const apiUrl = 'https://classycutzbackend.herokuapp.com/posts'
+  const apiUrl = 'https://classycutzbackend.herokuapp.com/posts'
 
-  const apiUrl = 'http://localhost:3007/posts'
+  //const apiUrl = 'http://localhost:3007/posts'
 
   const forceUpdateHandler = () => {
     this.forceUpdate()

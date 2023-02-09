@@ -9,8 +9,8 @@ const initialState = {
 }
 
 //const apiUrl = 'https://jsonplaceholder.typicode.com/posts'
-//const apiUrl = 'https://classycutzbackend.herokuapp.com/posts'
-const apiUrl = 'http://localhost:3007/posts'
+const apiUrl = 'https://classycutzbackend.herokuapp.com/posts'
+//const apiUrl = 'http://localhost:3007/posts'
 export const fetchPosts = createAsyncThunk('fetchedRecipients/', async () => {
   try {
     const res = await axios.get(apiUrl)
