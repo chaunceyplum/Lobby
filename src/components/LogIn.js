@@ -132,6 +132,8 @@ const LogIn = () => {
                   ) : (
                     console.log(statey)
                   )}
+
+                  {statey.message ? (<h3>{statey.message}</h3>): (<div></div>)}
                 </FormLabel>
 
                 {statey.message ? setValidated(false) : <div></div>}
