@@ -43,6 +43,7 @@ const SignUp = () => {
   const loggedInState = (state) => state.loggedIn.name
   const statey = useSelector(loggedInState)
   const email = statey.email
+  console.log(email)
   const loggedInBoolean = statey.LoggedIn
   const [validated, setValidated] = useState(false)
   const submitUser = (event) => {

@@ -36,13 +36,15 @@ const LogIn = () => {
 
   const Setter = useSelector(setter)
   const loggedInState = (state) => state.loggedIn.name
-  const message = (state) => state.loggedIn.message
+  const message = useSelector((state) => state.loggedIn.message)
   const statey = useSelector(loggedInState)
   const [userEmail, setUserEmail] = useState('')
   const [userPassword, setUserPassword] = useState('')
   const [validated, setValidated] = useState(false)
   //const message = statey.message
   const name = statey.name
+  //const message = statey.message
+ console.log(message)
   const clearBoth = () => {
     setUserEmail('')
     setUserPassword('')
@@ -127,13 +129,13 @@ const LogIn = () => {
             <Form noValidate validated={validated}>
               <FormGroup className='text-center'>
                 <FormLabel>
-                  {statey.loggedIn ? (
-                    <h3>Welcome back {name}</h3>
+                  {statey ? (
+                    <h3>Welcome back {statey}</h3>
                   ) : (
                     console.log(statey)
                   )}
 
-                  {statey.message ? (<h3>{statey.message}</h3>): (<div></div>)}
+                  {message ? (<div>{message}<h3>{statey.message}</h3></div>): (<div>{console.log(message)}</div>)}
                 </FormLabel>
 
                 {statey.message ? setValidated(false) : <div></div>}
