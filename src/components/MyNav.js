@@ -138,7 +138,7 @@ const MyNav = () => {
         >
           <Container>
             <Navbar.Brand href='/' className=''>
-              <h1 className='text2'>(logo)Lobby</h1>
+              <h1 className='text2 NavLink'><strong>(logo)Lobby</strong></h1>
             </Navbar.Brand>
 
             <Navbar.Toggle bg={'#613333'} className='buttons1' />
@@ -148,25 +148,35 @@ const MyNav = () => {
                 style={{ maxHeight: '50%' }}
               >
                 <NavItem>
-                  <NavLink className='NavLink text-white' href='/'>
+                  <NavLink className='NavLink ' href='/'>
+                    <strong>
                     Home
+                    </strong>
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink className='NavLink text-white' href='/service'>
+                  <NavLink className='NavLink ' href='/service'>
+                    
+                    <strong>
                     Service
+                    </strong>
                   </NavLink>
                 </NavItem>
 
                 <NavItem>
-                  <NavLink className='NavLink text-white' href='/contact'>
+                  <NavLink className='NavLink ' href='/contact'>
+                    
+                    <strong>
                     Contact
+                    </strong>
                   </NavLink>
                 </NavItem>
 
                 <NavItem>
-                  <NavLink className='NavLink text-white' href='/login'>
+                  <NavLink className='NavLink ' href='/login'>
+                    <strong>
                     Log In
+                    </strong>
                   </NavLink>
                 </NavItem>
               </Nav>
@@ -174,7 +184,7 @@ const MyNav = () => {
                 {!statey.email ? (
                   <div>
                     <Button
-                      variant='light'
+                      variant=''
                       onClick={handleShow}
                       className='buttons1'
                     >
@@ -315,16 +325,18 @@ const MyNav = () => {
                                       <Row>
                                         <Col>
                                           <Button
-                                            variant='secondary'
+                                            variant=''
                                             onClick={handleClose}
+                                            className='buttons1'
                                           >
                                             Close
                                           </Button>
                                         </Col>
                                         <Col>
                                           <Button
-                                            variant='primary'
+                                            variant=''
                                             onClick={submitUser}
+                                            className='buttons1'
                                           >
                                             Save Changes
                                           </Button>

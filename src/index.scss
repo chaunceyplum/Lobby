@@ -139,14 +139,14 @@ button {
   opacity: 100% !important;
   z-index: 100 !important;
 }
-.navlinks {
-  height: fit-content;
-  color: $textColor1 !important;
-  -webkit-text-stroke: 3px $textColor2 !important;
-}
+// .navlinks {
+//   height: fit-content;
+//   color: $textColor2 !important;
+//   -webkit-text-stroke: 3px $primaryBackground !important;
+// }
 .NavLink {
-  color: $textColor1 !important;
-  -webkit-text-stroke: 2px $textColor2 !important;
+  color: $textColor2 !important;
+  -webkit-text-stroke: 1px $primaryBackground !important;
 }
 //Contact
 .formMargin {

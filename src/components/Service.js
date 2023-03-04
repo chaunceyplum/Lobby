@@ -47,19 +47,7 @@ const Service = () => {
             </div>
           </Col>
         </Row>
-        <Row>
-          {show ? (
-            <div>Content</div>
-          ) : (
-            <div className='center1'>
-              <div>
-                <br />
 
-                <br />
-              </div>
-            </div>
-          )}
-        </Row>
         <Row>
           <Col xs={12} md={6}>
             <div>

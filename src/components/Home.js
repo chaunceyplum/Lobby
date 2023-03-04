@@ -32,8 +32,8 @@ const Home = () => {
   return (
     <div className='homeBackground'>
       <div className='homeBackground'>
-        <Parallax pages={6} className='homeBackground'>
-          <ParallaxLayer speed={2.5} offset={0}>
+        <Parallax pages={6} className='homeBackground' horizontal>
+          <ParallaxLayer speed={1} offset={0} horizontal>
             <Container>
               <Row className='changesss'>
                 <Col xs={2} />
@@ -54,7 +54,7 @@ const Home = () => {
               </Row>
             </Container>
           </ParallaxLayer>
-          <ParallaxLayer speed={2.5} offset={1}>
+          <ParallaxLayer speed={1} offset={1} horizontal>
             <div className='changesss'>
               <Container>
                 <Row>
@@ -85,7 +85,7 @@ const Home = () => {
               </Container>
             </div>
           </ParallaxLayer>
-          <ParallaxLayer speed={2.5} offset={2}>
+          <ParallaxLayer speed={1} offset={2} horizontal>
             <div className='changesss'>
               <Container className='homeCard'>
                 <Row>
@@ -139,7 +139,7 @@ const Home = () => {
             </div>
           </ParallaxLayer>
 
-          <ParallaxLayer speed={2.5} offset={3}>
+          <ParallaxLayer speed={1} offset={3} horizontal>
             <div className='changesss'>
               <Container>
                 <Row className=''>
@@ -223,7 +223,7 @@ const Home = () => {
             <br />
           </ParallaxLayer>
 
-          <ParallaxLayer speed={2.5} offset={4}>
+          <ParallaxLayer speed={1} offset={4} horizontal>
             <div className='changess'>
               <Container>
                 <Row>
@@ -235,7 +235,7 @@ const Home = () => {
             </div>
           </ParallaxLayer>
 
-          <ParallaxLayer speed={2.5} offset={5.5}>
+          <ParallaxLayer speed={1} offset={5.5} >
             {/* <div className='changess'> */}
               
                 <Footer fixed='bottom' />
