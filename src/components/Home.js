@@ -26,14 +26,14 @@ import FavoriteIcon from '@mui/icons-material/Favorite'
 import ShareIcon from '@mui/icons-material/Share'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
-import { animated, useSpring, useScroll } from '@react-spring/web'
+import { animated, useSpring } from '@react-spring/web'
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 const Home = () => {
   return (
     <div className='homeBackground'>
       <div className='homeBackground'>
-        <Parallax pages={6} className='homeBackground' horizontal>
-          <ParallaxLayer speed={1} offset={0} horizontal>
+        <Parallax pages={6} className='homeBackground' >
+          <ParallaxLayer speed={1} offset={0} >
             <Container>
               <Row className='changesss'>
                 <Col xs={2} />
@@ -54,7 +54,7 @@ const Home = () => {
               </Row>
             </Container>
           </ParallaxLayer>
-          <ParallaxLayer speed={1} offset={1} horizontal>
+          <ParallaxLayer speed={1} offset={1} >
             <div className='changesss'>
               <Container>
                 <Row>
@@ -85,7 +85,7 @@ const Home = () => {
               </Container>
             </div>
           </ParallaxLayer>
-          <ParallaxLayer speed={1} offset={2} horizontal>
+          <ParallaxLayer speed={1} offset={2} >
             <div className='changesss'>
               <Container className='homeCard'>
                 <Row>
@@ -139,9 +139,9 @@ const Home = () => {
             </div>
           </ParallaxLayer>
 
-          <ParallaxLayer speed={1} offset={3} horizontal>
+          <ParallaxLayer speed={1} offset={3} >
             <div className='changesss'>
-              <Container>
+              <Container className=''>
                 <Row className=''>
                   <Col xs={12} md={4} className='text-center center'>
                     <br />
@@ -223,7 +223,7 @@ const Home = () => {
             <br />
           </ParallaxLayer>
 
-          <ParallaxLayer speed={1} offset={4} horizontal>
+          <ParallaxLayer speed={1} offset={4} >
             <div className='changess'>
               <Container>
                 <Row>
