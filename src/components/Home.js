@@ -32,8 +32,8 @@ const Home = () => {
   return (
     <div className='homeBackground'>
       <div className='homeBackground'>
-        <Parallax pages={6} className='homeBackground' >
-          <ParallaxLayer speed={1} offset={0} >
+        {/* <Parallax pages={6} className='homeBackground' >
+          <ParallaxLayer speed={1} offset={0} > */}
             <div className="pageLayout">
             <Container>
               <Row>
@@ -55,8 +55,8 @@ const Home = () => {
               </Row>
             </Container>
             </div>
-          </ParallaxLayer>
-          <ParallaxLayer speed={1} offset={1} >
+          {/* </ParallaxLayer>
+          <ParallaxLayer speed={1} offset={1} > */}
             <div className='PageLayout'>
               <Container>
                 <Row>
@@ -81,8 +81,8 @@ const Home = () => {
                 </Row>
               </Container>
             </div>
-          </ParallaxLayer>
-          <ParallaxLayer speed={1} offset={2} >
+          {/* </ParallaxLayer>
+          <ParallaxLayer speed={1} offset={2} > */}
             <div className='PageLayout'>
               <Container className='homeCard'>
                 <Row>
@@ -134,9 +134,9 @@ const Home = () => {
                 </Row>
               </Container>
             </div>
-          </ParallaxLayer>
+          {/* </ParallaxLayer>
 
-          <ParallaxLayer speed={1} offset={3} >
+          <ParallaxLayer speed={1} offset={3} > */}
             <div className='PageLayout'>
               <Container className=''>
                 <Row className=''>
@@ -218,7 +218,7 @@ const Home = () => {
               </Container>
             </div>
             <br />
-          </ParallaxLayer>
+          {/* </ParallaxLayer>
 
           {/* <ParallaxLayer speed={1} offset={4} >
             <div className='changess'>
@@ -230,16 +230,16 @@ const Home = () => {
                 </Row>
               </Container>
             </div>
-          </ParallaxLayer> */}
+          </ParallaxLayer> 
 
-          <ParallaxLayer speed={1} offset={5.5} >
+          <ParallaxLayer speed={1} offset={5.5} > */}
             {/* <div className='changess'> */}
               
                 <Footer fixed='bottom' />
               
             {/* </div> */}
-          </ParallaxLayer>
-        </Parallax>
+          {/* </ParallaxLayer>
+        </Parallax> */}
 
        
       </div>
