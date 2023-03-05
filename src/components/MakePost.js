@@ -112,7 +112,7 @@ const MakePost = () => {
       <Container className=' '>
         <Row>
           <Col />
-          <Col xs={10}>
+          <Col xs={12} md={8}>
             <Form noValidate validated={validated}>
               <FormGroup className='text-center'>
                 <FormLabel>
@@ -149,9 +149,9 @@ const MakePost = () => {
               <FormGroup>
                 <br />
                 <br />
-                <div className='center'>
+                <div className='center1'>
                   <Button
-                    className='buttons'
+                    className='buttons center'
                     variant='secondary'
                     onClick={(e) => submitUser(e)}
                   >

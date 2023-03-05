@@ -51,8 +51,12 @@ export const DataSlice = createSlice({
       //     }
       //   }
       // } else {
+      //state.posts = action.payload.likedBy.push(state.username)
 
-      const newState = state.likedBy.push(state.username)
+      const newState = state
+
+      newState.posts.push(state.username)
+
       return newState
       //}
     },

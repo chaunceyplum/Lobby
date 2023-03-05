@@ -34,8 +34,9 @@ const Home = () => {
       <div className='homeBackground'>
         <Parallax pages={6} className='homeBackground' >
           <ParallaxLayer speed={1} offset={0} >
+            <div className="pageLayout">
             <Container>
-              <Row className='changesss'>
+              <Row>
                 <Col xs={2} />
                 <Col xs={8}>
                   <div className='text-center homeHeaderText'>
@@ -53,9 +54,10 @@ const Home = () => {
                 <Col xs={2} />
               </Row>
             </Container>
+            </div>
           </ParallaxLayer>
           <ParallaxLayer speed={1} offset={1} >
-            <div className='changesss'>
+            <div className='PageLayout'>
               <Container>
                 <Row>
                   <div className='text2'>
@@ -86,7 +88,7 @@ const Home = () => {
             </div>
           </ParallaxLayer>
           <ParallaxLayer speed={1} offset={2} >
-            <div className='changesss'>
+            <div className='PageLayout'>
               <Container className='homeCard'>
                 <Row>
                   <Col xs={12} sm={10} md={8} className=' center1'>
@@ -140,7 +142,7 @@ const Home = () => {
           </ParallaxLayer>
 
           <ParallaxLayer speed={1} offset={3} >
-            <div className='changesss'>
+            <div className='PageLayout'>
               <Container className=''>
                 <Row className=''>
                   <Col xs={12} md={4} className='text-center center'>
@@ -223,7 +225,7 @@ const Home = () => {
             <br />
           </ParallaxLayer>
 
-          <ParallaxLayer speed={1} offset={4} >
+          {/* <ParallaxLayer speed={1} offset={4} >
             <div className='changess'>
               <Container>
                 <Row>
@@ -233,7 +235,7 @@ const Home = () => {
                 </Row>
               </Container>
             </div>
-          </ParallaxLayer>
+          </ParallaxLayer> */}
 
           <ParallaxLayer speed={1} offset={5.5} >
             {/* <div className='changess'> */}

@@ -25,6 +25,8 @@ import {
   signOut,
 } from '../redux/LoggedInSlice'
 import axios from 'axios'
+import Footer from './Footer'
+
 const SignUp = () => {
   const [show, setShow] = useState(false)
 
@@ -282,6 +284,7 @@ const SignUp = () => {
           </Row>
         </Container>
       )}
+      <Footer />
     </div>
   )
 }

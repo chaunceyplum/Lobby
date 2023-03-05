@@ -15,6 +15,8 @@ import RenderServiceCard from './RenderServiceCard'
 import contact from '../Images/writing.jpg'
 import RenderPostCard from './RenderPostCard'
 import MakePost from './MakePost'
+import Footer from './Footer'
+
 
 const Service = () => {
   const dispatch = useDispatch()
@@ -49,14 +51,14 @@ const Service = () => {
         </Row>
 
         <Row>
-          <Col xs={12} md={6}>
+          <Col xs={12} >
             <div>
               <Container>
                 <MakePost />
               </Container>
             </div>
           </Col>
-          <Col xs={12} md={6}>
+          <Col xs={12} >
             <div>
               <Container>
                 <div className='center'>
@@ -78,6 +80,7 @@ const Service = () => {
           <Col xs={1} md={2} />
         </Row>
       </Container>
+      <Footer />
     </div>
   )
 }

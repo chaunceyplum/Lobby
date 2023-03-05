@@ -25,6 +25,7 @@ import {
   nameGetter,
 } from '../redux/LoggedInSlice'
 import axios from 'axios'
+import Footer from './Footer'
 
 const LogIn = () => {
   const [show, setShow] = useState(false)
@@ -44,7 +45,7 @@ const LogIn = () => {
   //const message = statey.message
   const name = statey.name
   //const message = statey.message
- console.log(message)
+  console.log(message)
   const clearBoth = () => {
     setUserEmail('')
     setUserPassword('')
@@ -135,7 +136,14 @@ const LogIn = () => {
                     console.log(statey)
                   )}
 
-                  {message ? (<div>{message}<h3>{statey.message}</h3></div>): (<div>{console.log(message)}</div>)}
+                  {message ? (
+                    <div>
+                      {message}
+                      <h3>{statey.message}</h3>
+                    </div>
+                  ) : (
+                    <div>{console.log(message)}</div>
+                  )}
                 </FormLabel>
 
                 {statey.message ? setValidated(false) : <div></div>}
@@ -157,7 +165,7 @@ const LogIn = () => {
               <br />
               <br />
 
-              <FormGroup className='text-center'>
+              <FormGroup className='text-center center'>
                 <FormLabel>
                   <h1 className='text2'>Password</h1>
                 </FormLabel>
@@ -175,13 +183,15 @@ const LogIn = () => {
               <FormGroup>
                 <br />
                 <br />
-                <Button
-                  variant='secondary'
-                  onClick={(e) => submitUser(e)}
-                  className='buttons1'
-                >
-                  Submit
-                </Button>
+                <div className='center1'>
+                  <Button
+                    variant='secondary'
+                    onClick={(e) => submitUser(e)}
+                    className='buttons1'
+                  >
+                    Submit
+                  </Button>
+                </div>
               </FormGroup>
               <br />
               <br />
@@ -200,6 +210,7 @@ const LogIn = () => {
           <br />
         </Row>
       </Container>
+      <Footer />
     </div>
   )
 }

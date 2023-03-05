@@ -12,6 +12,8 @@ import {
 } from 'react-bootstrap'
 import contact from '../Images/contact.jpg'
 import { Parallax } from 'react-parallax'
+import Footer from './Footer'
+
 
 const Contact = () => {
   return (
@@ -78,6 +80,7 @@ const Contact = () => {
           </div>
         </Row>
       </Container>
+      <Footer />
     </div>
   )
 }
