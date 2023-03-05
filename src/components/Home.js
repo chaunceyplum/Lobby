@@ -62,7 +62,7 @@ const Home = () => {
                 <Row>
                   <div className='text2'>
                     <h1 className='center text-center headerPadding1'>
-                      some text
+                      Interdum et malesuada fames ac ante ipsum primis in faucibus.
                     </h1>
 
                     <p className='center text-center textPadding'>
@@ -74,13 +74,8 @@ const Home = () => {
                       augue, tincidunt molestie maximus sit amet, blandit sit
                       amet neque. Praesent ante risus, sodales in vulputate
                       aliquet, pretium sit amet lacus. Praesent lacinia placerat
-                      dolor eu maximus. Sed pellentesque, turpis eget gravida
-                      egestas, nisi nulla egestas est, et rutrum nisl urna a
-                      lectus. Interdum et malesuada fames ac ante ipsum primis
-                      in faucibus. In tempus malesuada metus vitae rutrum.
-                      Integer lacus lorem, sollicitudin vitae lorem at, ornare
-                      venenatis velit. Suspendisse eget orci sodales, porttitor
-                      tortor tempus, interdum tortor.
+                      dolor eu maximus. 
+                      
                     </p>
                   </div>
                 </Row>
