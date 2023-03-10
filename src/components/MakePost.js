@@ -36,7 +36,7 @@ const MakePost = () => {
   const handleShow = () => setShow(true)
 
   const dispatch = useDispatch()
-  const LoggedInBool = useSelector(loggedInBool)
+
   const Setter = useSelector(setter)
   const loggedInState = (state) => state.loggedIn
   const message = (state) => state.loggedIn.message

@@ -42,7 +42,6 @@ const LogIn = () => {
   const [userEmail, setUserEmail] = useState('')
   const [userPassword, setUserPassword] = useState('')
   const [validated, setValidated] = useState(false)
-  //const message = statey.message
   const name = statey.name
   //const message = statey.message
   console.log(message)
@@ -62,7 +61,7 @@ const LogIn = () => {
     }
 
     setValidated(true)
-    // console.log(userDetails)
+
     logIn(userDetails)
 
     return userDetails
@@ -94,14 +93,6 @@ const LogIn = () => {
     }
     forceUpdateHandler()
   }
-
-  // const required = (val) => val && val.length
-  // const maxLength = (len) => (val) => !val || val.length <= len
-  // const minLength = (len) => (val) => val && val.length >= len
-  // const isNumber = (val) => !isNaN(+val)
-  // const validEmail = (val) =>
-  //   /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val)
-  // const validPassword = (val) => /^(?=.*\d)[a-zA-Z0-9]{8,16}$/
 
   return (
     <div className='homeBackground '>

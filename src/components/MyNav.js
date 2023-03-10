@@ -107,8 +107,6 @@ const MyNav = () => {
       try {
         const res = await axios.post(`${apiUrl}/user`, user)
 
-        // console.log(res.data)
-
         res.data
           ? dispatch(setter(res.data))
           : console.log('unable to run setter func')
@@ -138,7 +136,9 @@ const MyNav = () => {
         >
           <Container>
             <Navbar.Brand href='/' className=''>
-              <h1 className='text2 NavLink'><strong>(logo)Lobby</strong></h1>
+              <h1 className='text2 NavLink'>
+                <strong>(logo)Lobby</strong>
+              </h1>
             </Navbar.Brand>
 
             <Navbar.Toggle bg={'#613333'} className='buttons1' />
@@ -149,34 +149,24 @@ const MyNav = () => {
               >
                 <NavItem>
                   <NavLink className='NavLink ' href='/'>
-                    <strong>
-                    Home
-                    </strong>
+                    <strong>Home</strong>
                   </NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink className='NavLink ' href='/service'>
-                    
-                    <strong>
-                    Service
-                    </strong>
+                    <strong>Service</strong>
                   </NavLink>
                 </NavItem>
 
                 <NavItem>
                   <NavLink className='NavLink ' href='/contact'>
-                    
-                    <strong>
-                    Contact
-                    </strong>
+                    <strong>Contact</strong>
                   </NavLink>
                 </NavItem>
 
                 <NavItem>
                   <NavLink className='NavLink ' href='/login'>
-                    <strong>
-                    Log In
-                    </strong>
+                    <strong>Log In</strong>
                   </NavLink>
                 </NavItem>
               </Nav>
