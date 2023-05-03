@@ -8,7 +8,6 @@ const initialState = {
   error: null,
 }
 
-//const apiUrl = 'https://jsonplaceholder.typicode.com/posts'
 const apiUrl = 'https://classycutzbackend.herokuapp.com/posts'
 //const apiUrl = 'http://localhost:3007/posts'
 export const fetchPosts = createAsyncThunk('fetchedRecipients/', async () => {
@@ -33,7 +32,8 @@ export const DataSlice = createSlice({
       //   state.posts.push(action.payload)
       // },
       reducer(state, action) {
-        state.posts = action.payload.posts.posts
+        state.posts = action.payload.posts
+        console.log(action)
         return state.posts
       },
     },
@@ -68,7 +68,7 @@ export const DataSlice = createSlice({
       })
       .addCase(fetchPosts.fulfilled, (state, action) => {
         state.status = 'succeded'
-        state.posts = state.posts.concat(action.payload)
+        state.posts = action.payload
       })
       .addCase(fetchPosts.rejected, (state, action) => {
         state.status = 'failed'

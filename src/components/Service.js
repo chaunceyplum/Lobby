@@ -17,7 +17,6 @@ import RenderPostCard from './RenderPostCard'
 import MakePost from './MakePost'
 import Footer from './Footer'
 
-
 const Service = () => {
   const dispatch = useDispatch()
   const posts = useSelector(selectAllPosts)
@@ -51,14 +50,14 @@ const Service = () => {
         </Row>
 
         <Row>
-          <Col xs={12} >
+          <Col xs={12}>
             <div>
               <Container>
                 <MakePost />
               </Container>
             </div>
           </Col>
-          <Col xs={12} >
+          <Col xs={12}>
             <div>
               <Container>
                 <div className='center'>
