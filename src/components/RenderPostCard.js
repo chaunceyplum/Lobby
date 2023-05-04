@@ -24,7 +24,10 @@ import submitLike from '../redux/DataSlice'
 
 const RenderPostCard = (data, key) => {
   const [liked, setLiked] = useState(false)
+
+  const letter = data.data.username[0].toUpperCase()
   //const sendLike = useSelector(submitLike)
+
   return (
     <div className='center' style={{ width: '100%' }}>
       <br />
@@ -33,7 +36,7 @@ const RenderPostCard = (data, key) => {
         <CardHeader
           avatar={
             <Avatar sx={{ bgcolor: brown[700] }} aria-label=''>
-              c
+              {letter}
             </Avatar>
           }
           action={

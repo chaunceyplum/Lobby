@@ -57,7 +57,7 @@ export const LoggedInSlice = createSlice({
       return state.name
     },
     signOut: (state, action) => {
-      console.log(`clearing the state:     ${JSON.stringify(state)}`)
+      console.log(`Logged out user:     ${JSON.stringify(state.username)}`)
       return initialState
     },
   },
