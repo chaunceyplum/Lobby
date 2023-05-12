@@ -38,6 +38,7 @@ import {
 } from '../redux/LoggedInSlice'
 import axios from 'axios'
 import DisplayUser from './DisplayUser'
+import logo from '../Images/logo.svg'
 
 const MyNav = () => {
   const [isOpen, setOpen] = useState(false)
@@ -136,9 +137,23 @@ const MyNav = () => {
         >
           <Container>
             <Navbar.Brand href='/' className=''>
-              <h1 className='text2 NavLink'>
-                <strong>(logo)Lobby</strong>
-              </h1>
+              <div className='displayInline '>
+                <img
+                  src={logo}
+                  alt=''
+                  className=''
+                  style={{
+                    width: '100px',
+                    height: '100px',
+                    // display: 'flex',
+                    // justifyContent: 'center',
+                    //size: '2em',
+                  }}
+                />
+                <h1 className='text2 NavLink center'>
+                  <strong>Lobby</strong>
+                </h1>
+              </div>
             </Navbar.Brand>
 
             <Navbar.Toggle bg={'#613333'} className='buttons1' />

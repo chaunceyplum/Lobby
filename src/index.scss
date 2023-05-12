@@ -1,9 +1,9 @@
 $primaryColor: white;
-$primaryBackground: #613333;
+$primaryBackground: #242222;
 $secondBackground: #42708f;
-$thirdBackground: #f9ba7d;
+$thirdBackground: #eadfd6;
 $textColor1: #42708f;
-$textColor2: #f9ba7d;
+$textColor2: #eadfd6;
 $blue: rbg(0, 0, 72);
 
 //MISC
@@ -11,13 +11,15 @@ $blue: rbg(0, 0, 72);
   margin: 0 0 0 0;
   font-family: medium;
 }
-button {
-  background-color: #42708f !important;
-  color: #f9ba7d !important;
+// button {
+//   background-color: #42708f !important;
+//   color: #f9ba7d !important;
+// }
+.pageLayout {
+  min-height: 100vh;
 }
-.pageLayout{
-  min-height:100vh;
-  
+.displayInline {
+  display: inline-flex;
 }
 .roundedCorners {
   border-radius: 25px;
@@ -26,8 +28,8 @@ button {
   background-color: $thirdBackground;
 }
 .offsetBackground {
-  background-color: #f9ba7d !important;
-  color: #613333 !important;
+  background-color: #eadfd6 !important;
+  color: #42708f !important;
 }
 #signUpForm {
   background-color: #f9ba7d !important;
@@ -35,7 +37,7 @@ button {
 }
 .buttons {
   background-color: $primaryBackground !important;
-  color: #f9ba7d !important;
+  color: #42708f !important;
 }
 .buttons1 {
   background-color: $thirdBackground !important;
@@ -50,11 +52,13 @@ button {
 }
 .text2 {
   color: $thirdBackground;
+  font-size: 2rem;
 }
 .center1 {
   display: flex;
-  margin: 0 auto !important;
+  margin: auto auto !important;
   justify-content: center !important;
+  align-items: center;
 }
 .container {
   display: block;
@@ -76,13 +80,12 @@ button {
 }
 .headerPadding1 {
   padding-top: 15vh;
-  
-  font-size: 4rem;
+
+  font-size: 5rem;
 }
 .textPadding {
   padding-top: 10vh;
   padding-bottom: 10vh;
-  font-size: 1.5rem;
 }
 .homeHalfDiv {
   height: 50%;
@@ -103,7 +106,7 @@ button {
 .homeHeaderText {
   font-size: 4em;
   font-family: medium;
-  margin: auto auto;
+  // margin: auto auto;
   padding-top: 50%;
   padding-bottom: 50%;
   color: $textColor2 !important;
@@ -113,7 +116,7 @@ button {
 .homeHeaderText1 {
   font-size: 3em;
   font-family: medium;
-  margin: auto auto;
+  // margin: auto auto;
   padding-top: 75%;
   color: $textColor1 !important;
   //-webkit-text-stroke: 3px $textColor2;
@@ -135,13 +138,14 @@ button {
 .navbarPositoning {
   max-height: 75% !important;
   //height: 50%;
-  padding: 50px 0px 50px 0px !important;
+  // padding: 50px 0px 50px 0px !important;
   //box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   font-size: 20px !important;
   //   background-color: white;
   //backdrop-filter: blur(10px) !important;
-  opacity: 100% !important;
+  // opacity: 100% !important;
   z-index: 100 !important;
+  background-color: #242222;
 }
 // .navlinks {
 //   height: fit-content;
@@ -150,7 +154,7 @@ button {
 // }
 .NavLink {
   color: $textColor2 !important;
-  -webkit-text-stroke: 1px $primaryBackground !important;
+  // -webkit-text-stroke: 1px $primaryBackground !important;
 }
 //Contact
 .formMargin {
@@ -163,7 +167,7 @@ button {
   background-color: $thirdBackground;
   color: $primaryBackground !important;
   height: 50vh;
-  position:fixed;
+  position: fixed;
 }
 
 //Parallax

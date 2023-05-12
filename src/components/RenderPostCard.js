@@ -13,7 +13,7 @@ import Collapse from '@mui/material/Collapse'
 import Avatar from '@mui/material/Avatar'
 import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
-import { brown, red } from '@mui/material/colors'
+import { brown, grey, lightBlue, red } from '@mui/material/colors'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import ShareIcon from '@mui/icons-material/Share'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
@@ -35,7 +35,7 @@ const RenderPostCard = (data, key) => {
       <Card sx={{ width: '100%' }} className='offsetBackground'>
         <CardHeader
           avatar={
-            <Avatar sx={{ bgcolor: brown[700] }} aria-label=''>
+            <Avatar sx={{ bgcolor: grey[800] }} aria-label=''>
               {letter}
             </Avatar>
           }
@@ -46,10 +46,11 @@ const RenderPostCard = (data, key) => {
           }
           title={data.data.gamertag}
           subheader={data.data.console}
+          color='darkBlue'
         />
 
         <CardContent>
-          <Typography variant='h6' color='text-primary'>
+          <Typography variant='h6' color='slateGrey'>
             {data.data.title}
           </Typography>
           <Typography variant='body2' color='text.secondary'>
@@ -60,7 +61,7 @@ const RenderPostCard = (data, key) => {
         <CardActions>
           <IconButton
             aria-label='add to favorites'
-            sx={{ bgcolor: brown[700] }}
+            sx={{ bgcolor: lightBlue[700] }}
             className='buttons'
             //onClick={() => sendLike()}
           >
@@ -69,7 +70,7 @@ const RenderPostCard = (data, key) => {
           <br />
           <IconButton
             aria-label='share'
-            sx={{ bgcolor: brown[700] }}
+            sx={{ bgcolor: lightBlue[700] }}
             className='buttons'
           >
             <ShareIcon />
