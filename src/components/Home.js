@@ -5,7 +5,7 @@ import Footer from './Footer.js'
 import comp from '../Images/comp.svg'
 import comp1 from '../Images/comp1.svg'
 import comp2 from '../Images/comp2.svg'
-
+import meteor from '../Images/Meteor.svg'
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
 import CardHeader from '@mui/material/CardHeader'
@@ -29,7 +29,10 @@ const Home = () => {
       <div className='homeBackground'>
         {/* <Parallax pages={6} className='homeBackground' >
           <ParallaxLayer speed={1} offset={0} > */}
-        <div className='pageLayout'>
+        <div
+          className='pageLayout meteor'
+          style={{ backgroundImage: { meteor } }}
+        >
           <Container>
             <Row>
               <Col xs={12} lg={4}>
