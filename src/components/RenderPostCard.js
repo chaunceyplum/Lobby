@@ -29,7 +29,7 @@ const RenderPostCard = (data, key) => {
   //const sendLike = useSelector(submitLike)
 
   return (
-    <div className='center' style={{ width: '100%' }}>
+    <div className='center roundedCorners' style={{ width: '100%' }}>
       <br />
       {console.log(data)}
       <Card sx={{ width: '100%' }} className='offsetBackground'>

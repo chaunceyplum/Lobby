@@ -127,6 +127,7 @@ const MyNav = () => {
   const loggedInBoolean = statey.LoggedIn
   const [validated, setValidated] = useState(false)
   //const fetcher = useSelector(fetcher)
+
   return (
     <div className=''>
       <Container>

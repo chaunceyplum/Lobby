@@ -15,6 +15,11 @@ $blue: rbg(0, 0, 72);
 //   background-color: #42708f !important;
 //   color: #f9ba7d !important;
 // }
+.titleBlock {
+  background-color: #42708f;
+  color: #eadfd6;
+  max-height: 70vh;
+}
 .meteor {
   background-image: url('./Images/Meteor.svg');
   width: 100vw;
@@ -84,8 +89,12 @@ $blue: rbg(0, 0, 72);
   font-size: 6rem;
 }
 .headerPadding1 {
-  padding-top: 15vh;
+  padding-top: 5vh;
 
+  font-size: 4rem !important;
+  padding-bottom: 5vh;
+}
+.rem {
   font-size: 4rem;
 }
 .textPadding {

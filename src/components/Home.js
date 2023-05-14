@@ -34,10 +34,19 @@ const Home = () => {
           style={{ backgroundImage: { meteor } }}
         >
           <Container>
+            <br />
+            <br />
+            <br />
+            <br />
+
             <Row>
-              <Col xs={12} lg={4}>
-                <div className='homeHeaderText'>
-                  <h3 className=' text2 headerPadding1'>Find A Lobby</h3>
+              <Col xs={12} lg={4} className='center'>
+                <br />
+                <br />
+                <br />
+                <br />
+                <div className=' titleBlock roundedCorners text-center headerPadding1 center'>
+                  <h3 className=' text2 rem'>Find A Lobby</h3>
 
                   <h3 className=' text2 '>
                     Connect and Dominate: Find Your Perfect Gaming Team!
@@ -45,10 +54,6 @@ const Home = () => {
                   <Button variant='secondary' className='center1 buttons1'>
                     Get started
                   </Button>
-
-                  <br />
-
-                  <br />
                 </div>
               </Col>
 

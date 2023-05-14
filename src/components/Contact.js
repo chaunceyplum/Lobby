@@ -14,26 +14,31 @@ import contact from '../Images/contact.jpg'
 import { Parallax } from 'react-parallax'
 import Footer from './Footer'
 
-
 const Contact = () => {
   return (
     <div className='homeBackground'>
       <Container>
+        <Row>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+        </Row>
+
         <Row className='changesss'>
           <Col xs={2} />
           <Col xs={8}>
-            <div className='text-center'>
-              <h3 className='center homeHeaderText text2'>Contact </h3>
-
-              <br />
-              <br />
-              <br />
-              <br />
+            <div className=' titleBlock roundedCorners text-center headerPadding1 center'>
+              <h3 className=' text2 rem'>Contact</h3>
             </div>
           </Col>
           <Col xs={2} />
         </Row>
       </Container>
+      <br />
+      <br />
       <Container>
         <Row>
           <Col />

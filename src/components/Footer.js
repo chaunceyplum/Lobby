@@ -36,7 +36,7 @@ const Footer = () => {
                 <FaLinkedin />
               </Button>
             </Col>
-            <Col className='d-flex justify-content-center '>
+            {/* <Col className='d-flex justify-content-center '>
               <Button
                 href='https://twitter.com/chaunce_dev'
                 variant='secondary'
@@ -45,7 +45,7 @@ const Footer = () => {
               >
                 <FaTwitter />
               </Button>
-            </Col>
+            </Col> */}
             <Col className='d-flex justify-content-center '>
               <Button
                 href='https://github.com/chaunceyplum'
