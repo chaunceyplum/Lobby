@@ -298,6 +298,13 @@ const Home = () => {
           </Container>
         </div>
         <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         {/* </ParallaxLayer>
 
           {/* <ParallaxLayer speed={1} offset={4} >
