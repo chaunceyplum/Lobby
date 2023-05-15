@@ -291,8 +291,6 @@ const Home = () => {
           <ParallaxLayer speed={1} offset={5.5} > */}
         {/* <div className='changess'> */}
 
-        <Footer fixed='bottom' />
-
         {/* </div> */}
         {/* </ParallaxLayer>
         </Parallax> */}

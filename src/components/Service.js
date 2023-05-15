@@ -110,7 +110,6 @@ const Service = () => {
       <br />
       <br />
       <br />
-      <Footer />
     </div>
   )
 }

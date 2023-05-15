@@ -34,6 +34,7 @@ export const LoggedInSlice = createSlice({
   reducers: {
     fetcher: {
       reducer(state, action) {
+        state.LoggedIn = true
         state.email = action.payload.user.email
         state.password = action.payload.user.password
         state.user = action.payload.user

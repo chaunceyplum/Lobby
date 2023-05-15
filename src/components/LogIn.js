@@ -194,15 +194,8 @@ const LogIn = () => {
         <Row>
           <br />
           <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
         </Row>
       </Container>
-      <Footer />
     </div>
   )
 }
