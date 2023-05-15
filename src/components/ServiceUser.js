@@ -27,14 +27,14 @@ const ServiceUser = (data, key) => {
   const letterFunc = (gamertag) => {
     if (gamertag) {
       const letter = gamertag[0].toUpperCase()
-      return letter
+      return `${letter}`
     } else {
       return false
     }
   }
   return (
     <div className='center roundedCorners offsetBackground'>
-      {letterFunc() ? (
+      {letterFunc(gamertag) ? (
         <Container>
           {/* <Card sx={{ maxWidth: '100%' }} className='offsetBackground'>
           <CardHeader
@@ -52,17 +52,17 @@ const ServiceUser = (data, key) => {
             <Col xs={12} className='center1'>
               <Container>
                 <Row className='center1'>
-                  {/* <Avatar
+                  <Avatar
                     sx={{
                       bgcolor: grey[800],
                       width: '100px',
                       height: '100px',
-                      fontSize: '3rem',
+                      fontSize: '3.5rem',
                     }}
                     aria-label=''
                   >
-                    {letter}
-                  </Avatar> */}
+                    {letterFunc(gamertag)}
+                  </Avatar>
                 </Row>
                 <br />
                 <br />

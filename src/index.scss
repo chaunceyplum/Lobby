@@ -15,10 +15,14 @@ $blue: rbg(0, 0, 72);
 //   background-color: #42708f !important;
 //   color: #f9ba7d !important;
 // }
+.card {
+  min-height: 500px;
+}
 .titleBlock {
   background-color: #42708f;
   color: #eadfd6;
   max-height: 70vh;
+  // opacity: 0.8;
 }
 .meteor {
   background-image: url('./Images/Meteor.svg');
@@ -41,6 +45,10 @@ $blue: rbg(0, 0, 72);
   background-color: #eadfd6 !important;
   color: #42708f !important;
 }
+.offsetBackground1 {
+  background-color: #42708f !important;
+  color: #242222 !important;
+}
 #signUpForm {
   background-color: #f9ba7d !important;
   color: #613333 !important;
@@ -61,7 +69,7 @@ $blue: rbg(0, 0, 72);
   color: $secondBackground;
 }
 .text2 {
-  color: $thirdBackground;
+  color: $thirdBackground !important;
   font-size: 2rem;
 }
 .center1 {

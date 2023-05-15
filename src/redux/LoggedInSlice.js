@@ -42,12 +42,16 @@ export const LoggedInSlice = createSlice({
         state.email && state.password
           ? setter(state, action, state.user)
           : (state.LoggedIn = false)
-        console.log(state.user)
+
         setter(state, action, state.user)
       },
     },
     setter: (state, action, data) => {
       return action.payload
+    },
+    setLogin: (state) => {
+      state.LoggedIn = true
+      return state.LoggedIn
     },
 
     emailGetter: (state, action) => {

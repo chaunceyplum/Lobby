@@ -23,6 +23,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
 import { animated, useSpring } from '@react-spring/web'
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
+import Testimonials from './Testimonials'
 const Home = () => {
   return (
     <div className='homeBackground'>
@@ -78,6 +79,7 @@ const Home = () => {
             </Row>
           </Container>
         </div>
+
         {/* </ParallaxLayer>
           <ParallaxLayer speed={1} offset={1} > */}
         <div className='PageLayout'>
@@ -97,6 +99,15 @@ const Home = () => {
                   and vibrant community.
                 </p>
               </div>
+            </Row>
+          </Container>
+        </div>
+        <div className='offsetBackground1'>
+          <Container>
+            <Row>
+              <Col>
+                <Testimonials />
+              </Col>
             </Row>
           </Container>
         </div>
@@ -207,16 +218,21 @@ const Home = () => {
                 <br />
                 <Card
                   sx={{ maxWidth: 600, height: 500 }}
-                  className='offsetBackground'
+                  className='offsetBackground1'
                 >
                   <CardHeader
                     title='Playstation'
                     subheader='Gaming Excellence'
+                    className='text2'
                   />
                   <CardContent>
                     <CardImg></CardImg>
 
-                    <Typography variant='body2' color='text.secondary'>
+                    <Typography
+                      variant='body2'
+                      color='text.secondary'
+                      className='text2'
+                    >
                       Enter a realm of gaming excellence with PlayStation's
                       iconic consoles and exclusive games. Immerse yourself in
                       breathtaking worlds and captivating storytelling. Connect
@@ -231,13 +247,17 @@ const Home = () => {
                 <br />
                 <Card
                   sx={{ maxWidth: 600, height: 500 }}
-                  className='offsetBackground'
+                  className='offsetBackground1 text2'
                 >
                   <CardHeader title='Xbox' subheader='Unleash Gaming Power' />
                   <CardContent>
                     <CardImg></CardImg>
 
-                    <Typography variant='body2' color='text.secondary'>
+                    <Typography
+                      variant='body2'
+                      color='text.secondary'
+                      className='text2'
+                    >
                       Experience the excitement of Xbox gaming with cutting-edge
                       hardware, immersive gameplay, and exclusive titles.
                       Connect with friends, join parties, and explore endless
@@ -252,7 +272,7 @@ const Home = () => {
                 <br />
                 <Card
                   sx={{ maxWidth: 600, height: 500 }}
-                  className='offsetBackground '
+                  className='offsetBackground1 text2'
                 >
                   <CardHeader
                     title='PC'
@@ -261,7 +281,11 @@ const Home = () => {
                   <CardContent>
                     <CardImg></CardImg>
 
-                    <Typography variant='body2' color='text.secondary'>
+                    <Typography
+                      variant='body2'
+                      color='text.secondary'
+                      className='text2'
+                    >
                       PC gaming offers versatility, customization, and a vast
                       library of genres and indie titles. Enjoy stunning
                       visuals, smooth gameplay, and precise controls. Dive into
