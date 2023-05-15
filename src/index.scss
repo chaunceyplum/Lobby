@@ -15,6 +15,11 @@ $blue: rbg(0, 0, 72);
 //   background-color: #42708f !important;
 //   color: #f9ba7d !important;
 // }
+.tdec {
+  text-decoration: none !important;
+  list-style: none !important;
+  color: $textColor1 !important;
+}
 .card {
   min-height: 500px;
 }
@@ -66,7 +71,7 @@ $blue: rbg(0, 0, 72);
   margin: auto auto !important;
 }
 .text1 {
-  color: $secondBackground;
+  color: $secondBackground !important;
 }
 .text2 {
   color: $thirdBackground !important;
