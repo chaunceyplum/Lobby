@@ -123,15 +123,15 @@ const LogIn = () => {
               <FormGroup className='text-center'>
                 <FormLabel>
                   {statey ? (
-                    <h3>Welcome back {statey}</h3>
+                    <h3 className='text-center'>Welcome back {statey}</h3>
                   ) : (
                     console.log(statey)
                   )}
 
                   {message ? (
-                    <div>
+                    <div className='text-center'>
                       {message}
-                      <h3>{statey.message}</h3>
+                      <h3 className='text-center'>{statey.message}</h3>
                     </div>
                   ) : (
                     <div>{console.log(message)}</div>
@@ -141,16 +141,17 @@ const LogIn = () => {
                 {statey.message ? setValidated(false) : <div></div>}
 
                 <FormLabel>
-                  <h1 className='text2'>Email</h1>
+                  <h1 className='text2 text-center'>Email</h1>
                 </FormLabel>
                 <FormControl
                   onChange={(e) => setUserEmail(e.target.value)}
                   type='email'
                   placeholder='Type Email Here'
                   required
+                  className='text-center'
                 />
 
-                <Form.Control.Feedback type='invalid'>
+                <Form.Control.Feedback type='invalid' className='text-center'>
                   Please provide a valid Email.
                 </Form.Control.Feedback>
               </FormGroup>
@@ -159,16 +160,17 @@ const LogIn = () => {
 
               <FormGroup className='text-center center'>
                 <FormLabel>
-                  <h1 className='text2'>Password</h1>
+                  <h1 className='text2 text-center'>Password</h1>
                 </FormLabel>
                 <FormControl
                   onChange={(e) => setUserPassword(e.target.value)}
                   type='password'
                   placeholder='Type Password Here'
                   required
+                  className='text-center'
                 />
                 <Form.Control.Feedback>Looks Good</Form.Control.Feedback>
-                <Form.Control.Feedback type='invalid'>
+                <Form.Control.Feedback type='invalid' className='text-center'>
                   Please provide a valid password.
                 </Form.Control.Feedback>
               </FormGroup>
