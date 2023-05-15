@@ -118,7 +118,7 @@ const LogIn = () => {
       <Container className=' text2'>
         <Row>
           <Col />
-          <Col xs={10} sm={8} md={6}>
+          <Col xs={12} sm={8} md={6}>
             <Form noValidate validated={validated}>
               <FormGroup className='text-center'>
                 <FormLabel>
@@ -181,7 +181,7 @@ const LogIn = () => {
                   <Button
                     variant='secondary'
                     onClick={(e) => submitUser(e)}
-                    className='buttons1'
+                    className='buttons1 text-center'
                   >
                     Submit
                   </Button>
