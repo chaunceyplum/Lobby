@@ -4,15 +4,17 @@ import { Card, CardBody, CardText, Col, Container, Row } from 'reactstrap'
 const Testimonials = () => {
   return (
     <div className='offsetBackground1'>
+      <br />
+      <br />
       <Container>
         <div>
-          <h2>Testimonials</h2>
+          <h2 className='text2'>Testimonials</h2>
           <br />
           <Container>
             <Row>
               <Col xs={12} md={6} lg={3}>
                 <Card>
-                  <CardBody className='bg'>
+                  <CardBody className='offsetBackground'>
                     <h6>Rating:4/5</h6>
                     <CardText>9 months ago</CardText>
                     <br />
@@ -32,7 +34,7 @@ const Testimonials = () => {
               </Col>
               <Col xs={12} md={6} lg={3}>
                 <Card>
-                  <CardBody className='bg'>
+                  <CardBody className='offsetBackground'>
                     <h6>Rating:5/5</h6>
                     <CardText>3 months ago</CardText>
                     <br />
@@ -53,7 +55,7 @@ const Testimonials = () => {
               </Col>
               <Col xs={12} md={6} lg={3}>
                 <Card>
-                  <CardBody className='bg'>
+                  <CardBody className='offsetBackground'>
                     <h6>Rating:4.5/5</h6>
                     <CardText>2 months ago</CardText>
                     <br />
@@ -74,7 +76,7 @@ const Testimonials = () => {
               </Col>
               <Col xs={12} md={6} lg={3}>
                 <Card>
-                  <CardBody className='bg'>
+                  <CardBody className='offsetBackground'>
                     <h6>Rating:5/5</h6>
                     <CardText>7 months ago</CardText>
                     <br />
@@ -109,6 +111,8 @@ const Testimonials = () => {
           </Container>
         </div> */}
       </Container>
+      <br />
+      <br />
     </div>
   )
 }
