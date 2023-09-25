@@ -143,6 +143,9 @@ const LogIn = () => {
                 <FormLabel>
                   <h1 className='text2 text-center'>Email</h1>
                 </FormLabel>
+                <FormLabel>
+                  <p>EMAIL:dummy@gmail.com</p>
+                </FormLabel>
                 <FormControl
                   onChange={(e) => setUserEmail(e.target.value)}
                   type='email'
@@ -161,6 +164,9 @@ const LogIn = () => {
               <FormGroup className='text-center center'>
                 <FormLabel>
                   <h1 className='text2 text-center'>Password</h1>
+                </FormLabel>
+                <FormLabel>
+                  <p>PASSWORD:dummy</p>
                 </FormLabel>
                 <FormControl
                   onChange={(e) => setUserPassword(e.target.value)}
