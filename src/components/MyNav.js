@@ -85,7 +85,7 @@ const MyNav = () => {
   const signOutUser = () => {
     dispatch(signOut())
   }
-  const apiUrl = 'https://classycutzbackend.herokuapp.com'
+  const apiUrl = 'https://lobbybackend-39e0b804479e.herokuapp.com/user'
   //const apiUrl = 'http://localhost:3007'
 
   const signUp = async (user) => {
@@ -104,9 +104,12 @@ const MyNav = () => {
     }
   }
   const logIn = async (user) => {
+    const headers = {
+      'Access-Control-Allow-Origin': 'no-cors',
+    }
     if (validated) {
       try {
-        const res = await axios.post(`${apiUrl}/user`, user)
+        const res = await axios.post(`${apiUrl}/user`, user, headers)
 
         res.data
           ? dispatch(setter(res.data))

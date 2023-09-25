@@ -77,7 +77,7 @@ const SignUp = () => {
     user: userEmail,
     password: userPassword,
   }
-  const apiUrl = 'https://classycutzbackend.herokuapp.com/signUp'
+  const apiUrl = 'https://lobbybackend-39e0b804479e.herokuapp.com/signUp'
 
   const signUp = async (user) => {
     if (validated) {

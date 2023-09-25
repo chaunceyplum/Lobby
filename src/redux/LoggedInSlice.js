@@ -12,7 +12,7 @@ const initialState = {
   message: '',
 }
 
-const apiUrl = 'https://classycutzbackend.herokuapp.com'
+const apiUrl = 'https://lobbybackend-39e0b804479e.herokuapp.com/'
 
 export const fetchSignUp = createAsyncThunk('fetchedSignUp/', async (state) => {
   try {

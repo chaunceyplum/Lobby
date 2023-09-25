@@ -8,7 +8,7 @@ const initialState = {
   error: null,
 }
 
-const apiUrl = 'https://classycutzbackend.herokuapp.com/posts'
+const apiUrl = 'https://lobbybackend-39e0b804479e.herokuapp.com/posts'
 //const apiUrl = 'http://localhost:3007/posts'
 export const fetchPosts = createAsyncThunk('fetchedRecipients/', async () => {
   try {

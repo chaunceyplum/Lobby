@@ -70,7 +70,7 @@ const LogIn = () => {
     user: userEmail,
     password: userPassword,
   }
-  const apiUrl = 'https://classycutzbackend.herokuapp.com/user'
+  const apiUrl = 'https://lobbybackend-39e0b804479e.herokuapp.com/user'
 
   //const apiUrl = 'http://localhost:3007/user'
 
